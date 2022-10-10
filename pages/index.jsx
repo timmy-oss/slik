@@ -28,7 +28,7 @@ const Home = () => {
 
           <div className="md:hidden block">
             <Image
-              src="/assets/slik-favicon-transparent-web.png"
+              src="/assets/Slik-Logo-horizontal-web.png"
               layout="intrinsic"
               width="200"
               height="100"
