@@ -12,8 +12,8 @@ const Home = () => {
           href="/assets/slik-social-red-background.png"
         />
       </Head>
-      <main className="flex w-full min-h-screen  flex-col items-center justify-center  text-center">
-        <div className=" self-center h-[100%] ">
+      <main className="flex relative w-full min-h-screen  flex-col items-center justify-center  text-center">
+        <div className=" self-center absolute top-[35%]  ">
           <div className="hidden   md:block">
             <Image
               src="/assets/Slik-Logo-horizontal-web.png"
@@ -22,7 +22,7 @@ const Home = () => {
               height="200"
               alt="logo"
               objectFit="contain"
-              className="animate-pulse "
+              className=" "
             />
           </div>
 
@@ -34,7 +34,7 @@ const Home = () => {
               height="100"
               alt="logo"
               objectFit="contain"
-              className="animate-pulse "
+              className=" "
             />
           </div>
         </div>
