@@ -77,11 +77,11 @@ export default function Home(props) {
 
         <div className="self-center">
           <div className="flex flex-row space-x-6">
-            <button className="block text-lg p-2 hover:bg-prim-color/10 transition-colors transform duration-500 font-bold px-4 bg-white ring ring-prim-color text-prim-color rounded-xl text-center ">
+            <button className="block text-lg p-2 hover:bg-prim-color/10 transition-colors transform duration-300 font-bold px-4 bg-white ring ring-prim-color text-prim-color outline-none rounded-xl text-center ">
               Join Waitlist 🔥
             </button>
 
-            <button className="block text-lg p-2 hover:bg-black/10 transition-colors transform duration-500 font-bold px-4 bg-white ring ring-black text-black rounded-xl text-center ">
+            <button className="block text-lg p-2 hover:bg-black/10 transition-colors transform duration-300 font-bold px-4 bg-white ring ring-black text-black rounded-xl outline-none text-center ">
               Get Started
             </button>
           </div>
