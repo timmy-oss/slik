@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://use.typekit.net/qhf4ufm.css");
+
 :root {
   --main-bg: #ffffff;
   --primary-color: #ee3a46;
@@ -10,7 +12,22 @@
   --text-color-2: #0b8fe0;
 }
 
-* {
-  background-color: var(--main-bg);
-  color: var(--text-color);
+.text-gr {
+  background: rgb(255, 255, 255);
+  background: -moz-linear-gradient(
+    175deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 97%
+  );
+  background: -webkit-linear-gradient(
+    175deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 97%
+  );
+  background: linear-gradient(
+    175deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 97%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
 }
