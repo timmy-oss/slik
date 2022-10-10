@@ -7,10 +7,7 @@ const Home = () => {
       <Head>
         <title> Slik </title>
         <link rel="icon" href="/assets/slik-favicon-transparent-web.png" />
-        <link
-          rel="shortcut icon"
-          href="/assets/slik-social-red-background.png"
-        />
+        <link rel="shortcut icon" href="/assets/Slik-Logo-vertical-web.png" />
       </Head>
       <main className="flex relative w-full min-h-screen  flex-col items-center justify-center  text-center">
         <div className=" self-center absolute top-[35%]  ">
