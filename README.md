@@ -1,5 +1,7 @@
 # Slik Logistics
 
+<img src="https://github.com/timmy-oss/slik/blob/main/public/assets/Slik-Logo-horizontal-web.png" alt="Slik Logo" style="height: 100px; width:200px;"/>
+
  ***Slik logistics progressive web app***
  
 
