@@ -75,7 +75,7 @@ export default function DesktopNavBar(props) {
           Brands and Partners&nbsp;{" "}
         </span>
 
-        <span className="hover:cursor-pointer inline-block  self-center  transform text-base duration-500 transition-colors  hover:underline px-2">
+        <span className="hover:cursor-help inline-block  self-center  transform text-base duration-500 transition-colors  hover:underline px-2">
           More info... &nbsp;
         </span>
       </div>

@@ -7,7 +7,7 @@ export default function MobileNavBar(props) {
   const router = useRouter();
 
   return (
-    <nav className="py-2 z-10 bg-white md:hidden px-2 flex flex-row shadow fixed top-0 left-0 right-0 justify-between items-center">
+    <nav className="py-2 z-10 bg-white md:hidden px-4 flex flex-row shadow fixed top-0 left-0 right-0 justify-between items-center">
       {/* <div className="self-center p-0  bg-blue-400"> */}
       <Image
         src="/assets/Slik-Logo-horizontal-web.png"
@@ -32,15 +32,21 @@ export default function MobileNavBar(props) {
               ])
             }
           >
-            <span className="fa-solid fa-house "></span>
+            <span className="text-3xl">
+              <i className="fa-solid fa-house "></i>
+            </span>
           </div>
 
           <div className=" transform duration-300 transition-all hover:scale-[103%]">
-            <span className="fa-solid fa-magnifying-glass"></span>
+            <span className="text-3xl">
+              <i className="fa-solid fa-magnifying-glass"></i>
+            </span>
           </div>
 
           <div className=" transform duration-300 transition-all hover:scale-[103%]">
-            <span className="fa-solid fa-bars-staggered"></span>
+            <span className="text-3xl">
+              <i className="fa-solid fa-bars-staggered"></i>
+            </span>
           </div>
         </div>
       </div>

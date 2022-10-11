@@ -33,12 +33,20 @@ export default function Home(props) {
             style={{ fontFamily: "Work Sans" }}
             className="text-center capitalize p-4 font-black text-4xl lg:text-7xl 2xl:text-7xl max-w-3xl 2xl:max-w-4xl lg:text-left  text-c-1"
           >
-            Experience the modern logistics with Slik.
+            Experience the modern way of logistics with Slik.
           </h1>
           <div className="mx-auto md:hidden text-center md:text-left text-c-1 text-4xl md:text-5xl my-2 md:my-6 px-4  ">
-            <i class="fa-regular fa-clock"></i>{" "}
-            <i class="fa-solid fa-shield-halved"></i>{" "}
-            <i class="fa-solid fa-arrow-down-up-lock"></i>
+            <span className="text-4xl md:text-5xl">
+              <i class="fa-regular fa-clock"></i>{" "}
+            </span>
+
+            <span className="text-4xl md:text-5xl">
+              <i class="fa-solid fa-shield-halved"></i>{" "}
+            </span>
+
+            <span className="text-4xl md:text-5xl">
+              <i class="fa-solid fa-arrow-down-up-lock"></i>
+            </span>
           </div>
           <p
             style={{ fontFamily: "Roboto" }}
@@ -52,21 +60,21 @@ export default function Home(props) {
 
           <h1
             style={{ fontFamily: "Work Sans" }}
-            className="text-center  mt-16 capitalize p-4 font-black text-3xl lg:text-4xl 2xl:text-5xl max-w-5xl 2xl:max-w-5xl lg:text-left  text-black"
+            className="text-center  mt-8 md:mt-16 capitalize p-4 font-black text-3xl lg:text-4xl 2xl:text-5xl  lg:text-left  text-black"
           >
             Join the waitlist to get notified when we launch
           </h1>
 
-          <div className="my-8 md:px-4 md:w-[70%]">
+          <div className="my-8 px-2 md:px-4 md:w-[70%]">
             <div className="flex flex-col md:flex-row justify-around space-y-8 md:space-y-0 md:space-x-16">
               <div className="flex flex-row w-full hover:bg-prim-color/80 bg-prim-color rounded-xl  justify-between items-center space-x-2 ">
                 <input
-                  className=" outline-none w-[65%] text-lg h-[50px]  py-2 pl-4 pr-8 rounded-y-xl rounded-l-xl  "
+                  className=" outline-none w-[65%] text-base md:text-lg h-[50px] caret:text-prim-color text-prim-color placeholder:text-prim-color/50  py-2 pl-8 pr-8 rounded-y-xl rounded-l-xl  "
                   type="email"
-                  placeholder="Email Address"
+                  placeholder="johndoe@gmail.com"
                   name="waiter"
                 />
-                <button className="block w-[35%] text-base  hover:bg-prim-color/10 transition-colors transform duration-300   ring-[2px] ring-prim-color text-white font-bold outline-none  rounded-y-xl rounded-r-xl text-center ">
+                <button className="block w-[35%] text-base text-white font-bold outline-none  rounded-y-xl rounded-r-xl text-center ">
                   Join Waitlist
                 </button>
               </div>
