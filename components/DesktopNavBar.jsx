@@ -59,7 +59,10 @@ export default function DesktopNavBar(props) {
                 }
               >
                 <span className="text-base">
-                  <i className={n.icon + " fa-sm "}></i>
+                  <i
+                    style={{ fontSize: "2em" }}
+                    className={n.icon + " fa-sm "}
+                  ></i>
                 </span>
                 &nbsp;
                 {n.title}
