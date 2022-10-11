@@ -168,26 +168,21 @@ export default function Home(props) {
 
       {/* Frame 3 */}
 
-      <div className="  min-h-[500px] bg-black/80">
-        <div className="px-4 w-full pt-16 md:px-24 ">
-          <div className="">
-            <h1
-              data-aos="fade-up"
-              style={{ fontFamily: "Work Sans" }}
-              className="text-center capitalize p-4 font-black text-3xl lg:text-6xl 2xl:text-6xl  lg:text-left   text-white"
-            >
-              Try us and see how good our services are
-            </h1>
+      <div className="px-4 w-full  md:px-24 bg-local  bg-origin-border bg-clip-border bg-top md:bg-[right_top_150px]  bg-no-repeat bg-[length:100%_400px] min-h-[500px] md:bg-[length:700px_500px] bg-[#8C8C8C]  py-12 bg-[url('/assets/Fast-Delivery-Dark.png')] pt-[50px] md:pt-[150px]  ">
+        <div data-aos="fade-up" className="">
+          <h1
+            style={{ fontFamily: "Work Sans" }}
+            className="text-center capitalize p-4 font-black text-3xl lg:text-6xl 2xl:text-6xl  lg:text-left   text-white"
+          >
+            Try us and see how good our services are
+          </h1>
 
-            <div data-aos="fade-up">
-              <div className="my-6 px-2 md:px-4 md:w-[70%]">
-                <div className="flex flex-col md:flex-row justify-around space-y-8 md:space-y-0 md:space-x-16">
-                  <div className="w-full">
-                    <button className="block w-[80%] mx-auto md:w-full text-xl font-bold px-6 py-2 hover:bg-c-1/80 transition-colors transform duration-300 h-[50px]   bg-gray-100 ring-[2px] ring-gray-100 text-c-1 rounded-xl outline-none text-center ">
-                      Ok, Get Started
-                    </button>
-                  </div>
-                </div>
+          <div className="mt-36 max-w-lg">
+            <div className="flex flex-col md:flex-row justify-around space-y-8 md:space-y-0 md:space-x-16">
+              <div className="w-full">
+                <button className="block w-[80%] mx-auto md:w-full text-xl font-bold px-6 py-2 bg-c-1/80 transition-colors transform duration-300 h-[50px] text-white  ring-[2px] ring-gray-100  rounded-xl outline-none text-center ">
+                  Ok, Get Started
+                </button>
               </div>
             </div>
           </div>
