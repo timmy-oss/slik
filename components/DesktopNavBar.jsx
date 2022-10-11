@@ -58,7 +58,10 @@ export default function DesktopNavBar(props) {
                   ])
                 }
               >
-                <span className={n.icon}></span>&nbsp;
+                <span className="text-base">
+                  <i className={n.icon}></i>
+                </span>
+                &nbsp;
                 {n.title}
               </li>
             );
