@@ -10,6 +10,7 @@ import {
   faUsers,
   faBasketShopping,
 } from "@fortawesome/free-solid-svg-icons";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 
 const navItems = [
   {
