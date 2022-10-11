@@ -28,7 +28,7 @@ export default function Home(props) {
     <>
       <DesktopNavBar />
       <MobileNavBar />
-      <div className="min-h-screen bg-gray-100 mt-14">
+      <div className=" bg-gray-100 mt-14">
         <div className="px-4 md:px-24 bg-local  bg-origin-border bg-clip-border bg-top md:bg-[right_top_150px]  bg-no-repeat bg-[length:100%_300px] md:bg-[length:700px_500px] bg-[#8C8C8C] min-h-[800px] py-12 bg-[url('/assets/slik-delivery-red.jpg')] pt-[320px] md:pt-[150px] ">
           <h1
             data-aos="fade-up"
@@ -44,7 +44,7 @@ export default function Home(props) {
             style={{ fontFamily: "Work Sans" }}
             className="text-center capitalize p-4 font-black text-3xl lg:text-4xl 2xl:text-5xl max-w-3xl 2xl:max-w-4xl lg:text-left  text-prim-color/80"
           >
-            Ship anything to anywhere with ease.
+            Ship packages to anywhere with ease.
           </h1>
 
           <h1
@@ -107,9 +107,9 @@ export default function Home(props) {
                 </div>
 
                 <div className="w-full">
-                  <button className="block w-full text-xl font-bold px-6 py-2 hover:bg-c-1/80 transition-colors transform duration-300 h-[50px]   bg-c-1 ring-[2px] ring-c-1 text-white rounded-xl outline-none text-center ">
-                    Learn More &nbsp;{" "}
-                    <FontAwesomeIcon className="text-2xl" icon={faCircleInfo} />
+                  <button className="block w-full text-xl font-normal px-6 py-2 hover:bg-c-1/80 transition-colors transform duration-300 h-[50px]   bg-c-1 ring-[2px] ring-c-1 text-white rounded-xl outline-none text-center ">
+                    Learn more &nbsp;{" "}
+                    <FontAwesomeIcon className="text-xl" icon={faCircleInfo} />
                   </button>
                 </div>
               </div>
@@ -120,7 +120,7 @@ export default function Home(props) {
 
       {/* Frame 2  */}
 
-      <div className="min-h-screen  bg-gray-100">
+      <div className="  bg-gray-100">
         <div className="px-4 w-full  md:px-24 bg-local  bg-origin-border bg-clip-border bg-top md:bg-[left_top_150px]  bg-no-repeat bg-[length:100%_300px] md:bg-[length:700px_500px] bg-[#8C8C8C] min-h-[800px] py-12 bg-[url('/assets/slik-delivery-white.jpg')] pt-[320px] md:pt-[150px] ">
           <div className="md:ml-[45%]">
             <h1
@@ -148,16 +148,43 @@ export default function Home(props) {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
               obcaecati saepe dicta explicabo dolorum corporis vel repudiandae
               qui sint aut, soluta recusandae repellendus enim asperiores
-              incidunt, reiciendis dolorem eaque eveniet doloremque cum
-              excepturi.
+              incidunt.
             </p>
 
             <div data-aos="fade-up">
-              <div className="my-8 px-2 md:px-4 md:w-[70%]">
+              <div className="my-2 px-2 md:px-4 md:w-[70%]">
                 <div className="flex flex-col md:flex-row justify-around space-y-8 md:space-y-0 md:space-x-16">
                   <div className="w-full">
-                    <button className="block w-full text-xl font-bold px-6 py-2 hover:bg-c-1/80 transition-colors transform duration-300 h-[50px]   bg-c-1 ring-[2px] ring-c-1 text-white rounded-xl outline-none text-center ">
+                    <button className="block w-[80%] mx-auto md:w-full text-xl font-bold px-6 py-2 hover:bg-c-1/80 transition-colors transform duration-300 h-[50px]   bg-c-1 ring-[2px] ring-c-1 text-white rounded-xl outline-none text-center ">
                       Call Us
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Frame 3 */}
+
+      <div className="  min-h-[500px] bg-black/80">
+        <div className="px-4 w-full pt-16 md:px-24 ">
+          <div className="">
+            <h1
+              data-aos="fade-up"
+              style={{ fontFamily: "Work Sans" }}
+              className="text-center capitalize p-4 font-black text-3xl lg:text-6xl 2xl:text-6xl  lg:text-left   text-white"
+            >
+              Try us and see how good our services are
+            </h1>
+
+            <div data-aos="fade-up">
+              <div className="my-6 px-2 md:px-4 md:w-[70%]">
+                <div className="flex flex-col md:flex-row justify-around space-y-8 md:space-y-0 md:space-x-16">
+                  <div className="w-full">
+                    <button className="block w-[80%] mx-auto md:w-full text-xl font-bold px-6 py-2 hover:bg-c-1/80 transition-colors transform duration-300 h-[50px]   bg-gray-100 ring-[2px] ring-gray-100 text-c-1 rounded-xl outline-none text-center ">
+                      Ok, Get Started
                     </button>
                   </div>
                 </div>
