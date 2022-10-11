@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://use.typekit.net/qhf4ufm.css");
-
 :root {
   --main-bg: #ffffff;
   --primary-color: #ee3a46;

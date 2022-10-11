@@ -22,10 +22,6 @@ const Home = () => {
         <title> Slik | Home </title>
         <link rel="icon" href="/assets/slik-favicon-transparent-web.png" />
         <link rel="shortcut icon" href="Slik-Logo-horizontal-web.png" />
-        <link
-          rel="stylesheet"
-          href="https://use.typekit.net/qhf4ufm.css"
-        ></link>
       </Head>
       <main className="w-full min-h-screen  ">
         {showPage ? <HomeComponent /> : <Slik />}

@@ -1,92 +1,42 @@
 import React from "react";
+import DesktopNavBar from "./DesktopNavBar";
+import MobileNavBar from "./MobileNavBar";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import cn from "classnames";
 
-const navItems = [
-  {
-    title: "Home",
-    link: "/",
-  },
-  {
-    title: "Merchants",
-    link: "",
-  },
-  {
-    title: "Customers",
-    link: "",
-  },
-  {
-    title: "Riders",
-    link: "",
-  },
-  {
-    title: "Partners",
-    link: "",
-  },
-  {
-    title: "How it works",
-    link: "",
-  },
-];
-
 export default function Home(props) {
   const router = useRouter();
+
   return (
-    <div className="min-h-screen bg-gray-100">
-      <nav className="fixed hidden bg-white border-b border-prim-color/20 md:flex top-0 px-4 py-2 left-0 right-0 min-h-[40px] md:min-h-[50px] shadow  flex-row justify-between  items-center">
-        <div className="self-center relative ">
-          <Image
-            src="/assets/Slik-Logo-horizontal-web.png"
-            layout="fixed"
-            width="100"
-            height="50"
-            alt="nav logo"
-            objectFit="contain block bg-inherit"
-          />
-
-          <span
-            style={{ fontFamily: "Lato" }}
-            className="inline-block absolute top-[-10%] left-[100%] text-prim-color   text-lg align-top"
+    <>
+      <DesktopNavBar />
+      <MobileNavBar />
+      <div className="min-h-screen bg-gray-100 mt-14">
+        <div className="px-4 bg-local  bg-origin-border bg-clip-border bg-top md:bg-[right_top_1rem]  bg-no-repeat bg-[length:100%_300px] md:bg-[length:700px_500px] bg-[#8C8C8C] min-h-[800px] py-12 bg-[url('/assets/slik-delivery-red.jpg')] pt-[320px] md:pt-[100px]">
+          <h1
+            style={{ fontFamily: "Work Sans" }}
+            className="text-center capitalize p-4 font-black text-4xl lg:text-7xl 2xl:text-7xl max-w-3xl 2xl:max-w-4xl lg:text-left  text-c-1"
           >
-            logistics
-          </span>
-        </div>
-
-        <div className="self-center">
-          <ul className="flex flex-row font-bold  justify-around items-center space-x-8 ">
-            {navItems.map((n) => {
-              return (
-                <li
-                  className={
-                    "hover:cursor-pointer text-gr self-center border-b-2 border-transparent transform text-lg duration-500 transition-colors hover:border-black hover:scale-[1.02] " +
-                    cn([
-                      {
-                        " opacity-20 ": router.pathname === n.link,
-                        " opacity-100 ": router.pathname !== n.link,
-                      },
-                    ])
-                  }
-                >
-                  {n.title}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-
-        <div className="self-center">
-          <div className="flex flex-row space-x-6">
-            <button className="block text-lg p-2 hover:bg-prim-color/10 transition-colors transform duration-300 font-bold px-4 bg-white ring ring-prim-color text-prim-color outline-none rounded-xl text-center ">
-              Join Waitlist 🔥
-            </button>
-
-            <button className="block text-lg p-2 hover:bg-black/10 transition-colors transform duration-300 font-bold px-4 bg-white ring ring-black text-black rounded-xl outline-none text-center ">
-              Get Started
-            </button>
+            {" "}
+            Reliable delivery service every time{" "}
+          </h1>
+          <div className="mx-auto text-center md:text-left text-c-1 text-4xl md:text-7xl my-2 md:my-6 px-4  ">
+            <i class="fa-regular fa-clock"></i>{" "}
+            <i class="fa-solid fa-shield-halved"></i>{" "}
+            <i class="fa-solid fa-arrow-down-up-lock"></i>
           </div>
+          <p
+            style={{ fontFamily: "Roboto" }}
+            className="text-center text-lg lg:text-3xl lg:text-left  py-4 "
+          >
+            {" "}
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia
+            in alias perspiciatis. Similique iure eveniet hic maiores vero quod
+            assumenda libero voluptatum id, sequi.
+          </p>
         </div>
-      </nav>
-    </div>
+      </div>
+    </>
   );
 }
