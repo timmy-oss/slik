@@ -59,7 +59,7 @@ export default function DesktopNavBar(props) {
                 }
               >
                 <span className="text-base">
-                  <i className={n.icon}></i>
+                  <i className={n.icon + " fa-sm "}></i>
                 </span>
                 &nbsp;
                 {n.title}
