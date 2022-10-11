@@ -2,27 +2,35 @@ import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import cn from "classnames";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faShop,
+  faPersonChalkboard,
+  faMotorcycle,
+  faUsers,
+  faBasketShopping,
+} from "@fortawesome/free-solid-svg-icons";
 
 const navItems = [
   {
     title: "Home",
     link: "/",
-    icon: "fa-solid fa-shop",
+    icon: faShop,
   },
   {
     title: "Merchants",
     link: "",
-    icon: "fa-solid fa-basket-shopping",
+    icon: faBasketShopping,
   },
   {
     title: "Customers",
     link: "",
-    icon: "fa-solid fa-users",
+    icon: faUsers,
   },
   {
     title: "Riders",
     link: "",
-    icon: "fa-solid fa-motorcycle",
+    icon: faMotorcycle,
   },
 ];
 
@@ -58,12 +66,7 @@ export default function DesktopNavBar(props) {
                   ])
                 }
               >
-                <span className="text-base">
-                  <i
-                    style={{ fontSize: "2em" }}
-                    className={n.icon + " fa-sm "}
-                  ></i>
-                </span>
+                <FontAwesomeIcon icon={n.icon} className="text-base" />
                 &nbsp;
                 {n.title}
               </li>
