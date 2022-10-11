@@ -2,6 +2,13 @@ import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import cn from "classnames";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHouse,
+  faMagnifyingGlass,
+  faBarsStaggered,
+} from "@fortawesome/free-solid-svg-icons";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 
 export default function MobileNavBar(props) {
   const router = useRouter();
@@ -32,21 +39,15 @@ export default function MobileNavBar(props) {
               ])
             }
           >
-            <span className="text-3xl">
-              <i className="fa-solid fa-house "></i>
-            </span>
+            <FontAwesomeIcon icon={faHouse} className="text-3xl" />
           </div>
 
           <div className=" transform duration-300 transition-all hover:scale-[103%]">
-            <span className="text-3xl">
-              <i className="fa-solid fa-magnifying-glass"></i>
-            </span>
+            <FontAwesomeIcon icon={faMagnifyingGlass} className="text-3xl" />
           </div>
 
           <div className=" transform duration-300 transition-all hover:scale-[103%]">
-            <span className="text-3xl">
-              <i className="fa-solid fa-bars-staggered"></i>
-            </span>
+            <FontAwesomeIcon icon={faBarsStaggered} className="text-3xl" />
           </div>
         </div>
       </div>

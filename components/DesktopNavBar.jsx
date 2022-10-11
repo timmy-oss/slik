@@ -5,7 +5,6 @@ import cn from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faShop,
-  faPersonChalkboard,
   faMotorcycle,
   faUsers,
   faBasketShopping,

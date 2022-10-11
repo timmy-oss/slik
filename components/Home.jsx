@@ -4,6 +4,13 @@ import MobileNavBar from "./MobileNavBar";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import cn from "classnames";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faShieldHalved,
+  faStopwatch,
+  faArrowDownUpLock,
+} from "@fortawesome/free-solid-svg-icons";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 
 export default function Home(props) {
   const router = useRouter();
@@ -35,18 +42,21 @@ export default function Home(props) {
           >
             Experience the modern way of logistics with Slik.
           </h1>
-          <div className="mx-auto md:hidden text-center md:text-left text-c-1 text-4xl md:text-5xl my-2 md:my-6 px-4  ">
-            <span className="text-4xl md:text-5xl">
-              <i class="fa-regular fa-clock"></i>{" "}
-            </span>
+          <div className="mx-auto md:hidden text-center md:text-left text-c-1 text-4xl md:text-5xl my-2 md:my-6 px-4  space-x-8 ">
+            <FontAwesomeIcon
+              icon={faStopwatch}
+              className="text-4xl md:text-5xl"
+            />
 
-            <span className="text-4xl md:text-5xl">
-              <i class="fa-solid fa-shield-halved"></i>{" "}
-            </span>
+            <FontAwesomeIcon
+              icon={faShieldHalved}
+              className="text-4xl md:text-5xl"
+            />
 
-            <span className="text-4xl md:text-5xl">
-              <i class="fa-solid fa-arrow-down-up-lock"></i>
-            </span>
+            <FontAwesomeIcon
+              icon={faArrowDownUpLock}
+              className="text-4xl md:text-5xl"
+            />
           </div>
           <p
             style={{ fontFamily: "Roboto" }}
