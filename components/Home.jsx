@@ -5,12 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import cn from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faShieldHalved,
-  faStopwatch,
-  faArrowDownUpLock,
-  faCircleInfo,
-} from "@fortawesome/free-solid-svg-icons";
+import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import AOS from "aos";
 
@@ -194,7 +189,91 @@ export default function Home(props) {
         >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi!
         </h1>
+
+        <div className="flex w-full  flex-col pt-[100px] lg:flex-row justify-evenly space-x-24 items-center">
+          <div className="">
+            <Image
+              src="/assets/Mask-group.png"
+              layout="fixed"
+              width="701"
+              height="467"
+              alt="mask group"
+              objectFit="contain"
+              className="rounded-[10px]"
+            />
+          </div>
+
+          <div>
+            <h3 className=" block  capitalize font-bold py-6 text-2xl text-black/90">
+              Slik Vendor
+            </h3>
+
+            <p
+              data-aos="fade-up"
+              style={{ fontFamily: "Work Sans" }}
+              className="text-left w-[80%]  text-sm text-[#797979] "
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
+              omnis adipisci expedita labore velit consequuntur pariatur sed
+              inventore perferendis, voluptas mollitia dignissimos nam, quis
+              eaque ipsa suscipit, nulla repellat ut animi enim quia ratione
+              ipsum. Voluptatum, reprehenderit atque odit animi accusantium
+              officiis minus cum velit eos impedit quidem ut sit!
+            </p>
+
+            <div className="mt-[60px]">
+              <button className="block text-[#EE3A46] self-center text-base  py-3 px-4 ring-1 ring-transparent hover:ring-[#EE3A46] transition-colors  transform duration-300 font-normal    rounded-xl outline-none text-center ">
+                Become a vendor &nbsp;
+                <FontAwesomeIcon icon={faArrowRightLong} className="" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex w-full  flex-col pt-[100px] lg:flex-row justify-end  items-center">
+          <div className="ml-24">
+            <h3 className=" block  capitalize font-bold py-6 text-2xl text-black/90">
+              Slik Driver
+            </h3>
+
+            <p
+              data-aos="fade-up"
+              style={{ fontFamily: "Work Sans" }}
+              className="text-left w-[80%]  text-sm text-[#797979] "
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
+              omnis adipisci expedita labore velit consequuntur pariatur sed
+              inventore perferendis, voluptas mollitia dignissimos nam, quis
+              eaque ipsa suscipit, nulla repellat ut animi enim quia ratione
+              ipsum. Voluptatum, reprehenderit atque odit animi accusantium
+              officiis minus cum velit eos impedit quidem ut sit!
+            </p>
+
+            <div className="mt-[60px]">
+              <button className="block text-[#EE3A46] self-center text-base  py-3 px-4  ring-1  ring-transparent hover:ring-[#EE3A46] transition-colors  transform duration-300 font-normal    rounded-xl outline-none text-center ">
+                Become a driver &nbsp;
+                <FontAwesomeIcon icon={faArrowRightLong} className="" />
+              </button>
+            </div>
+          </div>
+
+          <div className="">
+            <Image
+              src="/assets/Mask-group2.png"
+              layout="fixed"
+              width="701"
+              height="467"
+              alt="mask group 2"
+              objectFit="contain"
+              className="rounded-[10px] ml-24"
+            />
+          </div>
+        </div>
       </div>
+
+      {/* footer  */}
+
+      <footer className="min-h-[516px] bg-[#EE3A46]"></footer>
     </>
   );
 }
