@@ -4,33 +4,27 @@ import { useRouter } from "next/router";
 import cn from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faShop,
-  faMotorcycle,
-  faUsers,
-  faBasketShopping,
+  faCircleInfo,
+  faTaxi,
+  faIdCard,
 } from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
 const navItems = [
   {
-    title: "Home",
+    title: "Our Services",
+    link: "",
+    icon: faTaxi,
+  },
+  {
+    title: "About Us",
     link: "/",
-    icon: faShop,
+    icon: faCircleInfo,
   },
   {
-    title: "Merchants",
+    title: "Join Us",
     link: "",
-    icon: faBasketShopping,
-  },
-  {
-    title: "Customers",
-    link: "",
-    icon: faUsers,
-  },
-  {
-    title: "Riders",
-    link: "",
-    icon: faMotorcycle,
+    icon: faIdCard,
   },
 ];
 
@@ -38,65 +32,47 @@ export default function DesktopNavBar(props) {
   const router = useRouter();
 
   return (
-    <nav className="fixed hidden z-10 bg-white border-b border-black/20 md:flex top-0 px-24 py-2 left-0 right-0 min-h-[40px] md:min-h-[50px] shadow  flex-row justify-between  items-center">
-      <div className="self-center  ">
-        <Image
-          src="/assets/Slik-Logo-horizontal-web.png"
-          layout="fixed"
-          width="100"
-          height="50"
-          alt="nav logo"
-          objectFit="contain"
-        />
+    <nav className="fixed hidden z-10 bg-white  md:flex top-0   left-0 right-0    flex-row justify-between  items-center">
+      <div className="self-center w-[60%] bg-[#FBF7EB] flex flex-row justify-around  px-12 py-2 ">
+        <div>
+          <Image
+            src="/assets/Slik-Logo-horizontal-web.png"
+            layout="fixed"
+            width="100"
+            height="50"
+            alt="nav logo"
+            objectFit="contain"
+          />
+        </div>
+
+        <div className="self-center hidden lg:block">
+          <ul className="flex flex-row   justify-around items-center space-x-16 ">
+            {navItems.map((n, i) => {
+              return (
+                <li
+                  key={i}
+                  className={
+                    "hover:cursor-pointer text-black/90 font-semibold  self-center border-b border-transparent transform text-base duration-500 transition-colors hover:border-black/90 hover:scale-[1.0] "
+                  }
+                >
+                  <FontAwesomeIcon icon={n.icon} className="text-base" />
+                  &nbsp;&nbsp;
+                  {n.title}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
 
-      <div className="self-center hidden lg:block">
-        <ul className="flex flex-row   justify-around items-center space-x-8 ">
-          {navItems.map((n, i) => {
-            return (
-              <li
-                key={i}
-                className={
-                  "hover:cursor-pointer text-c-1 font-semibold  self-center border-b-2 border-transparent transform text-base duration-500 transition-colors hover:border-c-1 hover:scale-[1.02] " +
-                  cn([
-                    {
-                      " opacity-20 ": router.pathname === n.link,
-                      " opacity-100 ": router.pathname !== n.link,
-                    },
-                  ])
-                }
-              >
-                <FontAwesomeIcon icon={n.icon} className="text-base" />
-                &nbsp;
-                {n.title}
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-
-      <div className="self-center text-stone-900 space-x-4 hidden 2xl:block">
-        <span className="hover:cursor-pointer inline-block  self-center  transform text-base duration-500 transition-colors  hover:underline px-2">
-          How it works &nbsp;
-        </span>
-
-        <span className="hover:cursor-pointer inline-block  self-center  transform text-base duration-500 transition-colors  hover:underline px-2">
-          Brands and Partners&nbsp;{" "}
-        </span>
-
-        <span className="hover:cursor-help inline-block  self-center  transform text-base duration-500 transition-colors  hover:underline px-2">
-          More info... &nbsp;
-        </span>
-      </div>
-
-      <div className="self-center">
-        <div className="flex flex-row space-x-6">
-          <button className="block text-base  hover:bg-prim-color/10 transition-colors transform duration-300 font-normal px-3 py-1 bg-white ring-[2px] ring-prim-color text-prim-color outline-none rounded-xl text-center ">
-            Join Waitlist 🔥
+      <div className="self-stretch px-16 py-2 w-[40%] bg-[#EE3A46]">
+        <div className="flex h-full flex-row justify-around space-x-6 w-full">
+          <button className="block text-lg self-center  font-normal px-3 py-1  text-white outline-none hover:scale-[1.02] transform transition rounded-xl text-center ">
+            Book a delivery
           </button>
 
-          <button className="block text-base px-3 py-1 hover:bg-c-1/10 transition-colors transform duration-300 font-normal  bg-white ring-[2px] ring-c-1 text-c-1 rounded-xl outline-none text-center ">
-            Get Started
+          <button className="block text-[#EE3A46] self-center text-base px-6 py-2 hover:bg-c-1/10 transition-colors hover:text-white transform duration-300 font-normal  bg-[#FBF7EB]  rounded-xl outline-none text-center ">
+            Join Waitlist
           </button>
         </div>
       </div>
