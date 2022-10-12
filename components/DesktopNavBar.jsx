@@ -33,7 +33,7 @@ export default function DesktopNavBar(props) {
 
   return (
     <nav className="fixed hidden z-10 bg-white  md:flex top-0   left-0 right-0    flex-row justify-between  items-center">
-      <div className="self-center w-[60%] bg-[#FBF7EB] flex flex-row justify-around  px-12 py-2 ">
+      <div className="self-center w-[60%] bg-[#FBF7EB] flex flex-row justify-around  px-12 py-3 ">
         <div>
           <Image
             src="/assets/Slik-Logo-horizontal-web.png"
@@ -52,7 +52,7 @@ export default function DesktopNavBar(props) {
                 <li
                   key={i}
                   className={
-                    "hover:cursor-pointer text-black/90 font-semibold  self-center border-b border-transparent transform text-base duration-500 transition-colors hover:border-black/90 hover:scale-[1.0] "
+                    "hover:cursor-pointer text-black/90 font-semibold  self-center border-b border-transparent transform text-base duration-500 transition-colors pb-1 hover:border-black/90 hover:scale-[1.0] "
                   }
                 >
                   <FontAwesomeIcon icon={n.icon} className="text-base" />
@@ -65,14 +65,14 @@ export default function DesktopNavBar(props) {
         </div>
       </div>
 
-      <div className="self-stretch px-16 py-2 w-[40%] bg-[#EE3A46]">
+      <div className="self-stretch px-16 py-3 w-[40%] bg-[#EE3A46]">
         <div className="flex h-full flex-row justify-around space-x-6 w-full">
           <button className="block text-lg self-center  font-normal px-3 py-1  text-white outline-none hover:scale-[1.02] transform transition rounded-xl text-center ">
             Book a delivery
           </button>
 
           <button className="block text-[#EE3A46] self-center text-base px-6 py-2 hover:bg-c-1/10 transition-colors hover:text-white transform duration-300 font-normal  bg-[#FBF7EB]  rounded-xl outline-none text-center ">
-            Join Waitlist
+            Join Waitlist 🔥
           </button>
         </div>
       </div>

@@ -6,6 +6,11 @@ import { useRouter } from "next/router";
 import cn from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
+import {
+  faTwitter,
+  faLinkedinIn,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import AOS from "aos";
 
@@ -130,19 +135,22 @@ export default function Home(props) {
         </div>
       </div>
 
-      {/* Phase 2 */}
+      {/* Phase 3 */}
 
-      <div className="px-[97px] bg-[#D4AF37]/10 py-[96px] max-h-[616px] flex flex-col lg:flex-col justify-center lg:justify-center min-h-[616px]">
+      <div
+        style={{ fontFamily: "Mulish" }}
+        className="px-[97px] bg-[#D4AF37]/10 py-[96px] max-h-[616px] flex flex-col lg:flex-col justify-center lg:justify-center min-h-[616px]"
+      >
         <div className=" w-[40%]">
           <h1
-            style={{ fontFamily: "Work Sans" }}
-            className="   font-normal uppercase text-lg  text-left  text-[#EE3A46]"
+            // style={{ fontFamily: "Work Sans" }}
+            className="   font-bold uppercase text-lg  text-left  text-[#EE3A46]"
           >
             Our Services
           </h1>
 
           <h2
-            style={{ fontFamily: "Work Sans" }}
+            // style={{ fontFamily: "Work Sans" }}
             className="text-left w-[80%] text-black/90 text-xl lg:text-2xl py-8 font-bold "
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -170,7 +178,7 @@ export default function Home(props) {
 
                 <p
                   data-aos="fade-up"
-                  style={{ fontFamily: "Work Sans" }}
+                  // style={{ fontFamily: "Work Sans" }}
                   className="text-left w-[80%]  text-sm text-[#797979] "
                 >
                   Delivery to every location in Nigeria.
@@ -182,9 +190,12 @@ export default function Home(props) {
       </div>
       {/* Phase 4  */}
 
-      <div className="px-[97px] bg-white py-[87px] max-h-[1433px] flex flex-col  justify-start lg:justify-start items-center min-h-[1433px]">
+      <div
+        style={{ fontFamily: "Mulish" }}
+        className="px-[97px] bg-white py-[87px] max-h-[1433px] flex flex-col  justify-start lg:justify-start items-center min-h-[1433px]"
+      >
         <h1
-          style={{ fontFamily: "Work Sans" }}
+          // style={{ fontFamily: "Work Sans" }}
           className="     text-2xl font-bold  text-center  text-black/90"
         >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi!
@@ -210,7 +221,7 @@ export default function Home(props) {
 
             <p
               data-aos="fade-up"
-              style={{ fontFamily: "Work Sans" }}
+              // style={{ fontFamily: "Work Sans" }}
               className="text-left w-[80%]  text-sm text-[#797979] "
             >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
@@ -222,7 +233,7 @@ export default function Home(props) {
             </p>
 
             <div className="mt-[60px]">
-              <button className="block text-[#EE3A46] self-center text-base  py-3 px-4 ring-1 ring-transparent hover:ring-[#EE3A46] transition-colors  transform duration-300 font-normal    rounded-xl outline-none text-center ">
+              <button className="block text-[#EE3A46] self-center text-base  py-3 px-4 ring-1 hover:ring-2 ring-[#EE3A46] transition-colors  transform duration-300 font-normal    rounded-xl outline-none text-center ">
                 Become a vendor &nbsp;
                 <FontAwesomeIcon icon={faArrowRightLong} className="" />
               </button>
@@ -238,7 +249,7 @@ export default function Home(props) {
 
             <p
               data-aos="fade-up"
-              style={{ fontFamily: "Work Sans" }}
+              // style={{ fontFamily: "Work Sans" }}
               className="text-left w-[80%]  text-sm text-[#797979] "
             >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
@@ -249,8 +260,8 @@ export default function Home(props) {
               officiis minus cum velit eos impedit quidem ut sit!
             </p>
 
-            <div className="mt-[60px]">
-              <button className="block text-[#EE3A46] self-center text-base  py-3 px-4  ring-1  ring-transparent hover:ring-[#EE3A46] transition-colors  transform duration-300 font-normal    rounded-xl outline-none text-center ">
+            <div className="mt-[60px] ">
+              <button className="block text-[#EE3A46] self-center text-base  py-3 px-4  ring-1 hover:ring-2 ring-[#EE3A46] transition-colors  transform duration-300 font-normal    rounded-xl outline-none text-center ">
                 Become a driver &nbsp;
                 <FontAwesomeIcon icon={faArrowRightLong} className="" />
               </button>
@@ -273,7 +284,79 @@ export default function Home(props) {
 
       {/* footer  */}
 
-      <footer className="min-h-[516px] bg-[#EE3A46]"></footer>
+      <footer
+        style={{ fontFamily: "Mulish" }}
+        className=" px-[97px] py-[87px] min-h-[516px] bg-[#EE3A46]"
+      >
+        <div className="flex flex-col lg:flex-row justify-between">
+          <div className="self-start">
+            <Image
+              src="/assets/Slik-Logo-vertical-white-web.png"
+              layout="fixed"
+              width="100"
+              height="60"
+              alt="slik logo white"
+              objectFit="contain"
+              className="rounded-[10px] ml-24"
+            />
+
+            <div className="text-white mt-24 text-2xl flex flex-row justify-around space-x-4">
+              <FontAwesomeIcon icon={faLinkedinIn} />
+              <FontAwesomeIcon icon={faTwitter} />
+              <FontAwesomeIcon icon={faInstagram} />
+            </div>
+          </div>
+
+          <div>
+            <h2 className="text-left text-white text-2xl"> Company </h2>
+            <ul className="mt-6">
+              <li className="text-white capitalize pb-4 text-sm"> About us </li>
+              <li className="text-white capitalize pb-4 text-sm">
+                {" "}
+                Our services{" "}
+              </li>
+              <li className="text-white capitalize pb-4 text-sm"> Join us </li>
+              <li className="text-white capitalize pb-4 text-sm">
+                {" "}
+                Book a delivery{" "}
+              </li>
+            </ul>
+          </div>
+          <div className="w-[40%]">
+            <p className="text-white capitalize pb-4 text-sm">
+              {" "}
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum
+              temporibus impedit dolores exercitationem officiis sunt quod illum
+              est minima tempora in, ducimus possimus, error corrupti asperiores
+              velit? Nobis, error eaque.
+            </p>
+
+            <em className="text-white block capitalize pb-4 text-sm">
+              {" "}
+              example@slik.com
+            </em>
+
+            <em className="text-white block capitalize pb-4 text-sm">
+              {" "}
+              +234-000-000-0000
+            </em>
+          </div>
+        </div>
+
+        <div className="mt-16">
+          <p className="text-white text-center max-w-[70%] mx-auto py-4 capitalize pb-4 text-sm">
+            {" "}
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum
+            temporibus impedit dolores exercitationem officiis sunt quod illum
+            est minima tempora in, ducimus possimus, error corrupti asperiores
+            velit? Nobis.
+          </p>
+
+          <p className="text-white text-center max-w-[70%] mx-auto py-4 capitalize pb-4 text-sm">
+            &copy; 2021-2022 Slik - RC 000000
+          </p>
+        </div>
+      </footer>
     </>
   );
 }
