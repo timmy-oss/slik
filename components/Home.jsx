@@ -28,12 +28,12 @@ export default function Home(props) {
     <>
       <DesktopNavBar />
       <MobileNavBar />
-      <div className=" bg-[#FBF7EB] mt-14 flex flex-col lg:flex-row justify-center lg:justify-around max-h-[727px] min-h-[727px]">
+      <div className=" bg-[#FBF7EB] dark:bg-[#242318] mt-14 flex flex-col lg:flex-row justify-center lg:justify-around max-h-[727px] min-h-[727px]">
         <div className="w-[60%] px-32 pt-24">
           <h1
             data-aos="fade-up"
             style={{ fontFamily: "Work Sans" }}
-            className="text-center capitalize p-4 font-black text-4xl lg:text-6xl 2xl:text-6xl max-w-3xl 2xl:max-w-4xl lg:text-left  text-black/90"
+            className="text-center capitalize p-4 font-black text-4xl lg:text-6xl 2xl:text-6xl max-w-3xl 2xl:max-w-4xl lg:text-left  text-black/90 dark:text-white"
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias,
             tempora.
@@ -42,17 +42,17 @@ export default function Home(props) {
           <p
             data-aos="fade-up"
             style={{ fontFamily: "Work Sans" }}
-            className="text-center max-w-3xl px-4 text-lg lg:text-xl lg:text-left  py-4 "
+            className="text-center max-w-3xl px-4 text-lg lg:text-xl lg:text-left  py-4 dark:text-white text-black/90"
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
             obcaecati saepe dicta explicabo dolorum corporis vel repudiandae qui
             sint aut, soluta recusandae repellendus enim asperiores.
           </p>
 
-          <div className="p-2 pl-4 bg-white rounded-[10px] mt-24">
+          <div className="p-2 pl-4 bg-white dark:bg-[#2A2A2A] rounded-[10px] mt-24">
             <div className="flex flex-row w-full   rounded-[10px]  justify-between items-center  ">
               <input
-                className=" outline-none w-[65%] bg-[#EEEEEE] text-base md:text-lg h-[72px] caret:text-prim-color text-black/90 placeholder:text-black/40  py-4 pl-8 pr-8 rounded-y-xl rounded-l-xl  "
+                className=" outline-none w-[65%] bg-[#EEEEEE] dark:bg-[#444444] text-base md:text-lg h-[72px] caret:text-prim-color text-black/90 dark:text-white placeholder:text-black/40 dark:placeholder:text-white/40  py-4 pl-8 pr-8 rounded-y-xl rounded-l-xl  "
                 type="email"
                 placeholder="Input Tracking Code"
                 name="waiter"
@@ -64,7 +64,7 @@ export default function Home(props) {
           </div>
         </div>
 
-        <div className="w-[40%] bg-[#EE3A46] self-stretch ">
+        <div className="w-[40%] bg-[#EE3A46]  self-stretch ">
           <Image
             src="/assets/slik-delivery-white-1.png"
             layout="fixed"
@@ -77,7 +77,7 @@ export default function Home(props) {
       </div>
       {/* Phase 2  */}
 
-      <div className=" bg-[#FFFFFF] py-[96px] max-h-[728px] flex flex-col lg:flex-row justify-center lg:justify-center min-h-[727px]">
+      <div className=" bg-[#FFFFFF] dark:bg-[#111315] py-[96px] max-h-[728px] flex flex-col lg:flex-row justify-center lg:justify-center min-h-[727px]">
         <div className="w-[50%] bg-[##EEEEEE] self-stretch rounded-[10px] ">
           <Image
             src="/assets/slik-social-red-background.png"
@@ -100,7 +100,7 @@ export default function Home(props) {
 
           <h2
             style={{ fontFamily: "Work Sans" }}
-            className="text-left w-[80%] text-black/90 text-2xl lg:text-3xl py-8 font-bold "
+            className="text-left w-[80%] text-black/90 dark:text-white text-2xl lg:text-3xl py-8 font-bold "
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </h2>
@@ -108,7 +108,7 @@ export default function Home(props) {
           <p
             data-aos="fade-up"
             style={{ fontFamily: "Work Sans" }}
-            className="text-left w-[80%]  text-sm text-[#797979] "
+            className="text-left w-[80%] dark:text-white text-sm text-[#797979] "
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
             quisquam in molestias minus pariatur harum voluptate error, fugiat
@@ -139,7 +139,7 @@ export default function Home(props) {
 
       <div
         style={{ fontFamily: "Mulish" }}
-        className="px-[97px] bg-[#D4AF37]/10 py-[96px] max-h-[616px] flex flex-col lg:flex-col justify-center lg:justify-center min-h-[616px]"
+        className="px-[97px] dark:bg-[#242318] bg-[#D4AF37]/10 py-[96px] max-h-[616px] flex flex-col lg:flex-col justify-center lg:justify-center min-h-[616px]"
       >
         <div className=" w-[40%]">
           <h1
@@ -151,7 +151,7 @@ export default function Home(props) {
 
           <h2
             // style={{ fontFamily: "Work Sans" }}
-            className="text-left w-[80%] text-black/90 text-xl lg:text-2xl py-8 font-bold "
+            className="text-left dark:text-white w-[80%] text-black/90 text-xl lg:text-2xl py-8 font-bold "
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </h2>
@@ -160,18 +160,30 @@ export default function Home(props) {
         <div className="flex flex-col lg:flex-row justify-around space-x-16 items-center">
           {[1, 2, 3, 4].map((c, i) => {
             return (
-              <div className="white py-[46px] flex max-h-[290px] min-h-[290px] flex-1  flex-col justify-start bg-white px-[34px]">
-                <Image
-                  src="/assets/cart-wheel.png"
-                  layout="fixed"
-                  width="72"
-                  height="62"
-                  alt="cart wheel"
-                  objectFit="contain"
-                  className="rounded-[10px]"
-                />
+              <div className="white py-[46px] dark:bg-[#111315] flex max-h-[290px] min-h-[290px] flex-1  flex-col justify-start bg-white px-[34px]">
+                <div className="rounded-[10px] dark:hidden">
+                  <Image
+                    src="/assets/cart-wheel.png"
+                    layout="fixed"
+                    width="72"
+                    height="62"
+                    alt="cart wheel"
+                    objectFit="contain"
+                  />
+                </div>
 
-                <h3 className=" block  capitalize font-bold py-6 text-2xl text-black/90">
+                <div className="rounded-[10px] dark:block hidden">
+                  <Image
+                    src="/assets/cart-wheel-dm.png"
+                    layout="fixed"
+                    width="72"
+                    height="62"
+                    alt="cart wheel"
+                    objectFit="contain"
+                  />
+                </div>
+
+                <h3 className=" block dark:text-white capitalize font-bold py-6 text-2xl text-black/90">
                   {" "}
                   Delivery{" "}
                 </h3>
@@ -179,7 +191,7 @@ export default function Home(props) {
                 <p
                   data-aos="fade-up"
                   // style={{ fontFamily: "Work Sans" }}
-                  className="text-left w-[80%]  text-sm text-[#797979] "
+                  className="text-left w-[80%] dark:text-white text-base text-[#797979] "
                 >
                   Delivery to every location in Nigeria.
                 </p>
@@ -192,11 +204,11 @@ export default function Home(props) {
 
       <div
         style={{ fontFamily: "Mulish" }}
-        className="px-[97px] bg-white py-[87px] max-h-[1433px] flex flex-col  justify-start lg:justify-start items-center min-h-[1433px]"
+        className="px-[97px] bg-white dark:bg-[#111315] py-[87px] max-h-[1433px] flex flex-col  justify-start lg:justify-start items-center min-h-[1433px]"
       >
         <h1
           // style={{ fontFamily: "Work Sans" }}
-          className="     text-2xl font-bold  text-center  text-black/90"
+          className="     text-2xl font-bold dark:text-white  text-center  text-black/90"
         >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi!
         </h1>
@@ -204,7 +216,7 @@ export default function Home(props) {
         <div className="flex w-full  flex-col pt-[100px] lg:flex-row justify-evenly space-x-24 items-center">
           <div className="">
             <Image
-              src="/assets/Mask-group.png"
+              src="/assets/v2.png"
               layout="fixed"
               width="701"
               height="467"
@@ -215,14 +227,14 @@ export default function Home(props) {
           </div>
 
           <div>
-            <h3 className=" block  capitalize font-bold py-6 text-2xl text-black/90">
+            <h3 className=" block dark:text-white capitalize font-bold py-6 text-2xl text-black/90">
               Slik Vendor
             </h3>
 
             <p
               data-aos="fade-up"
               // style={{ fontFamily: "Work Sans" }}
-              className="text-left w-[80%]  text-sm text-[#797979] "
+              className="text-left w-[80%] dark:text-white  text-sm text-[#797979] "
             >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
               omnis adipisci expedita labore velit consequuntur pariatur sed
@@ -243,14 +255,14 @@ export default function Home(props) {
 
         <div className="flex w-full  flex-col pt-[100px] lg:flex-row justify-end  items-center">
           <div className="ml-24">
-            <h3 className=" block  capitalize font-bold py-6 text-2xl text-black/90">
+            <h3 className=" block dark:text-white capitalize font-bold py-6 text-2xl text-black/90">
               Slik Driver
             </h3>
 
             <p
               data-aos="fade-up"
               // style={{ fontFamily: "Work Sans" }}
-              className="text-left w-[80%]  text-sm text-[#797979] "
+              className="text-left w-[80%] dark:text-white text-sm text-[#797979] "
             >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
               omnis adipisci expedita labore velit consequuntur pariatur sed
@@ -270,7 +282,7 @@ export default function Home(props) {
 
           <div className="">
             <Image
-              src="/assets/Mask-group2.png"
+              src="/assets/v1.png"
               layout="fixed"
               width="701"
               height="467"
