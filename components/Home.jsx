@@ -27,8 +27,8 @@ export default function Home(props) {
     <>
       <DesktopNavBar />
       <MobileNavBar />
-      <div className=" bg-[#FBF7EB] dark:bg-[#242318]  md:pt-32 lg:pt-14 flex flex-col lg:flex-row justify-center lg:justify-around  min-h-[727px]">
-        <div className=" w-full  lg:w-[60%] px-4 lg:px-32 pt-24 pb-[67px]">
+      <div className=" bg-[#FBF7EB] dark:bg-[#EE3A46] md:dark:bg-[#242318]   md:pt-32 lg:pt-14 flex flex-col lg:flex-row justify-center lg:justify-around  min-h-[727px]">
+        <div className=" w-full bg-[#FBF7EB] dark:bg-[#EE3A46] md:dark:bg-[#242318]   lg:w-[60%] px-4 lg:px-32 pt-24 lg:pb-[67px]">
           <h1
             data-aos="fade-up"
             style={{ fontFamily: "Work Sans" }}
@@ -48,15 +48,15 @@ export default function Home(props) {
             sint aut, soluta recusandae repellendus enim asperiores.
           </p>
 
-          <div className="p-2 pl-4 max-w-md mx-auto bg-white dark:bg-[#2A2A2A] rounded-[10px] mt-24">
+          <div className="p-2 pl-4 max-w-md mx-auto bg-white md:dark:bg-[#2A2A2A] rounded-[10px] mt-24">
             <div className="flex flex-row w-full   rounded-[10px]  justify-between items-center  ">
               <input
-                className=" outline-none w-[65%] bg-[#EEEEEE] dark:bg-[#444444] text-base md:text-lg h-[50px] lg:h-[72px] caret:text-prim-color text-black/90 dark:text-white placeholder:text-black/40 dark:placeholder:text-white/40  py-4 pl-8 pr-8 rounded-y-xl rounded-l-xl  "
+                className=" outline-none w-[65%] bg-[#EEEEEE] md:dark:bg-[#444444] text-sm md:text-lg h-[50px] lg:h-[72px] caret:text-prim-color text-black/90 md:dark:text-white placeholder:text-black/40 md:dark:placeholder:text-white/40  py-4 pl-4 md:pl-8  pr-8 rounded-y-xl rounded-l-xl  "
                 type="email"
                 placeholder="Input Tracking Code"
                 name="waiter"
               />
-              <button className="block relative -left-2 w-[35%] bg-[#EE3A46] self-stretch text-lg hover:bg-[#EE3A46]/90 transform transition-colors text-white  outline-none  rounded-[10px] text-center ">
+              <button className="block relative -left-2 w-[35%] bg-[#EE3A46] self-stretch text-base md:text-lg hover:bg-[#EE3A46]/90 transform transition-colors text-white  outline-none  rounded-[10px] text-center ">
                 Track order
               </button>
             </div>
@@ -90,17 +90,17 @@ export default function Home(props) {
           />
         </div>
 
-        <div className="w-full lg:w-[50%] self-center  lg:self-start ">
+        <div className="w-full lg:w-[50%] self-center  lg:self-start px-8">
           <h1
             style={{ fontFamily: "Work Sans" }}
-            className="   font-normal uppercase lg:w-[80%] mx-auto text-base text-center lg:text-left  text-[#EE3A46]"
+            className="   font-normal uppercase lg:w-[80%] mx-auto text-base text-left lg:text-left  text-[#EE3A46]"
           >
             About Us
           </h1>
 
           <h2
             style={{ fontFamily: "Work Sans" }}
-            className="text-center lg:text-left mx-auto w-[80%] text-black/90 dark:text-white text-2xl lg:text-3xl py-8 font-bold "
+            className="text-left lg:text-left mx-auto lg:w-[80%] text-black/90 dark:text-white text-2xl lg:text-3xl py-8 font-bold "
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </h2>
@@ -108,7 +108,7 @@ export default function Home(props) {
           <p
             data-aos="fade-up"
             style={{ fontFamily: "Work Sans" }}
-            className="text-center lg:text-left mx-auto w-[80%] dark:text-white text-sm text-[#797979] "
+            className="text-left lg:text-left mx-auto lg:w-[80%] dark:text-white text-base lg:text-sm text-[#797979] "
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
             quisquam in molestias minus pariatur harum voluptate error, fugiat
@@ -128,7 +128,7 @@ export default function Home(props) {
           </p>
 
           <div className="mt-[72px]">
-            <button className="block mx-auto hover:text-[#EE3A46] self-center text-base px-8 py-3 hover:bg-white hover:ring-1 hover:ring-[#EE3A46] transition-colors text-white transform duration-300 font-normal  bg-[#EE3A46]  rounded-xl outline-none text-center ">
+            <button className="block  hover:text-[#EE3A46] self-center text-base px-8 py-3 hover:bg-white hover:ring-1 hover:ring-[#EE3A46] transition-colors text-white transform duration-300 font-normal  bg-[#EE3A46]  rounded-xl outline-none text-center ">
               Join Waitlist
             </button>
           </div>
@@ -141,17 +141,17 @@ export default function Home(props) {
         style={{ fontFamily: "Mulish" }}
         className="px-4 lg:px-[97px] dark:bg-[#242318] bg-[#D4AF37]/10 py-[96px]  flex flex-col lg:flex-col justify-center lg:justify-center min-h-[616px]"
       >
-        <div className=" lg:w-[40%] mx-auto lg:mx-0">
+        <div className=" lg:w-[40%] mx-auto lg:mx-0 px-4">
           <h1
             // style={{ fontFamily: "Work Sans" }}
-            className=" text-center  font-bold uppercase text-lg  lg:text-left  text-[#EE3A46]"
+            className=" text-left  font-bold uppercase text-lg  lg:text-left  text-[#EE3A46]"
           >
             Our Services
           </h1>
 
           <h2
             // style={{ fontFamily: "Work Sans" }}
-            className=" text-center lg:text-left dark:text-white lg:w-[80%] text-black/90 text-xl lg:text-2xl py-8 font-bold "
+            className=" text-left lg:text-left dark:text-white lg:w-[80%] text-black/90 text-xl lg:text-2xl py-8 font-bold "
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </h2>
@@ -214,7 +214,7 @@ export default function Home(props) {
         </h1>
 
         <div className="flex w-full  flex-col pt-[100px] lg:flex-row justify-evenly lg:space-x-24 items-center space-y-8 lg:space-y-0">
-          <div className="lg:w-[50%]">
+          <div className="lg:w-[50%] flex flex-col justify-start items-start">
             <Image
               src="/assets/v2.png"
               layout="intrinsic"
@@ -222,7 +222,7 @@ export default function Home(props) {
               height="467"
               alt="mask group"
               objectFit="contain"
-              className="rounded-[10px]"
+              className="rounded-[10px] "
             />
           </div>
 
@@ -234,7 +234,7 @@ export default function Home(props) {
             <p
               data-aos="fade-up"
               // style={{ fontFamily: "Work Sans" }}
-              className="text-left lg:w-[80%] dark:text-white  text-sm text-[#797979] "
+              className="text-left lg:w-[80%] dark:text-white text-base lg:text-sm text-[#797979] "
             >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
               omnis adipisci expedita labore velit consequuntur pariatur sed
@@ -262,7 +262,7 @@ export default function Home(props) {
             <p
               data-aos="fade-up"
               // style={{ fontFamily: "Work Sans" }}
-              className="text-left lg:w-[80%] dark:text-white text-sm text-[#797979] "
+              className="text-left lg:w-[80%] dark:text-white text-base lg:text-sm text-[#797979] "
             >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
               omnis adipisci expedita labore velit consequuntur pariatur sed
@@ -280,7 +280,7 @@ export default function Home(props) {
             </div>
           </div>
 
-          <div className=" lg:w-[50%]">
+          <div className=" lg:w-[50%] flex flex-col justify-start items-start">
             <Image
               src="/assets/v1.png"
               layout="intrinsic"
@@ -301,12 +301,12 @@ export default function Home(props) {
         className="px-8 lg:px-[97px] py-[87px] min-h-[516px] bg-[#EE3A46]"
       >
         <div className="flex flex-col md:flex-row justify-center md:justify-between space-y-8 md:spacey-0">
-          <div className="self-center">
+          <div className="self-center flex flex-row lg:flex-col w-full justify-between lg:justify-center">
             <Image
               src="/assets/Slik-Logo-vertical-white-web.png"
               layout="intrinsic"
-              width="100"
-              height="60"
+              width="50"
+              height="30"
               alt="slik logo white"
               objectFit="contain"
               className="rounded-[10px] ml-24"
