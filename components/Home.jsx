@@ -17,7 +17,7 @@ export default function Home(props) {
   const router = useRouter();
 
   AOS.init({
-    offset: 80,
+    offset: 40,
     duration: 800,
     easing: "ease-in-sine",
     delay: 100,
@@ -72,6 +72,7 @@ export default function Home(props) {
             alt="bike"
             objectFit="contain"
             className=""
+            priority
           />
         </div>
       </div>
