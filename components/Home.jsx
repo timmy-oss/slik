@@ -151,7 +151,7 @@ export default function Home(props) {
 
           <h2
             // style={{ fontFamily: "Work Sans" }}
-            className=" text-center lg:text-left dark:text-white w-[80%] text-black/90 text-xl lg:text-2xl py-8 font-bold "
+            className=" text-center lg:text-left dark:text-white lg:w-[80%] text-black/90 text-xl lg:text-2xl py-8 font-bold "
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </h2>
