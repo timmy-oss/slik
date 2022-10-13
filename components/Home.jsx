@@ -32,7 +32,7 @@ export default function Home(props) {
           <h1
             data-aos="fade-up"
             style={{ fontFamily: "Work Sans" }}
-            className="text-center  capitalize  p-4 font-black text-3xl md:text-4xl lg:text-4xl xl:text-5xl 2xl:text-6xl lg:max-w-3xl 2xl:max-w-4xl lg:text-left  text-black/90 dark:text-white"
+            className="text-center  capitalize  p-4 font-black text-3xl md:text-4xl lg:text-4xl xl:text-5xl 2xl:text-6xl lg:max-w-3xl 2xl:max-w-4xl lg:text-left text-white md:text-black/90 dark:text-white"
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias,
             tempora.
@@ -41,7 +41,7 @@ export default function Home(props) {
           <p
             data-aos="fade-up"
             style={{ fontFamily: "Work Sans" }}
-            className="text-center max-w-3xl px-4 text-lg lg:text-xl lg:text-left  py-4 dark:text-white text-black/90"
+            className="text-center max-w-3xl px-4 text-lg lg:text-xl lg:text-left  py-4 dark:text-white text-white md:text-black/90"
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
             obcaecati saepe dicta explicabo dolorum corporis vel repudiandae qui
