@@ -48,10 +48,10 @@ export default function Home(props) {
             sint aut, soluta recusandae repellendus enim asperiores.
           </p>
 
-          <div className="p-2 pl-4 bg-white dark:bg-[#2A2A2A] rounded-[10px] mt-24">
+          <div className="p-2 pl-4 max-w-md mx-auto bg-white dark:bg-[#2A2A2A] rounded-[10px] mt-24">
             <div className="flex flex-row w-full   rounded-[10px]  justify-between items-center  ">
               <input
-                className=" outline-none w-[65%] bg-[#EEEEEE] dark:bg-[#444444] text-base md:text-lg h-[72px] caret:text-prim-color text-black/90 dark:text-white placeholder:text-black/40 dark:placeholder:text-white/40  py-4 pl-8 pr-8 rounded-y-xl rounded-l-xl  "
+                className=" outline-none w-[65%] bg-[#EEEEEE] dark:bg-[#444444] text-base md:text-lg h-[50px] lg:h-[72px] caret:text-prim-color text-black/90 dark:text-white placeholder:text-black/40 dark:placeholder:text-white/40  py-4 pl-8 pr-8 rounded-y-xl rounded-l-xl  "
                 type="email"
                 placeholder="Input Tracking Code"
                 name="waiter"
@@ -93,7 +93,7 @@ export default function Home(props) {
         <div className="w-full lg:w-[50%] self-center  lg:self-start ">
           <h1
             style={{ fontFamily: "Work Sans" }}
-            className="   font-normal uppercase w-[80%] mx-auto text-base text-center lg:text-left  text-[#EE3A46]"
+            className="   font-normal uppercase lg:w-[80%] mx-auto text-base text-center lg:text-left  text-[#EE3A46]"
           >
             About Us
           </h1>
@@ -139,7 +139,7 @@ export default function Home(props) {
 
       <div
         style={{ fontFamily: "Mulish" }}
-        className="px-[97px] dark:bg-[#242318] bg-[#D4AF37]/10 py-[96px]  flex flex-col lg:flex-col justify-center lg:justify-center min-h-[616px]"
+        className="px-4 lg:px-[97px] dark:bg-[#242318] bg-[#D4AF37]/10 py-[96px]  flex flex-col lg:flex-col justify-center lg:justify-center min-h-[616px]"
       >
         <div className=" lg:w-[40%] mx-auto lg:mx-0">
           <h1
@@ -157,7 +157,7 @@ export default function Home(props) {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8 justify-around  items-center">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 lg:gap-y-8 justify-around  items-center">
           {[1, 2, 3, 4].map((c, i) => {
             return (
               <div className="white py-[46px] dark:bg-[#111315] flex  min-h-[290px] flex-1  flex-col justify-start bg-white px-[34px]">
@@ -204,7 +204,7 @@ export default function Home(props) {
 
       <div
         style={{ fontFamily: "Mulish" }}
-        className="px-[97px] bg-white dark:bg-[#111315] py-[87px]  flex flex-col  justify-start lg:justify-start items-center min-h-[1433px]"
+        className="px-8 lg:px-[97px] bg-white dark:bg-[#111315] py-[87px]  flex flex-col  justify-start lg:justify-start items-center min-h-[1433px]"
       >
         <h1
           // style={{ fontFamily: "Work Sans" }}
@@ -213,8 +213,8 @@ export default function Home(props) {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi!
         </h1>
 
-        <div className="flex w-full  flex-col pt-[100px] lg:flex-row justify-evenly space-x-24 items-center">
-          <div className="">
+        <div className="flex w-full  flex-col pt-[100px] lg:flex-row justify-evenly lg:space-x-24 items-center space-y-8 lg:space-y-0">
+          <div className="lg:w-[50%]">
             <Image
               src="/assets/v2.png"
               layout="intrinsic"
@@ -226,7 +226,7 @@ export default function Home(props) {
             />
           </div>
 
-          <div>
+          <div className="lg:w-[50%]">
             <h3 className=" block dark:text-white capitalize font-bold py-6 text-2xl text-black/90">
               Slik Vendor
             </h3>
@@ -234,7 +234,7 @@ export default function Home(props) {
             <p
               data-aos="fade-up"
               // style={{ fontFamily: "Work Sans" }}
-              className="text-left w-[80%] dark:text-white  text-sm text-[#797979] "
+              className="text-left lg:w-[80%] dark:text-white  text-sm text-[#797979] "
             >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
               omnis adipisci expedita labore velit consequuntur pariatur sed
@@ -253,8 +253,8 @@ export default function Home(props) {
           </div>
         </div>
 
-        <div className="flex w-full  flex-col pt-[100px] lg:flex-row justify-end  items-center">
-          <div className="ml-24">
+        <div className="flex w-full  flex-col pt-[100px] lg:flex-row justify-end  items-center space-y-8 lg:space-y-0">
+          <div className="lg:ml-24 lg:w-[50%]">
             <h3 className=" block dark:text-white capitalize font-bold py-6 text-2xl text-black/90">
               Slik Driver
             </h3>
@@ -262,7 +262,7 @@ export default function Home(props) {
             <p
               data-aos="fade-up"
               // style={{ fontFamily: "Work Sans" }}
-              className="text-left w-[80%] dark:text-white text-sm text-[#797979] "
+              className="text-left lg:w-[80%] dark:text-white text-sm text-[#797979] "
             >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
               omnis adipisci expedita labore velit consequuntur pariatur sed
@@ -280,7 +280,7 @@ export default function Home(props) {
             </div>
           </div>
 
-          <div className="">
+          <div className=" lg:w-[50%]">
             <Image
               src="/assets/v1.png"
               layout="intrinsic"
@@ -298,13 +298,13 @@ export default function Home(props) {
 
       <footer
         style={{ fontFamily: "Mulish" }}
-        className=" px-[97px] py-[87px] min-h-[516px] bg-[#EE3A46]"
+        className="px-8 lg:px-[97px] py-[87px] min-h-[516px] bg-[#EE3A46]"
       >
         <div className="flex flex-col md:flex-row justify-center md:justify-between space-y-8 md:spacey-0">
           <div className="self-center">
             <Image
               src="/assets/Slik-Logo-vertical-white-web.png"
-              layout="fixed"
+              layout="intrinsic"
               width="100"
               height="60"
               alt="slik logo white"
@@ -313,9 +313,9 @@ export default function Home(props) {
             />
 
             <div className="text-white mt-24 text-2xl flex flex-row justify-around space-x-4">
-              <FontAwesomeIcon icon={faLinkedinIn} />
-              <FontAwesomeIcon icon={faTwitter} />
-              <FontAwesomeIcon icon={faInstagram} />
+              <FontAwesomeIcon icon={faLinkedinIn} className="cursor-pointer" />
+              <FontAwesomeIcon icon={faTwitter} className="cursor-pointer" />
+              <FontAwesomeIcon icon={faInstagram} className="cursor-pointer" />
             </div>
           </div>
 
