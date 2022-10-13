@@ -3,7 +3,6 @@ import DesktopNavBar from "./DesktopNavBar";
 import MobileNavBar from "./MobileNavBar";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import cn from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -28,12 +27,12 @@ export default function Home(props) {
     <>
       <DesktopNavBar />
       <MobileNavBar />
-      <div className=" bg-[#FBF7EB] dark:bg-[#242318] mt-14 flex flex-col lg:flex-row justify-center lg:justify-around max-h-[727px] min-h-[727px]">
-        <div className="w-[60%] px-32 pt-24">
+      <div className=" bg-[#FBF7EB] dark:bg-[#242318]  pt-32 lg:pt-14 flex flex-col lg:flex-row justify-center lg:justify-around  min-h-[727px]">
+        <div className=" w-full  lg:w-[60%] px-32 pt-24 pb-[67px]">
           <h1
             data-aos="fade-up"
             style={{ fontFamily: "Work Sans" }}
-            className="text-center capitalize p-4 font-black text-4xl lg:text-6xl 2xl:text-6xl max-w-3xl 2xl:max-w-4xl lg:text-left  text-black/90 dark:text-white"
+            className="text-center capitalize p-4 font-black md:text-4xl lg:text-4xl x:text-5xl 2xl:text-6xl max-w-3xl 2xl:max-w-4xl lg:text-left  text-black/90 dark:text-white"
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias,
             tempora.
@@ -64,24 +63,25 @@ export default function Home(props) {
           </div>
         </div>
 
-        <div className="w-[40%] bg-[#EE3A46]  self-stretch ">
+        <div className="w-full flex flex-col justify-center items-center   lg:w-[40%]  bg-[#EE3A46]  self-stretch ">
           <Image
             src="/assets/slik-delivery-white-1.png"
-            layout="fixed"
+            layout="intrinsic"
             width="700"
             height="500"
-            alt="nav logo"
+            alt="bike"
             objectFit="contain"
+            className=""
           />
         </div>
       </div>
       {/* Phase 2  */}
 
-      <div className=" bg-[#FFFFFF] dark:bg-[#111315] py-[96px] max-h-[728px] flex flex-col lg:flex-row justify-center lg:justify-center min-h-[727px]">
-        <div className="w-[50%] bg-[##EEEEEE] self-stretch rounded-[10px] ">
+      <div className=" bg-[#FFFFFF] dark:bg-[#111315] py-[96px]  flex flex-col lg:flex-row justify-center lg:justify-center min-h-[727px]  space-y-16 lg:space-y-0">
+        <div className="w-full lg:w-[50%] self-center bg-[##EEEEEE] lg:self-stretch mx-auto rounded-[10px]  flex flex-col justify-center items-center">
           <Image
             src="/assets/slik-social-red-background.png"
-            layout="fixed"
+            layout="intrinsic"
             width="710"
             height="569"
             alt="nav logo"
@@ -90,17 +90,17 @@ export default function Home(props) {
           />
         </div>
 
-        <div className="w-[50%] self-start ">
+        <div className="w-full lg:w-[50%] self-center  lg:self-start ">
           <h1
             style={{ fontFamily: "Work Sans" }}
-            className="   font-normal uppercase text-base  text-left  text-[#EE3A46]"
+            className="   font-normal uppercase w-[80%] mx-auto text-base text-center lg:text-left  text-[#EE3A46]"
           >
             About Us
           </h1>
 
           <h2
             style={{ fontFamily: "Work Sans" }}
-            className="text-left w-[80%] text-black/90 dark:text-white text-2xl lg:text-3xl py-8 font-bold "
+            className="text-center lg:text-left mx-auto w-[80%] text-black/90 dark:text-white text-2xl lg:text-3xl py-8 font-bold "
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </h2>
@@ -108,7 +108,7 @@ export default function Home(props) {
           <p
             data-aos="fade-up"
             style={{ fontFamily: "Work Sans" }}
-            className="text-left w-[80%] dark:text-white text-sm text-[#797979] "
+            className="text-center lg:text-left mx-auto w-[80%] dark:text-white text-sm text-[#797979] "
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
             quisquam in molestias minus pariatur harum voluptate error, fugiat
@@ -128,7 +128,7 @@ export default function Home(props) {
           </p>
 
           <div className="mt-[72px]">
-            <button className="block hover:text-[#EE3A46] self-center text-base px-8 py-3 hover:bg-white hover:ring-1 hover:ring-[#EE3A46] transition-colors text-white transform duration-300 font-normal  bg-[#EE3A46]  rounded-xl outline-none text-center ">
+            <button className="block mx-auto hover:text-[#EE3A46] self-center text-base px-8 py-3 hover:bg-white hover:ring-1 hover:ring-[#EE3A46] transition-colors text-white transform duration-300 font-normal  bg-[#EE3A46]  rounded-xl outline-none text-center ">
               Join Waitlist
             </button>
           </div>
@@ -139,32 +139,32 @@ export default function Home(props) {
 
       <div
         style={{ fontFamily: "Mulish" }}
-        className="px-[97px] dark:bg-[#242318] bg-[#D4AF37]/10 py-[96px] max-h-[616px] flex flex-col lg:flex-col justify-center lg:justify-center min-h-[616px]"
+        className="px-[97px] dark:bg-[#242318] bg-[#D4AF37]/10 py-[96px]  flex flex-col lg:flex-col justify-center lg:justify-center min-h-[616px]"
       >
-        <div className=" w-[40%]">
+        <div className=" lg:w-[40%] mx-auto lg:mx-0">
           <h1
             // style={{ fontFamily: "Work Sans" }}
-            className="   font-bold uppercase text-lg  text-left  text-[#EE3A46]"
+            className=" text-center  font-bold uppercase text-lg  lg:text-left  text-[#EE3A46]"
           >
             Our Services
           </h1>
 
           <h2
             // style={{ fontFamily: "Work Sans" }}
-            className="text-left dark:text-white w-[80%] text-black/90 text-xl lg:text-2xl py-8 font-bold "
+            className=" text-center lg:text-left dark:text-white w-[80%] text-black/90 text-xl lg:text-2xl py-8 font-bold "
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </h2>
         </div>
 
-        <div className="flex flex-col lg:flex-row justify-around space-x-16 items-center">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8 justify-around  items-center">
           {[1, 2, 3, 4].map((c, i) => {
             return (
-              <div className="white py-[46px] dark:bg-[#111315] flex max-h-[290px] min-h-[290px] flex-1  flex-col justify-start bg-white px-[34px]">
+              <div className="white py-[46px] dark:bg-[#111315] flex  min-h-[290px] flex-1  flex-col justify-start bg-white px-[34px]">
                 <div className="rounded-[10px] dark:hidden">
                   <Image
                     src="/assets/cart-wheel.png"
-                    layout="fixed"
+                    layout="intrinsic"
                     width="72"
                     height="62"
                     alt="cart wheel"
@@ -175,7 +175,7 @@ export default function Home(props) {
                 <div className="rounded-[10px] dark:block hidden">
                   <Image
                     src="/assets/cart-wheel-dm.png"
-                    layout="fixed"
+                    layout="intrinsic"
                     width="72"
                     height="62"
                     alt="cart wheel"
@@ -204,7 +204,7 @@ export default function Home(props) {
 
       <div
         style={{ fontFamily: "Mulish" }}
-        className="px-[97px] bg-white dark:bg-[#111315] py-[87px] max-h-[1433px] flex flex-col  justify-start lg:justify-start items-center min-h-[1433px]"
+        className="px-[97px] bg-white dark:bg-[#111315] py-[87px]  flex flex-col  justify-start lg:justify-start items-center min-h-[1433px]"
       >
         <h1
           // style={{ fontFamily: "Work Sans" }}
@@ -217,7 +217,7 @@ export default function Home(props) {
           <div className="">
             <Image
               src="/assets/v2.png"
-              layout="fixed"
+              layout="intrinsic"
               width="701"
               height="467"
               alt="mask group"
@@ -283,7 +283,7 @@ export default function Home(props) {
           <div className="">
             <Image
               src="/assets/v1.png"
-              layout="fixed"
+              layout="intrinsic"
               width="701"
               height="467"
               alt="mask group 2"
@@ -300,8 +300,8 @@ export default function Home(props) {
         style={{ fontFamily: "Mulish" }}
         className=" px-[97px] py-[87px] min-h-[516px] bg-[#EE3A46]"
       >
-        <div className="flex flex-col lg:flex-row justify-between">
-          <div className="self-start">
+        <div className="flex flex-col md:flex-row justify-center md:justify-between space-y-8 md:spacey-0">
+          <div className="self-center">
             <Image
               src="/assets/Slik-Logo-vertical-white-web.png"
               layout="fixed"
@@ -319,7 +319,7 @@ export default function Home(props) {
             </div>
           </div>
 
-          <div>
+          <div className="self-center">
             <h2 className="text-left text-white text-2xl"> Company </h2>
             <ul className="mt-6">
               <li className="text-white capitalize pb-4 text-sm"> About us </li>
@@ -334,8 +334,8 @@ export default function Home(props) {
               </li>
             </ul>
           </div>
-          <div className="w-[40%]">
-            <p className="text-white capitalize pb-4 text-sm">
+          <div className="md:w-[40%] self-center">
+            <p className="text-white text-center md:text-left capitalize pb-4 text-sm">
               {" "}
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum
               temporibus impedit dolores exercitationem officiis sunt quod illum
@@ -343,12 +343,12 @@ export default function Home(props) {
               velit? Nobis, error eaque.
             </p>
 
-            <em className="text-white block capitalize pb-4 text-sm">
+            <em className="text-white block text-center md:text-left capitalize pb-4 text-sm">
               {" "}
               example@slik.com
             </em>
 
-            <em className="text-white block capitalize pb-4 text-sm">
+            <em className="text-white block text-center md:text-left capitalize pb-4 text-sm">
               {" "}
               +234-000-000-0000
             </em>
@@ -356,7 +356,7 @@ export default function Home(props) {
         </div>
 
         <div className="mt-16">
-          <p className="text-white text-center max-w-[70%] mx-auto py-4 capitalize pb-4 text-sm">
+          <p className="text-white  max-w-[70%] mx-auto py-4 capitalize pb-4 text-sm text-center md:text-left">
             {" "}
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum
             temporibus impedit dolores exercitationem officiis sunt quod illum
@@ -364,7 +364,7 @@ export default function Home(props) {
             velit? Nobis.
           </p>
 
-          <p className="text-white text-center max-w-[70%] mx-auto py-4 capitalize pb-4 text-sm">
+          <p className="text-white text-center md:text-left  max-w-[70%] mx-auto py-4 capitalize pb-4 text-sm">
             &copy; 2021-2022 Slik - RC 000000
           </p>
         </div>

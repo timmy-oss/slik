@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <div className=" min-h-screen bg-main-bg  ">
       <Head>
-        <title> Slik | Home </title>
+        <title> Home - Slik </title>
         <link rel="icon" href="/assets/slik-favicon-transparent-web.png" />
         <link rel="shortcut icon" href="Slik-Logo-horizontal-web.png" />
       </Head>
