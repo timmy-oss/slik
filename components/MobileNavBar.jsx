@@ -7,10 +7,12 @@ import {
   faHouse,
   faMagnifyingGlass,
   faBarsStaggered,
+  faTruckFast,
 } from "@fortawesome/free-solid-svg-icons";
 import { faRectangleXmark } from "@fortawesome/free-regular-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { useState } from "react";
+import { navItems } from "./DesktopNavBar";
 
 export default function MobileNavBar(props) {
   const router = useRouter();
@@ -27,7 +29,7 @@ export default function MobileNavBar(props) {
       <div
         style={{ fontFamily: "Mulish" }}
         className={
-          "bg-black/40 z-10 fixed  w-[100%] right-0 top-[5%] min-h-screen " +
+          "bg-black/40 md:hidden z-10 fixed  w-[100%] right-0 top-[5%] min-h-screen " +
           cn([
             {
               " hidden ": !showMenu,
@@ -37,8 +39,27 @@ export default function MobileNavBar(props) {
         }
       >
         <div className="bg-white fixed h-full w-[70%] top-0 right-0">
-          <ul className=" mx-auto pt-[50%] font-bold space-y-8 ">
-            <li className="text-black/90 capitalize text-center pb-4 text-lg">
+          <ul className=" mx-auto pt-[50%] font-bold space-y-12 ">
+            {navItems.map((n, i) => {
+              return (
+                <li
+                  key={i}
+                  className={
+                    "hover:cursor-pointer w-[50%] mx-auto dark:text-black/90 text-black/90 font-semibold text-left self-center border-b border-transparent transform text-lg duration-500 transition-colors pb-1 hover:border-black/90 hover:scale-[1.0] "
+                  }
+                >
+                  <FontAwesomeIcon icon={n.icon} className="text-base" />
+                  &nbsp;&nbsp;
+                  {n.title}
+                </li>
+              );
+            })}
+
+            <li className="hover:cursor-pointer w-[70%] mx-auto dark:text-black/90 text-black/90 font-semibold text-left self-center border-b border-transparent transform text-lg duration-500 transition-colors pb-1 hover:border-black/90 hover:scale-[1.0] ">
+              <FontAwesomeIcon icon={faTruckFast} className="" />
+              &nbsp;&nbsp;Book a delivery
+            </li>
+            {/* <li className="text-black/90 capitalize text-center pb-4 text-lg">
               {" "}
               About us{" "}
             </li>
@@ -53,7 +74,7 @@ export default function MobileNavBar(props) {
             <li className="text-black/90 capitalize text-center pb-4 text-lg">
               {" "}
               Book a delivery{" "}
-            </li>
+            </li> */}
           </ul>
 
           <div className="mt-[72px] w-full    ">

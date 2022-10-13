@@ -10,7 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
-const navItems = [
+export const navItems = [
   {
     title: "Our Services",
     link: "",
