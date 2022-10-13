@@ -28,7 +28,7 @@ export default function Home(props) {
       <DesktopNavBar />
       <MobileNavBar />
       <div className="bg-[#EE3A46] md:bg-[#FBF7EB] dark:bg-[#EE3A46] md:dark:bg-[#242318]   md:pt-32 lg:pt-14 flex flex-col lg:flex-row justify-center lg:justify-around  min-h-[727px]">
-        <div className=" w-full bg-[#FBF7EB] dark:bg-[#EE3A46] md:dark:bg-[#242318]   lg:w-[60%] px-4 lg:px-32 pt-24 lg:pb-[67px]">
+        <div className=" w-full bg-[#FBF7EB] dark:bg-[#EE3A46] md:dark:bg-[#242318]   lg:w-[60%] px-4 lg:px-32 pt-24 pb-16 lg:pb-[67px]">
           <h1
             data-aos="fade-up"
             style={{ fontFamily: "Work Sans" }}
@@ -63,7 +63,7 @@ export default function Home(props) {
           </div>
         </div>
 
-        <div className="w-full flex flex-col justify-center items-center   lg:w-[40%]  bg-[#EE3A46]  self-stretch ">
+        <div className="w-full flex flex-col justify-center items-center   lg:w-[40%]  bg-[#EE3A46] pb-8 self-stretch ">
           <Image
             src="/assets/slik-delivery-white-1.png"
             layout="intrinsic"
