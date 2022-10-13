@@ -365,7 +365,7 @@ export default function Home(props) {
         </div>
 
         <div className="mt-16">
-          <p className="text-white  max-w-[70%] mx-auto py-4 capitalize pb-4 text-sm text-center ">
+          <p className="text-white  lg:max-w-[70%] mx-auto py-4 capitalize pb-4 text-sm text-center ">
             {" "}
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum
             temporibus impedit dolores exercitationem officiis sunt quod illum
