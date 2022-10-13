@@ -27,12 +27,12 @@ export default function Home(props) {
     <>
       <DesktopNavBar />
       <MobileNavBar />
-      <div className=" bg-[#FBF7EB] dark:bg-[#242318]  pt-32 lg:pt-14 flex flex-col lg:flex-row justify-center lg:justify-around  min-h-[727px]">
-        <div className=" w-full  lg:w-[60%] px-32 pt-24 pb-[67px]">
+      <div className=" bg-[#FBF7EB] dark:bg-[#242318]  md:pt-32 lg:pt-14 flex flex-col lg:flex-row justify-center lg:justify-around  min-h-[727px]">
+        <div className=" w-full  lg:w-[60%] px-4 lg:px-32 pt-24 pb-[67px]">
           <h1
             data-aos="fade-up"
             style={{ fontFamily: "Work Sans" }}
-            className="text-center capitalize p-4 font-black md:text-4xl lg:text-4xl x:text-5xl 2xl:text-6xl max-w-3xl 2xl:max-w-4xl lg:text-left  text-black/90 dark:text-white"
+            className="text-center  capitalize  p-4 font-black text-3xl md:text-4xl lg:text-4xl xl:text-5xl 2xl:text-6xl lg:max-w-3xl 2xl:max-w-4xl lg:text-left  text-black/90 dark:text-white"
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias,
             tempora.
@@ -356,7 +356,7 @@ export default function Home(props) {
         </div>
 
         <div className="mt-16">
-          <p className="text-white  max-w-[70%] mx-auto py-4 capitalize pb-4 text-sm text-center md:text-left">
+          <p className="text-white  max-w-[70%] mx-auto py-4 capitalize pb-4 text-sm text-center ">
             {" "}
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum
             temporibus impedit dolores exercitationem officiis sunt quod illum
@@ -364,7 +364,7 @@ export default function Home(props) {
             velit? Nobis.
           </p>
 
-          <p className="text-white text-center md:text-left  max-w-[70%] mx-auto py-4 capitalize pb-4 text-sm">
+          <p className="text-white text-center   max-w-[70%] mx-auto py-4 capitalize pb-4 text-sm">
             &copy; 2021-2022 Slik - RC 000000
           </p>
         </div>
