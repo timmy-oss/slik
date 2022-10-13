@@ -13,6 +13,32 @@ import {
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import AOS from "aos";
 
+const pitchBoxes = [
+  {
+    title: "Food & Drinks",
+    body: "Delivery to every location in Nigeria",
+    img: "/assets/burg.png",
+  },
+
+  {
+    title: "Packages",
+    body: "Delivery to every location in Nigeria",
+    img: "/assets/box.png",
+  },
+
+  {
+    title: "Gadgets",
+    body: "Delivery to every location in Nigeria",
+    img: "/assets/box.png",
+  },
+
+  {
+    title: "Laundry",
+    body: "Delivery to every location in Nigeria",
+    img: "/assets/laundry.png",
+  },
+];
+
 export default function Home(props) {
   const router = useRouter();
 
@@ -33,7 +59,7 @@ export default function Home(props) {
           <h1
             data-aos="fade-up"
             style={{ fontFamily: "Work Sans" }}
-            className="text-center  capitalize  p-4 font-black text-3xl md:text-4xl lg:text-4xl xl:text-5xl 2xl:text-6xl lg:max-w-3xl 2xl:max-w-4xl lg:text-left text-white md:text-black/90 dark:text-white"
+            className="text-center  capitalize  p-4 font-black text-3xl md:text-4xl lg:text-4xl xl:text-5xl 2xl:text-6xl lg:max-w-3xl 2xl:max-w-4xl lg:text-left text-white md:text-black/90 md:dark:text-white dark:text-white"
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias,
             tempora.
@@ -42,7 +68,7 @@ export default function Home(props) {
           <p
             data-aos="fade-up"
             style={{ fontFamily: "Work Sans" }}
-            className="text-center max-w-3xl px-4 text-lg lg:text-xl lg:text-left  py-4 dark:text-white text-white md:text-black/90"
+            className="text-center max-w-3xl px-4 text-lg lg:text-xl lg:text-left md:dark:text-white py-4 dark:text-white text-white md:text-black/90"
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
             obcaecati saepe dicta explicabo dolorum corporis vel repudiandae qui
@@ -161,12 +187,15 @@ export default function Home(props) {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 lg:gap-y-8 justify-around  items-center">
-          {[1, 2, 3, 4].map((c, i) => {
+          {pitchBoxes.map((c, i) => {
             return (
-              <div className="white py-[46px] dark:bg-[#111315] flex  min-h-[290px] flex-1  flex-col justify-start bg-white px-[34px]">
+              <div
+                key={i}
+                className="white py-[46px] dark:bg-[#111315] flex  min-h-[290px] flex-1  flex-col justify-start bg-white px-[34px]"
+              >
                 <div className="rounded-[10px] dark:hidden">
                   <Image
-                    src="/assets/cart-wheel.png"
+                    src={c.img}
                     layout="intrinsic"
                     width="72"
                     height="62"
@@ -177,7 +206,7 @@ export default function Home(props) {
 
                 <div className="rounded-[10px] dark:block hidden">
                   <Image
-                    src="/assets/cart-wheel-dm.png"
+                    src={c.img}
                     layout="intrinsic"
                     width="72"
                     height="62"
@@ -187,8 +216,7 @@ export default function Home(props) {
                 </div>
 
                 <h3 className=" block dark:text-white capitalize font-bold py-6 text-2xl text-black/90">
-                  {" "}
-                  Delivery{" "}
+                  {c.title}
                 </h3>
 
                 <p
@@ -196,14 +224,61 @@ export default function Home(props) {
                   // style={{ fontFamily: "Work Sans" }}
                   className="text-left w-[80%] dark:text-white text-base text-[#797979] "
                 >
-                  Delivery to every location in Nigeria.
+                  {c.body}{" "}
                 </p>
               </div>
             );
           })}
         </div>
       </div>
+
       {/* Phase 4  */}
+
+      <div
+        style={{ fontFamily: "Mulish" }}
+        className="px-8 lg:px-[97px] bg-[#EE3A46] py-[87px]  flex flex-col lg:flex-row justify-center lg:justify-between items-center min-h-[240px] lg:space-x-24 space-y-6 lg:space-y-0"
+      >
+        <div className="lg:w-[40%] self-start">
+          <h3
+            // style={{ fontFamily: "Work Sans" }}
+            className="   text-lg   lg:text-xl font-normal dark:text-white  text-left  text-white"
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi!
+          </h3>
+        </div>
+
+        <div className="lg:flex-1 self-start space-y-4">
+          <h2 className="text-left text-white text-lg lg:text-xl">
+            {" "}
+            Coming soon.
+          </h2>{" "}
+          <div className="flex flex-row justify-start space-x-6">
+            <div>
+              <Image
+                src="/assets/appstore-badge.svg"
+                layout="intrinsic"
+                width="160"
+                height="52"
+                alt="appstore"
+                objectFit="contain"
+              />
+            </div>
+
+            <div>
+              <Image
+                src="/assets/Google_Play_Store_badge_EN.svg"
+                layout="intrinsic"
+                width="160"
+                height="52"
+                alt="google-play-badge"
+                objectFit="contain"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Phase 5  */}
 
       <div
         style={{ fontFamily: "Mulish" }}
@@ -301,13 +376,13 @@ export default function Home(props) {
 
       <footer
         style={{ fontFamily: "Mulish" }}
-        className="px-8 lg:px-[97px] py-[87px] min-h-[516px] bg-[#EE3A46]"
+        className="px-8 lg:px-[97px] py-[87px] min-h-[516px] bg-[#FFFFFF]"
       >
         <div className="flex  flex-col md:flex-row justify-center md:justify-between space-y-8 md:space-y-0">
           <div className="self-center  lg:self-start  flex-1 flex flex-row lg:flex-col w-full justify-between lg:justify-center lg:space-y-8">
             <div className="flex  flex-row justify-start items-start">
               <Image
-                src="/assets/Slik-Logo-vertical-white-web.png"
+                src="/assets/Slik-Logo-horizontal-web.png"
                 layout="intrinsic"
                 width="50"
                 height="50"
@@ -317,7 +392,7 @@ export default function Home(props) {
               />
             </div>
 
-            <div className="text-white   self-start  lg:self-center space-x-8 text-2xl flex flex-row justify-end lg:justify-start  w-full lg:space-x-4 ">
+            <div className="text-black/90   self-start  lg:self-center space-x-8 text-2xl flex flex-row justify-end lg:justify-start  w-full lg:space-x-4 ">
               <FontAwesomeIcon icon={faLinkedinIn} className="cursor-pointer" />
               <FontAwesomeIcon icon={faTwitter} className="cursor-pointer" />
               <FontAwesomeIcon icon={faInstagram} className="cursor-pointer" />
@@ -325,31 +400,31 @@ export default function Home(props) {
           </div>
 
           <div className="self-start flex-1 lg:self-center">
-            <h2 className="text-left text-white text-xl lg:text-2xl">
+            <h2 className="text-left text-black/90 text-xl lg:text-2xl">
               {" "}
               Company{" "}
             </h2>
             <ul className="mt-6">
-              <li className="text-white capitalize pb-4 text-base">
+              <li className="text-black/90 capitalize pb-4 text-base">
                 {" "}
                 About us{" "}
               </li>
-              <li className="text-white capitalize pb-4 text-base">
+              <li className="text-black/90 capitalize pb-4 text-base">
                 {" "}
                 Our services{" "}
               </li>
-              <li className="text-white capitalize pb-4 text-base">
+              <li className="text-black/90 capitalize pb-4 text-base">
                 {" "}
                 Join us{" "}
               </li>
-              <li className="text-white capitalize pb-4 text-base">
+              <li className="text-black/90 capitalize pb-4 text-base">
                 {" "}
                 Book a delivery{" "}
               </li>
             </ul>
           </div>
           <div className="md:w-[40%] flex-1 self-center">
-            <p className="text-white text-left md:text-left capitalize pb-4 text-sm">
+            <p className="text-black/90 text-left md:text-left capitalize pb-4 text-sm">
               {" "}
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum
               temporibus impedit dolores exercitationem officiis sunt quod illum
@@ -357,12 +432,12 @@ export default function Home(props) {
               velit? Nobis, error eaque.
             </p>
 
-            <em className="text-white block text-left md:text-left capitalize pb-4 text-sm">
+            <em className="text-black/90 block text-left md:text-left capitalize pb-4 text-sm">
               {" "}
               example@slik.com
             </em>
 
-            <em className="text-white block text-left md:text-left capitalize pb-4 text-sm">
+            <em className="text-black/90 block text-left md:text-left capitalize pb-4 text-sm">
               {" "}
               +234-000-000-0000
             </em>
@@ -370,7 +445,7 @@ export default function Home(props) {
         </div>
 
         <div className="mt-16">
-          <p className="text-white  lg:max-w-[70%] mx-auto py-4 capitalize pb-4 text-sm text-center ">
+          <p className="text-black/90  lg:max-w-[70%] mx-auto py-4 capitalize pb-4 text-sm text-center ">
             {" "}
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum
             temporibus impedit dolores exercitationem officiis sunt quod illum
@@ -378,7 +453,7 @@ export default function Home(props) {
             velit? Nobis.
           </p>
 
-          <p className="text-white text-center   max-w-[70%] mx-auto py-4 capitalize pb-4 text-sm">
+          <p className="text-black/90 text-center   max-w-[70%] mx-auto py-4 capitalize pb-4 text-sm">
             &copy; 2021-2022 Slik - RC 000000
           </p>
         </div>

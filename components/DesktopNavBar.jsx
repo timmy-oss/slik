@@ -33,7 +33,7 @@ export default function DesktopNavBar(props) {
 
   return (
     <nav className="fixed hidden z-10 bg-white  md:flex top-0   left-0 right-0    flex-row justify-between  items-center">
-      <div className="self-center  md:w-[50%] lg:w-[60%] bg-[#FBF7EB] dark:bg-[#242318] flex flex-row justify-around  px-12 py-3 ">
+      <div className="self-center  md:w-[50%] lg:w-[60%] bg-[#EE3A46] dark:bg-[#242318] flex flex-row justify-around  px-12 py-3 ">
         <div>
           <Image
             src="/assets/Slik-Logo-horizontal-web.png"
@@ -52,7 +52,7 @@ export default function DesktopNavBar(props) {
                 <li
                   key={i}
                   className={
-                    "hover:cursor-pointer dark:text-white text-black/90 font-semibold  self-center border-b border-transparent transform text-base duration-500 transition-colors pb-1 hover:border-black/90 hover:scale-[1.0] "
+                    "hover:cursor-pointer dark:text-white text-black/90 font-semibold  self-center border-b border-transparent transform text-base duration-500 transition-colors pb-1 hover:border-black/90 dark:hover:border-white hover:scale-[1.0] "
                   }
                 >
                   <FontAwesomeIcon icon={n.icon} className="text-base" />
