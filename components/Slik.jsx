@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Slik(props) {
   return (
-    <div className="flex relative w-full min-h-screen  flex-col items-center justify-center  text-center">
+    <div className="flex relative bg-white dark:bg-[#111315] w-full min-h-screen  flex-col items-center justify-center  text-center">
       <div className=" self-center absolute top-[35%]  ">
         <div className="hidden   md:block">
           <Image

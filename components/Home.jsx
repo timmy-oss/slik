@@ -108,7 +108,7 @@ export default function Home(props) {
           <p
             data-aos="fade-up"
             style={{ fontFamily: "Work Sans" }}
-            className="text-left lg:text-left mx-auto lg:w-[80%] dark:text-white text-base lg:text-sm text-[#797979] "
+            className="text-left lg:text-left mx-auto lg:w-[80%] dark:text-white text-base lg:text-lg text-[#797979] "
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
             quisquam in molestias minus pariatur harum voluptate error, fugiat
@@ -127,8 +127,8 @@ export default function Home(props) {
             dolores excepturi eveniet.
           </p>
 
-          <div className="mt-[72px]">
-            <button className="block  hover:text-[#EE3A46] self-center text-base px-8 py-3 hover:bg-white hover:ring-1 hover:ring-[#EE3A46] transition-colors text-white transform duration-300 font-normal  bg-[#EE3A46]  rounded-xl outline-none text-center ">
+          <div className="mt-[72px] mx-auto lg:w-[80%]  ">
+            <button className="  hover:text-[#EE3A46] self-center text-base px-8 py-3 hover:bg-white dark:hover:bg-[#111315] hover:ring-1 hover:ring-[#EE3A46] transition-colors text-white transform duration-300 font-normal   bg-[#EE3A46]  rounded-xl outline-none text-center ">
               Join Waitlist
             </button>
           </div>
@@ -234,7 +234,7 @@ export default function Home(props) {
             <p
               data-aos="fade-up"
               // style={{ fontFamily: "Work Sans" }}
-              className="text-left lg:w-[80%] dark:text-white text-base lg:text-sm text-[#797979] "
+              className="text-left lg:w-[80%] dark:text-white text-base lg:text-lg text-[#797979] "
             >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
               omnis adipisci expedita labore velit consequuntur pariatur sed
@@ -262,7 +262,7 @@ export default function Home(props) {
             <p
               data-aos="fade-up"
               // style={{ fontFamily: "Work Sans" }}
-              className="text-left lg:w-[80%] dark:text-white text-base lg:text-sm text-[#797979] "
+              className="text-left lg:w-[80%] dark:text-white text-base lg:text-lg text-[#797979] "
             >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
               omnis adipisci expedita labore velit consequuntur pariatur sed

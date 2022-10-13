@@ -14,7 +14,7 @@ export default function MobileNavBar(props) {
   const router = useRouter();
 
   return (
-    <nav className="py-2 z-10 bg-[#EE3A46] md:hidden px-4 flex flex-row  fixed top-0 left-0 right-0 justify-between items-center">
+    <nav className="py-3 z-10 bg-[#EE3A46] md:hidden px-4 flex flex-row  fixed top-0 left-0 right-0 justify-between items-center">
       {/* <div className="self-center p-0  bg-blue-400"> */}
       <Image
         src="/assets/Slik-Logo-horizontal-white-web.png"
