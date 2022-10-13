@@ -49,7 +49,7 @@ export default function Home(props) {
           </p>
 
           <div className="p-2 pl-4 max-w-md mx-auto bg-white md:dark:bg-[#2A2A2A] rounded-[10px] mt-24">
-            <div className="flex flex-row w-full   rounded-[10px]  justify-between items-center  ">
+            <div className="flex flex-row w-full   rounded-[10px]  justify-between items-center">
               <input
                 className=" outline-none w-[65%] bg-[#EEEEEE] md:dark:bg-[#444444] text-sm md:text-lg h-[50px] lg:h-[72px] caret:text-prim-color text-black/90 md:dark:text-white placeholder:text-black/40 md:dark:placeholder:text-white/40  py-4 pl-4 md:pl-8  pr-8 rounded-y-xl rounded-l-xl  "
                 type="email"
