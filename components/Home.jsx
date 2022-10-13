@@ -300,42 +300,50 @@ export default function Home(props) {
         style={{ fontFamily: "Mulish" }}
         className="px-8 lg:px-[97px] py-[87px] min-h-[516px] bg-[#EE3A46]"
       >
-        <div className="flex flex-col md:flex-row justify-center md:justify-between space-y-8 md:spacey-0">
-          <div className="self-center flex flex-row lg:flex-col w-full justify-between lg:justify-center">
-            <Image
-              src="/assets/Slik-Logo-vertical-white-web.png"
-              layout="intrinsic"
-              width="50"
-              height="30"
-              alt="slik logo white"
-              objectFit="contain"
-              className="rounded-[10px] ml-24"
-            />
+        <div className="flex  flex-col md:flex-row justify-center md:justify-between space-y-8 md:space-y-0">
+          <div className="self-center  lg:self-start  flex-1 flex flex-row lg:flex-col w-full justify-between lg:justify-center lg:space-y-8">
+            <div className="flex  flex-row justify-start items-start">
+              <Image
+                src="/assets/Slik-Logo-vertical-white-web.png"
+                layout="intrinsic"
+                width="50"
+                height="50"
+                alt="slik logo white"
+                objectFit="contain"
+                className="rounded-[10px] ml-24"
+              />
+            </div>
 
-            <div className="text-white mt-24 text-2xl flex flex-row justify-around space-x-4">
+            <div className="text-white   self-start  lg:self-center space-x-8 text-2xl flex flex-row justify-end lg:justify-start  w-full lg:space-x-4 ">
               <FontAwesomeIcon icon={faLinkedinIn} className="cursor-pointer" />
               <FontAwesomeIcon icon={faTwitter} className="cursor-pointer" />
               <FontAwesomeIcon icon={faInstagram} className="cursor-pointer" />
             </div>
           </div>
 
-          <div className="self-center">
+          <div className="self-start flex-1 lg:self-center">
             <h2 className="text-left text-white text-2xl"> Company </h2>
             <ul className="mt-6">
-              <li className="text-white capitalize pb-4 text-sm"> About us </li>
-              <li className="text-white capitalize pb-4 text-sm">
+              <li className="text-white capitalize pb-4 text-base">
+                {" "}
+                About us{" "}
+              </li>
+              <li className="text-white capitalize pb-4 text-base">
                 {" "}
                 Our services{" "}
               </li>
-              <li className="text-white capitalize pb-4 text-sm"> Join us </li>
-              <li className="text-white capitalize pb-4 text-sm">
+              <li className="text-white capitalize pb-4 text-base">
+                {" "}
+                Join us{" "}
+              </li>
+              <li className="text-white capitalize pb-4 text-base">
                 {" "}
                 Book a delivery{" "}
               </li>
             </ul>
           </div>
-          <div className="md:w-[40%] self-center">
-            <p className="text-white text-center md:text-left capitalize pb-4 text-sm">
+          <div className="md:w-[40%] flex-1 self-center">
+            <p className="text-white text-left md:text-left capitalize pb-4 text-sm">
               {" "}
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum
               temporibus impedit dolores exercitationem officiis sunt quod illum
@@ -343,12 +351,12 @@ export default function Home(props) {
               velit? Nobis, error eaque.
             </p>
 
-            <em className="text-white block text-center md:text-left capitalize pb-4 text-sm">
+            <em className="text-white block text-left md:text-left capitalize pb-4 text-sm">
               {" "}
               example@slik.com
             </em>
 
-            <em className="text-white block text-center md:text-left capitalize pb-4 text-sm">
+            <em className="text-white block text-left md:text-left capitalize pb-4 text-sm">
               {" "}
               +234-000-000-0000
             </em>
