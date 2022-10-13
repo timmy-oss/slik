@@ -39,25 +39,22 @@ export default function MobileNavBar(props) {
         }
       >
         <div className="bg-white fixed h-full w-[70%] top-0 right-0">
-          <ul className=" mx-auto pt-[50%] font-bold space-y-12 ">
+          <ul className=" mx-auto pt-[50%] font-bold space-y-10 ">
             {navItems.map((n, i) => {
               return (
                 <li
                   key={i}
                   className={
-                    "hover:cursor-pointer w-[50%] mx-auto dark:text-black/90 text-black/90 font-semibold text-left self-center border-b border-transparent transform text-lg duration-500 transition-colors pb-1 hover:border-black/90 hover:scale-[1.0] "
+                    "hover:cursor-pointer block mx-auto dark:text-black/90 text-black/90 font-semibold text-center self-center border-b border-transparent transform text-lg duration-500 transition-colors pb-1 hover:border-black/90 hover:scale-[1.0] "
                   }
                 >
-                  <FontAwesomeIcon icon={n.icon} className="text-base" />
-                  &nbsp;&nbsp;
                   {n.title}
                 </li>
               );
             })}
 
-            <li className="hover:cursor-pointer w-[70%] mx-auto dark:text-black/90 text-black/90 font-semibold text-left self-center border-b border-transparent transform text-lg duration-500 transition-colors pb-1 hover:border-black/90 hover:scale-[1.0] ">
-              <FontAwesomeIcon icon={faTruckFast} className="" />
-              &nbsp;&nbsp;Book a delivery
+            <li className="hover:cursor-pointer block mx-auto dark:text-black/90 text-black/90 font-semibold text-center self-center border-b border-transparent transform text-lg duration-500 transition-colors pb-1 hover:border-black/90 hover:scale-[1.0] ">
+              Book a delivery
             </li>
             {/* <li className="text-black/90 capitalize text-center pb-4 text-lg">
               {" "}
