@@ -59,7 +59,7 @@ export default function Home(props) {
           <h1
             data-aos="fade-up"
             style={{ fontFamily: "Work Sans" }}
-            className="text-center  capitalize  p-4 font-black text-3xl md:text-4xl lg:text-4xl xl:text-5xl 2xl:text-6xl lg:max-w-3xl 2xl:max-w-4xl lg:text-left text-white md:text-black/90 md:dark:text-white dark:text-white"
+            className="text-center  capitalize  p-4 font-black text-3xl md:text-4xl lg:text-4xl xl:text-5xl 2xl:text-6xl lg:max-w-3xl 2xl:max-w-4xl lg:text-left text-black/90 md:text-black/90 md:dark:text-white dark:text-white"
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias,
             tempora.
@@ -68,15 +68,15 @@ export default function Home(props) {
           <p
             data-aos="fade-up"
             style={{ fontFamily: "Work Sans" }}
-            className="text-center max-w-3xl px-4 text-lg lg:text-xl lg:text-left md:dark:text-white py-4 dark:text-white text-white md:text-black/90"
+            className="text-center max-w-3xl px-4 text-lg lg:text-xl lg:text-left md:dark:text-white py-4 dark:text-white text-black/90 md:text-black/90"
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
             obcaecati saepe dicta explicabo dolorum corporis vel repudiandae qui
             sint aut, soluta recusandae repellendus enim asperiores.
           </p>
 
-          <div className="mt-[36px] p-2 lg:w-[80%]  ">
-            <button className="  hover:text-[white] self-center text-lg px-12 py-4 hover:bg-white dark:hover:bg-[#EE3A46]/90 hover:ring-1 hover:ring-[#EE3A46] transition-colors text-white transform duration-300 font-normal   bg-[#EE3A46]  rounded-xl outline-none text-center ">
+          <div className="mt-[36px] w-full flex flex-row justify-center lg:justify-start items-center   p-2 lg:w-[80%]  ">
+            <button className="block w-[70%] hover:text-[white]  text-lg px-12 py-2 lg:py-4 hover:bg-white dark:hover:bg-[#EE3A46]/90 hover:ring-1 hover:ring-[#EE3A46] transition-colors text-white transform duration-300 font-normal   bg-[#EE3A46]  rounded-xl outline-none text-center ">
               Join Us
             </button>
           </div>
