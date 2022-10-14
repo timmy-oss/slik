@@ -65,7 +65,7 @@ export default function Home(props) {
             tempora.
           </h1>
 
-          <p
+          {/* <p
             data-aos="fade-up"
             style={{ fontFamily: "Work Sans" }}
             className="text-center max-w-3xl px-4 text-lg lg:text-xl lg:text-left md:dark:text-white py-4 dark:text-white text-black/90 md:text-black/90"
@@ -73,11 +73,11 @@ export default function Home(props) {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
             obcaecati saepe dicta explicabo dolorum corporis vel repudiandae qui
             sint aut, soluta recusandae repellendus enim asperiores.
-          </p>
+          </p> */}
 
           <div className="mt-[36px] w-full flex flex-row justify-center lg:justify-start items-center   p-2 lg:w-[70%]  ">
             <button className="block w-[70%] hover:text-[#EE3A46] dark:hover:text-white  text-lg px-12 py-2 lg:py-4 hover:bg-white dark:hover:bg-[#242318] hover:ring-1 hover:ring-[#EE3A46] transition-colors text-white transform duration-300 font-normal   bg-[#EE3A46]  rounded-xl outline-none text-center ">
-              Join Us
+              Join Waitlist
             </button>
           </div>
 
@@ -96,10 +96,10 @@ export default function Home(props) {
           </div>
 
           <div className="lg:flex-1 p-2 self-start space-y-4 mt-8">
-            <h2 className="text-left text-[#EE3A46] dark:marker:text-white text-lg lg:text-xl">
+            {/* <h2 className="text-left text-[#EE3A46] dark:marker:text-white text-lg lg:text-xl">
               {" "}
               Coming soon.
-            </h2>{" "}
+            </h2>{" "} */}
             <div className="flex flex-row justify-start space-x-6">
               <div>
                 <Image
