@@ -75,8 +75,8 @@ export default function Home(props) {
             sint aut, soluta recusandae repellendus enim asperiores.
           </p>
 
-          <div className="mt-[36px] w-full flex flex-row justify-center lg:justify-start items-center   p-2 lg:w-[80%]  ">
-            <button className="block w-[70%] hover:text-[white]  text-lg px-12 py-2 lg:py-4 hover:bg-white dark:hover:bg-[#EE3A46]/90 hover:ring-1 hover:ring-[#EE3A46] transition-colors text-white transform duration-300 font-normal   bg-[#EE3A46]  rounded-xl outline-none text-center ">
+          <div className="mt-[36px] w-full flex flex-row justify-center lg:justify-start items-center   p-2 lg:w-[70%]  ">
+            <button className="block w-[70%] hover:text-[#EE3A46] dark:hover:text-white  text-lg px-12 py-2 lg:py-4 hover:bg-white dark:hover:bg-[#242318] hover:ring-1 hover:ring-[#EE3A46] transition-colors text-white transform duration-300 font-normal   bg-[#EE3A46]  rounded-xl outline-none text-center ">
               Join Us
             </button>
           </div>
@@ -126,7 +126,7 @@ export default function Home(props) {
           </div>
         </div>
 
-        <div className="w-full flex flex-col justify-center items-center   lg:w-[40%]  bg-[#FFFFFF] dark:bg-[#111315] md:dark:bg-[#242318] py-12 self-stretch ">
+        <div className="w-full flex flex-col justify-center items-center   lg:w-[40%]  bg-[#FBF7EB] dark:bg-[#111315] md:dark:bg-[#242318] py-12 self-stretch ">
           <Image
             src="/assets/mobile-logistics.png"
             layout="intrinsic"

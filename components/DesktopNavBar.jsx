@@ -67,8 +67,8 @@ export default function DesktopNavBar(props) {
 
       <div className="self-stretch xl:px-16 py-3 md:w-[50%] lg:w-[40%] bg-[#EE3A46]">
         <div className="flex h-full flex-row justify-around space-x-6 w-full">
-          <button className="block text-lg self-center  font-normal px-3 py-1  text-white outline-none hover:scale-[1.02] transform transition rounded-xl text-center ">
-            Book a delivery
+          <button className="block text-base font-semibold self-center   px-3 py-1  text-white outline-none hover:scale-[1.02] transform transition rounded-xl text-center ">
+            Contact Us
           </button>
 
           <button className="block text-[#EE3A46] self-center text-base px-6 py-2 hover:bg-c-1/10 transition-colors hover:text-white transform duration-300 font-normal  bg-[#FBF7EB]  rounded-xl outline-none text-center ">
