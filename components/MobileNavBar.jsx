@@ -87,10 +87,10 @@ export default function MobileNavBar(props) {
 
       {/* End of SlideInOverlay  */}
 
-      <nav className="py-3 z-20 bg-[#FFFFFF] md:hidden px-4 flex flex-row  fixed top-0 left-0 right-0 justify-between items-center">
+      <nav className="py-3 z-20 bg-[#EE3A46] md:hidden px-4 flex flex-row  fixed top-0 left-0 right-0 justify-between items-center">
         {/* <div className="self-center p-0  bg-blue-400"> */}
         <Image
-          src="/assets/Slik-Logo-horizontal-web.png"
+          src="/assets/Slik-Logo-horizontal-white-web.png"
           layout="fixed"
           width="60"
           height="35"
@@ -100,7 +100,7 @@ export default function MobileNavBar(props) {
         />
         {/* </div> */}
 
-        <div className="text-[#EE3A46] text-3xl self-center">
+        <div className="text-white text-3xl self-center">
           <div className="flex flex-row items-center justify-center space-x-6">
             {/* <div
               className={
