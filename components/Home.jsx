@@ -227,7 +227,7 @@ export default function Home(props) {
             return (
               <div
                 key={i}
-                className="white py-[46px] dark:bg-[#111315] flex  min-h-[290px] flex-1  flex-col justify-start bg-white px-[34px]"
+                className="white w-[95%] mx-auto md:mx-0 md:w-full py-[46px] dark:bg-[#111315] flex  min-h-[290px] flex-1  flex-col justify-start bg-white px-[34px]"
               >
                 <div className="rounded-[10px] dark:hidden">
                   <Image
@@ -416,19 +416,18 @@ export default function Home(props) {
       >
         <div className="flex  flex-col md:flex-row justify-center md:justify-between space-y-8 md:space-y-0">
           <div className="self-center  lg:self-start  flex-1 flex flex-row lg:flex-col w-full justify-between lg:justify-center lg:space-y-8">
-            <div className="flex  flex-row justify-start items-start">
+            <div className="flex self-start  flex-row justify-start items-start">
               <Image
                 src="/assets/Slik-Logo-horizontal-web.png"
                 layout="intrinsic"
-                width="50"
+                width="100"
                 height="50"
                 alt="slik logo white"
                 objectFit="contain"
-                className="rounded-[10px] ml-24"
               />
             </div>
 
-            <div className="text-black/90   dark:text-white   self-start  lg:self-center space-x-8 text-2xl flex flex-row justify-end lg:justify-start  w-full lg:space-x-4 ">
+            <div className="text-black/90   dark:text-white   self-center  lg:self-center space-x-8 text-2xl flex flex-row justify-end lg:justify-start  w-full lg:space-x-4 ">
               <FontAwesomeIcon icon={faLinkedinIn} className="cursor-pointer" />
               <FontAwesomeIcon icon={faTwitter} className="cursor-pointer" />
               <FontAwesomeIcon icon={faInstagram} className="cursor-pointer" />
