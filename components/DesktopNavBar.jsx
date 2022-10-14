@@ -32,11 +32,11 @@ export default function DesktopNavBar(props) {
   const router = useRouter();
 
   return (
-    <nav className="fixed hidden z-10 bg-white  md:flex top-0   left-0 right-0    flex-row justify-between  items-center">
-      <div className="self-center  md:w-[50%] lg:w-[60%] bg-[#EE3A46] dark:bg-[#242318] flex flex-row justify-around  px-12 py-3 ">
+    <nav className="fixed hidden z-10 bg-[#EE3A46]  md:flex top-0   left-0 right-0    flex-row justify-between  items-center">
+      <div className="self-center  md:w-[50%] lg:w-[60%] bg-[#EE3A46] dark:bg-[#EE3A46] flex flex-row justify-around  px-12 py-3 ">
         <div>
           <Image
-            src="/assets/Slik-Logo-horizontal-web.png"
+            src="/assets/Slik-Logo-horizontal-white-web.png"
             layout="fixed"
             width="100"
             height="50"

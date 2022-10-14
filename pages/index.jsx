@@ -23,7 +23,7 @@ const Home = () => {
         <link rel="icon" href="/assets/slik-favicon-transparent-web.png" />
         <link rel="shortcut icon" href="Slik-Logo-horizontal-web.png" />
       </Head>
-      <main className="w-full min-h-screen  ">
+      <main className="w-full min-h-screen bg-[#FFFFFF] dark:bg-[#111315] ">
         {showPage ? <HomeComponent /> : <Slik />}
       </main>
     </div>

@@ -54,8 +54,8 @@ export default function Home(props) {
       <DesktopNavBar />
       <MobileNavBar />
 
-      <div className="bg-[#EE3A46] md:bg-[#FBF7EB] dark:bg-[#EE3A46] md:dark:bg-[#242318]   md:pt-32 lg:pt-14 flex flex-col lg:flex-row justify-center lg:justify-around  min-h-[727px]">
-        <div className="bg-[#EE3A46] w-full md:bg-[#FBF7EB] dark:bg-[#EE3A46] md:dark:bg-[#242318]   lg:w-[60%] px-4 lg:px-32 pt-24 pb-16 lg:pb-[67px]">
+      <div className="bg-[#FBF7EB] md:bg-[#FBF7EB] dark:bg-[#242318] md:dark:bg-[#242318]   md:pt-32 lg:pt-14 flex flex-col lg:flex-row justify-center lg:justify-around  min-h-[727px]">
+        <div className="bg-[#FBF7EB] w-full md:bg-[#FBF7EB] dark:bg-[#242318] md:dark:bg-[#242318]   lg:w-[60%] px-4 lg:px-32 pt-24 pb-16 lg:pb-[67px]">
           <h1
             data-aos="fade-up"
             style={{ fontFamily: "Work Sans" }}
@@ -75,8 +75,14 @@ export default function Home(props) {
             sint aut, soluta recusandae repellendus enim asperiores.
           </p>
 
-          <div className="p-2 pl-4 max-w-md mx-auto bg-white md:dark:bg-[#2A2A2A] rounded-[10px] mt-24">
-            <div className="flex flex-row w-full   rounded-[10px]  justify-between items-center">
+          <div className="mt-[36px] p-2 lg:w-[80%]  ">
+            <button className="  hover:text-[white] self-center text-lg px-12 py-4 hover:bg-white dark:hover:bg-[#EE3A46]/90 hover:ring-1 hover:ring-[#EE3A46] transition-colors text-white transform duration-300 font-normal   bg-[#EE3A46]  rounded-xl outline-none text-center ">
+              Join Us
+            </button>
+          </div>
+
+          <div className="p-2 pl-4 max-w-md hidden  bg-white md:dark:bg-[#2A2A2A] rounded-[10px] mt-12">
+            <div className="flex flex-row w-full max-w-md   rounded-[10px]  justify-between items-center">
               <input
                 className=" outline-none w-[65%] bg-[#EEEEEE] md:dark:bg-[#444444] text-sm md:text-lg h-[50px] lg:h-[72px] caret:text-prim-color text-black/90 md:dark:text-white placeholder:text-black/40 md:dark:placeholder:text-white/40  py-4 pl-4 md:pl-8  pr-8 rounded-y-xl rounded-l-xl  "
                 type="email"
@@ -88,11 +94,41 @@ export default function Home(props) {
               </button>
             </div>
           </div>
+
+          <div className="lg:flex-1 p-2 self-start space-y-4 mt-8">
+            <h2 className="text-left text-[#EE3A46] dark:marker:text-white text-lg lg:text-xl">
+              {" "}
+              Coming soon.
+            </h2>{" "}
+            <div className="flex flex-row justify-start space-x-6">
+              <div>
+                <Image
+                  src="/assets/appstore-badge.svg"
+                  layout="intrinsic"
+                  width="160"
+                  height="52"
+                  alt="appstore"
+                  objectFit="contain"
+                />
+              </div>
+
+              <div>
+                <Image
+                  src="/assets/Google_Play_Store_badge_EN.svg"
+                  layout="intrinsic"
+                  width="160"
+                  height="52"
+                  alt="google-play-badge"
+                  objectFit="contain"
+                />
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="w-full flex flex-col justify-center items-center   lg:w-[40%]  bg-[#EE3A46] pb-8 self-stretch ">
+        <div className="w-full flex flex-col justify-center items-center   lg:w-[40%]  bg-[#FFFFFF] dark:bg-[#111315] md:dark:bg-[#242318] py-12 self-stretch ">
           <Image
-            src="/assets/slik-delivery-white-1.png"
+            src="/assets/mobile-logistics.png"
             layout="intrinsic"
             width="700"
             height="500"
@@ -376,7 +412,7 @@ export default function Home(props) {
 
       <footer
         style={{ fontFamily: "Mulish" }}
-        className="px-8 lg:px-[97px] py-[87px] min-h-[516px] bg-[#FFFFFF]"
+        className="px-8 lg:px-[97px] pt-[87px] pb-[40px] min-h-[516px] dark:bg-[#111315] bg-[#FFFFFF]"
       >
         <div className="flex  flex-col md:flex-row justify-center md:justify-between space-y-8 md:space-y-0">
           <div className="self-center  lg:self-start  flex-1 flex flex-row lg:flex-col w-full justify-between lg:justify-center lg:space-y-8">
@@ -392,7 +428,7 @@ export default function Home(props) {
               />
             </div>
 
-            <div className="text-black/90   self-start  lg:self-center space-x-8 text-2xl flex flex-row justify-end lg:justify-start  w-full lg:space-x-4 ">
+            <div className="text-black/90   dark:text-white   self-start  lg:self-center space-x-8 text-2xl flex flex-row justify-end lg:justify-start  w-full lg:space-x-4 ">
               <FontAwesomeIcon icon={faLinkedinIn} className="cursor-pointer" />
               <FontAwesomeIcon icon={faTwitter} className="cursor-pointer" />
               <FontAwesomeIcon icon={faInstagram} className="cursor-pointer" />
@@ -400,31 +436,31 @@ export default function Home(props) {
           </div>
 
           <div className="self-start flex-1 lg:self-center">
-            <h2 className="text-left text-black/90 text-xl lg:text-2xl">
+            <h2 className="text-left text-black/90   dark:text-white text-xl lg:text-2xl">
               {" "}
               Company{" "}
             </h2>
             <ul className="mt-6">
-              <li className="text-black/90 capitalize pb-4 text-base">
+              <li className="text-black/90   dark:text-white capitalize pb-4 text-base">
                 {" "}
                 About us{" "}
               </li>
-              <li className="text-black/90 capitalize pb-4 text-base">
+              <li className="text-black/90   dark:text-white capitalize pb-4 text-base">
                 {" "}
                 Our services{" "}
               </li>
-              <li className="text-black/90 capitalize pb-4 text-base">
+              <li className="text-black/90   dark:text-white capitalize pb-4 text-base">
                 {" "}
                 Join us{" "}
               </li>
-              <li className="text-black/90 capitalize pb-4 text-base">
+              <li className="text-black/90   dark:text-white capitalize pb-4 text-base">
                 {" "}
                 Book a delivery{" "}
               </li>
             </ul>
           </div>
           <div className="md:w-[40%] flex-1 self-center">
-            <p className="text-black/90 text-left md:text-left capitalize pb-4 text-sm">
+            <p className="text-black/90   dark:text-white text-left md:text-left capitalize pb-4 text-sm">
               {" "}
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum
               temporibus impedit dolores exercitationem officiis sunt quod illum
@@ -432,12 +468,12 @@ export default function Home(props) {
               velit? Nobis, error eaque.
             </p>
 
-            <em className="text-black/90 block text-left md:text-left capitalize pb-4 text-sm">
+            <em className="text-black/90   dark:text-white block text-left md:text-left capitalize pb-4 text-sm">
               {" "}
               example@slik.com
             </em>
 
-            <em className="text-black/90 block text-left md:text-left capitalize pb-4 text-sm">
+            <em className="text-black/90   dark:text-white block text-left md:text-left capitalize pb-4 text-sm">
               {" "}
               +234-000-000-0000
             </em>
@@ -445,7 +481,7 @@ export default function Home(props) {
         </div>
 
         <div className="mt-16">
-          <p className="text-black/90  lg:max-w-[70%] mx-auto py-4 capitalize pb-4 text-sm text-center ">
+          <p className="text-black/90   dark:text-white  lg:max-w-[70%] mx-auto py-4 capitalize pb-4 text-sm text-center ">
             {" "}
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum
             temporibus impedit dolores exercitationem officiis sunt quod illum
@@ -453,7 +489,7 @@ export default function Home(props) {
             velit? Nobis.
           </p>
 
-          <p className="text-black/90 text-center   max-w-[70%] mx-auto py-4 capitalize pb-4 text-sm">
+          <p className="text-black/90   dark:text-white text-center   max-w-[70%] mx-auto py-4 capitalize pb-4 text-sm">
             &copy; 2021-2022 Slik - RC 000000
           </p>
         </div>

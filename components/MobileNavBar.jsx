@@ -39,7 +39,7 @@ export default function MobileNavBar(props) {
         >
           <animated.div
             // style={animationProps}
-            className="bg-white fixed h-full w-[70%] top-0 right-0"
+            className="bg-white fixed h-full w-[80%] top-0 right-0"
           >
             <ul className=" mx-auto pt-[50%] font-bold space-y-10 ">
               {navItems.map((n, i) => {
