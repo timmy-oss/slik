@@ -28,7 +28,7 @@ export const navItems = [
   },
 ];
 
-export default function DesktopNavBar(props) {
+export default function DesktopNavBar({ toggleForm }) {
   const router = useRouter();
 
   return (
@@ -71,7 +71,10 @@ export default function DesktopNavBar(props) {
             Contact Us
           </button>
 
-          <button className="block text-[#EE3A46] self-center text-base px-6 py-2 hover:bg-c-1/10 transition-colors hover:text-white transform duration-300 font-normal  bg-[#FBF7EB]  rounded-xl outline-none text-center ">
+          <button
+            onClick={toggleForm}
+            className="block text-[#EE3A46] self-center text-base px-6 py-2 hover:bg-c-1/10 transition-colors hover:text-white transform duration-300 font-normal  bg-[#FBF7EB]  rounded-xl outline-none text-center "
+          >
             Join Waitlist 🔥
           </button>
         </div>

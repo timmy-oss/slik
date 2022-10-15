@@ -42,6 +42,11 @@ const pitchBoxes = [
 
 export default function Home(props) {
   const router = useRouter();
+  const [showForm, setShowForm] = useState(false);
+
+  function toggleForm() {
+    setShowForm(!showForm);
+  }
 
   AOS.init({
     offset: 40,
@@ -52,9 +57,9 @@ export default function Home(props) {
 
   return (
     <>
-      <DesktopNavBar />
+      <DesktopNavBar toggleForm={toggleForm} />
+      {showForm && <WaitListForm toggle={toggleForm} showForm={showForm} />}
       <MobileNavBar />
-      <WaitListForm />
 
       <div className="bg-[#FBF7EB] md:bg-[#FBF7EB] dark:bg-[#242318] md:dark:bg-[#242318]   md:pt-32 lg:pt-14 flex flex-col lg:flex-row justify-center lg:justify-around  min-h-[727px]">
         <div className="bg-[#FBF7EB] w-full md:bg-[#FBF7EB] dark:bg-[#242318] md:dark:bg-[#242318]   lg:w-[60%] px-4 lg:px-32 pt-24 pb-16 lg:pb-[67px]">
@@ -78,7 +83,10 @@ export default function Home(props) {
           </p> */}
 
           <div className="mt-[36px] w-full flex flex-row justify-center lg:justify-start items-center   p-2 lg:w-[70%]  ">
-            <button className="block w-[70%] hover:text-[#EE3A46] dark:hover:text-white  text-lg px-12 py-2 lg:py-4 hover:bg-[#FBF7EB] dark:hover:bg-[#242318] hover:ring-1 hover:ring-[#EE3A46] transition-colors text-white transform duration-300 font-normal   bg-[#EE3A46]  rounded-xl outline-none text-center ">
+            <button
+              onClick={toggleForm}
+              className="block w-[70%] hover:text-[#EE3A46] dark:hover:text-white  text-lg px-12 py-2 lg:py-4 hover:bg-[#FBF7EB] dark:hover:bg-[#242318] hover:ring-1 hover:ring-[#EE3A46] transition-colors text-white transform duration-300 font-normal   bg-[#EE3A46]  rounded-xl outline-none text-center "
+            >
               Join Waitlist
             </button>
           </div>
@@ -195,7 +203,10 @@ export default function Home(props) {
           </p>
 
           <div className="mt-[72px] mx-auto lg:w-[80%]  ">
-            <button className="  hover:text-[#EE3A46] self-center text-base px-8 py-3 hover:bg-white dark:hover:bg-[#111315] hover:ring-1 hover:ring-[#EE3A46] transition-colors text-white transform duration-300 font-normal   bg-[#EE3A46]  rounded-xl outline-none text-center ">
+            <button
+              onClick={toggleForm}
+              className="  hover:text-[#EE3A46] self-center text-base px-8 py-3 hover:bg-white dark:hover:bg-[#111315] hover:ring-1 hover:ring-[#EE3A46] transition-colors text-white transform duration-300 font-normal   bg-[#EE3A46]  rounded-xl outline-none text-center "
+            >
               Join Waitlist
             </button>
           </div>

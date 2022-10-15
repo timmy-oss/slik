@@ -2,24 +2,59 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faHouse,
-  faMagnifyingGlass,
   faBarsStaggered,
   faX,
+  faSun,
+  faMoon,
 } from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { navItems } from "./DesktopNavBar";
-import { useSpring, animated } from "@react-spring/web";
+import AOS from "aos";
 
 export default function MobileNavBar(props) {
   const router = useRouter();
   const [showMenu, setShowMenu] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
-  const animationProps = useSpring({
-    opacity: showMenu ? 1 : 0,
-    delay: 200,
+  AOS.init({
+    offset: 40,
+    duration: 500,
+    easing: "ease-in-sine",
+    delay: 100,
   });
+
+  useEffect(() => {
+    if (localStorage) {
+      const theme = localStorage.getItem("slik_theme");
+
+      if (theme) {
+        if (theme === "dark") {
+          setDarkMode(true);
+          document.getElementsByTagName("html")[0].className += "  dark  ";
+        }
+      }
+    }
+  }, []);
+
+  function toggleTheme() {
+    let classes = document.getElementsByTagName("html")[0].className.split(" ");
+
+    if (classes.includes("dark")) {
+      const newClasses = classes.filter((m) => m !== "dark");
+      document.getElementsByTagName("html")[0].className = newClasses;
+
+      if (localStorage) {
+        localStorage.setItem("slik_theme", "light");
+      }
+    } else {
+      document.getElementsByTagName("html")[0].className += "  dark  ";
+      if (localStorage) {
+        localStorage.setItem("slik_theme", "dark");
+      }
+    }
+    setDarkMode(!darkMode);
+  }
 
   function toggleMenu() {
     setShowMenu(!showMenu);
@@ -30,13 +65,13 @@ export default function MobileNavBar(props) {
       {/* SLideInOverlay */}
 
       {showMenu && (
-        <animated.div
-          style={animationProps}
+        <div
           className={
             "bg-black/40 dark:bg-white/40  md:hidden z-10 fixed  w-[100%] right-0 top-[5%] min-h-screen "
           }
         >
-          <animated.div
+          <div
+            data-aos="fade-left"
             style={{ fontFamily: "Mulish" }}
             className="bg-white  dark:bg-[#111315] fixed h-full w-[80%] top-0 right-0"
           >
@@ -64,8 +99,8 @@ export default function MobileNavBar(props) {
                 Join Waitlist
               </button>
             </div>
-          </animated.div>
-        </animated.div>
+          </div>
+        </div>
       )}
 
       {/* End of SlideInOverlay  */}
@@ -97,10 +132,21 @@ export default function MobileNavBar(props) {
             >
               <FontAwesomeIcon icon={faHouse} className="text-3xl" />
             </div>
+            */}
 
-            <div className=" transform duration-300 transition-all hover:scale-[103%]">
-              <FontAwesomeIcon icon={faMagnifyingGlass} className="text-3xl" />
-            </div> */}
+            <div
+              onClick={toggleTheme}
+              className=" rounded-full  transform duration-300 transition-all hover:scale-[103%] "
+            >
+              {darkMode ? (
+                <FontAwesomeIcon icon={faSun} className="text-3xl text-white" />
+              ) : (
+                <FontAwesomeIcon
+                  icon={faMoon}
+                  className="text-3xl text-white"
+                />
+              )}
+            </div>
 
             <div
               onClick={toggleMenu}
