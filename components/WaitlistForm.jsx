@@ -80,12 +80,14 @@ const baseValidationSchema = {
     .required("Phone number cannot be blank!"),
   category: Yup.string()
     .oneOf(["vendor", "driver", "user"], "Your description is invalid!")
-    .label(""),
+    .label("Category")
+    .required("Choose one that describes you best!"),
 
   more: Yup.string()
     .min(40, "Too short!")
     .test("is-enough-words", "At least 10 words!", (v) => {
-      if (v === undefined) return false;
+      if (v === undefined) return true;
+      if (v.length === 0) return true;
       return v.split(" ").length >= 10;
     })
     .label("More"),
@@ -95,7 +97,7 @@ export default function WaitlistForm() {
   const validationSchema = Yup.object().shape(baseValidationSchema);
 
   async function handleSubmit(values) {
-    console.log(v);
+    console.log(values);
   }
 
   return (
@@ -126,7 +128,7 @@ export default function WaitlistForm() {
             <Form about="Waitlist Form" className="mt-4 space-y-4">
               {fields.map((f, i) => (
                 <div
-                  key={i}
+                  key={i + f.name}
                   className="w-full py-2 flex flex-col  justify-center items-start"
                 >
                   <label
@@ -197,6 +199,13 @@ export default function WaitlistForm() {
                   alt="Recaptcha"
                 />
               </div>
+
+              {!isValid && (
+                <p className="mt-1 text-sm block text-red-500">
+                  Please correct the errors in the form to continue.
+                </p>
+              )}
+
               <div className="mt-12 w-full flex flex-row justify-center  items-center     ">
                 <button
                   type="submit"
