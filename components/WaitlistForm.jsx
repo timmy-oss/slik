@@ -125,7 +125,7 @@ export default function WaitlistForm() {
           }}
         >
           {({ isValid, isSubmitting }) => (
-            <Form about="Waitlist Form" className="mt-4 space-y-4">
+            <Form about="Waitlist Form" className="mt-4 space-y-4 pb-12">
               {fields.map((f, i) => (
                 <div
                   key={i + f.name}
