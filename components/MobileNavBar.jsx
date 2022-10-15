@@ -1,15 +1,15 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-import cn from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse,
   faMagnifyingGlass,
   faBarsStaggered,
+  faX,
 } from "@fortawesome/free-solid-svg-icons";
-import { faRectangleXmark } from "@fortawesome/free-regular-svg-icons";
+// import { faRectangleXmark, faX } from "@fortawesome/free-regular-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { navItems } from "./DesktopNavBar";
 import { useSpring, animated } from "@react-spring/web";
 
@@ -34,12 +34,12 @@ export default function MobileNavBar(props) {
         <animated.div
           style={{ fontFamily: "Mulish" }}
           className={
-            "bg-black/40 md:hidden z-10 fixed  w-[100%] right-0 top-[5%] min-h-screen "
+            "bg-black/40 dark:bg-white/40  md:hidden z-10 fixed  w-[100%] right-0 top-[5%] min-h-screen "
           }
         >
           <animated.div
             // style={animationProps}
-            className="bg-white fixed h-full w-[80%] top-0 right-0"
+            className="bg-white  dark:bg-[#111315] fixed h-full w-[80%] top-0 right-0"
           >
             <ul className=" mx-auto pt-[50%] font-bold space-y-10 ">
               {navItems.map((n, i) => {
@@ -47,7 +47,7 @@ export default function MobileNavBar(props) {
                   <li
                     key={i}
                     className={
-                      "hover:cursor-pointer block mx-auto dark:text-black/90 text-black/90 font-semibold text-center self-center  transform text-lg duration-500 transition-colors pb-1  hover:scale-[1.02] "
+                      "hover:cursor-pointer block mx-auto dark:text-white text-black/90 font-semibold text-center self-center  transform text-lg duration-500 transition-colors pb-1  hover:scale-[1.02] "
                     }
                   >
                     {n.title}
@@ -55,29 +55,13 @@ export default function MobileNavBar(props) {
                 );
               })}
 
-              <li className="hover:cursor-pointer block mx-auto dark:text-black/90 text-black/90 font-semibold text-center self-center  transform text-lg duration-500 transition-colors pb-1  hover:scale-[1.02] ">
+              <li className="hover:cursor-pointer block mx-auto dark:text-white text-black/90 font-semibold text-center self-center  transform text-lg duration-500 transition-colors pb-1  hover:scale-[1.02] ">
                 Book a delivery
               </li>
-              {/* <li className="text-black/90 capitalize text-center pb-4 text-lg">
-              {" "}
-              About us{" "}
-            </li>
-            <li className="text-black/90 capitalize text-center pb-4 text-lg">
-              {" "}
-              Our services{" "}
-            </li>
-            <li className="text-black/90 capitalize text-center pb-4 text-lg">
-              {" "}
-              Join us{" "}
-            </li>
-            <li className="text-black/90 capitalize text-center pb-4 text-lg">
-              {" "}
-              Book a delivery{" "}
-            </li> */}
             </ul>
 
             <div className="mt-[72px] w-full    ">
-              <button className="block mx-auto hover:text-[#EE3A46] self-center text-base px-12 py-3 hover:bg-white  hover:ring-2 hover:ring-[#EE3A46] transition-colors text-white transform duration-300 font-normal   bg-[#EE3A46]  rounded-xl outline-none text-center ">
+              <button className="block mx-auto hover:text-[#EE3A46] self-center text-base px-12 py-3 hover:bg-white  hover:ring-2 hover:ring-[#EE3A46] transition-colors text-white transform duration-300 font-normal dark:hover:bg-[#111315]   bg-[#EE3A46]  rounded-xl outline-none text-center ">
                 Join Waitlist
               </button>
             </div>
@@ -124,7 +108,7 @@ export default function MobileNavBar(props) {
               className=" transform duration-300 transition-all hover:scale-[103%]"
             >
               <FontAwesomeIcon
-                icon={showMenu ? faRectangleXmark : faBarsStaggered}
+                icon={showMenu ? faX : faBarsStaggered}
                 className="text-3xl"
               />
             </div>
