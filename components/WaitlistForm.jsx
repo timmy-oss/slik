@@ -124,7 +124,7 @@ export default function WaitlistForm() {
             more: "",
           }}
         >
-          {({ isValid }) => (
+          {({ isValid, isSubmitting }) => (
             <Form about="Waitlist Form" className="mt-4 space-y-4">
               {fields.map((f, i) => (
                 <div
@@ -209,7 +209,15 @@ export default function WaitlistForm() {
               <div className="mt-12 w-full flex flex-row justify-center  items-center     ">
                 <button
                   type="submit"
-                  className="block w-full  hover:text-[#EE3A46] dark:hover:text-white  text-lg px-12 py-2 lg:py-3 hover:bg-[#EE3A46]/90 hover:ring-1 hover:ring-[#EE3A46] transition-colors text-white transform duration-300 font-normal   bg-[#EE3A46]  rounded-xl outline-none text-center "
+                  disabled={!isValid || isSubmitting}
+                  className={
+                    "block w-full    text-lg px-12 py-2 lg:py-3   transition-colors text-white transform duration-300 font-normal   bg-[#EE3A46]  rounded-xl outline-none text-center " +
+                    cn({
+                      " opacity-20 ": !isValid || isSubmitting,
+                      " hover:ring-[#EE3A46] hover:text-[#EE3A46] dark:hover:text-white  hover:bg-[#EE3A46]/90 hover:ring-1":
+                        isValid && !isSubmitting,
+                    })
+                  }
                 >
                   Join Waitlist
                 </button>
@@ -217,7 +225,14 @@ export default function WaitlistForm() {
               <div className="mt-6 w-full flex flex-row justify-center  items-center     ">
                 <button
                   type="button"
-                  className="block w-full hover:ring-2 hover:font-semibold  text-lg px-12 py-2 lg:py-3  ring-1 ring-black/90 transition-colors text-black/90 transform duration-300 font-normal     rounded-xl outline-none text-center "
+                  disabled={isSubmitting}
+                  className={
+                    "block w-full  text-lg px-12 py-2 lg:py-3  ring-1 ring-black/90 transition-colors text-black/90 transform duration-300 font-normal     rounded-xl outline-none text-center " +
+                    cn({
+                      " hover:ring-2 hover:font-semibold ": !isSubmitting,
+                      " opacity-20 ": isSubmitting,
+                    })
+                  }
                 >
                   Close
                 </button>
