@@ -31,7 +31,14 @@ export default function MobileNavBar(props) {
       if (theme) {
         if (theme === "dark") {
           setDarkMode(true);
-          document.getElementsByTagName("html")[0].className += "  dark  ";
+          if (
+            !document
+              .getElementsByTagName("html")[0]
+              .className.split(" ")
+              .includes("dark")
+          ) {
+            document.getElementsByTagName("html")[0].className += "  dark  ";
+          }
         }
       }
     }
@@ -150,7 +157,7 @@ export default function MobileNavBar(props) {
 
             <div
               onClick={toggleMenu}
-              className=" transform duration-300 transition-all hover:scale-[103%]"
+              className=" transform duration-300  min-w-[25px] max-w-[25px] transition-all hover:scale-[103%]"
             >
               <FontAwesomeIcon
                 icon={showMenu ? faX : faBarsStaggered}

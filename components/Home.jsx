@@ -104,8 +104,21 @@ export default function Home(props) {
               </button>
             </div>
           </div>
+        </div>
 
-          <div className="lg:flex-1 p-2 self-start space-y-4 mt-8">
+        <div className="w-full flex flex-col justify-center items-center   lg:w-[40%]  bg-[#FBF7EB] dark:bg-[#111315] md:dark:bg-[#242318] py-12 self-stretch ">
+          <Image
+            src="/assets/mobile-logistics.png"
+            layout="intrinsic"
+            width="700"
+            height="500"
+            alt="bike"
+            objectFit="contain"
+            className=""
+            priority
+          />
+
+          <div className="lg:flex-1 p-2 self-start space-y-4 mt-16 mx-auto">
             {/* <h2 className="text-left text-[#EE3A46] dark:marker:text-white text-lg lg:text-xl">
               {" "}
               Coming soon.
@@ -135,24 +148,11 @@ export default function Home(props) {
             </div>
           </div>
         </div>
-
-        <div className="w-full flex flex-col justify-center items-center   lg:w-[40%]  bg-[#FBF7EB] dark:bg-[#111315] md:dark:bg-[#242318] py-12 self-stretch ">
-          <Image
-            src="/assets/mobile-logistics.png"
-            layout="intrinsic"
-            width="700"
-            height="500"
-            alt="bike"
-            objectFit="contain"
-            className=""
-            priority
-          />
-        </div>
       </div>
       {/* Phase 2  */}
 
-      <div className=" bg-[#FFFFFF] dark:bg-[#111315] py-[96px]  flex flex-col lg:flex-row justify-center lg:justify-center min-h-[727px]  space-y-16 lg:space-y-0">
-        <div className="w-full lg:w-[50%] self-center bg-[##EEEEEE] lg:self-stretch mx-auto rounded-[10px]  flex flex-col justify-center items-center">
+      <div className=" bg-[#FFFFFF] dark:bg-[#111315] lg:py-[96px]  flex flex-col lg:flex-row justify-center lg:justify-center min-h-[727px]  space-y-16 lg:space-y-0">
+        <div className="w-full order-2 lg:order-1 lg:w-[50%] self-center bg-[##EEEEEE] lg:self-stretch mx-auto rounded-[10px]  flex flex-col justify-center items-center">
           <Image
             src="/assets/delivery-car.png"
             layout="intrinsic"
@@ -165,7 +165,7 @@ export default function Home(props) {
           />
         </div>
 
-        <div className="w-full lg:w-[50%] self-center  lg:self-start px-8">
+        <div className="w-full  lg:w-[50%] order-1 lg:order-2 self-center  lg:self-start px-8">
           <h1
             style={{ fontFamily: "Work Sans" }}
             className="   font-normal uppercase lg:w-[80%] mx-auto text-base text-left lg:text-left  text-[#EE3A46]"

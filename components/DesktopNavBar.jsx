@@ -1,14 +1,15 @@
-import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import cn from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleInfo,
   faTaxi,
   faIdCard,
+  faSun,
+  faMoon,
 } from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import { useState, useEffect } from "react";
 
 export const navItems = [
   {
@@ -30,6 +31,46 @@ export const navItems = [
 
 export default function DesktopNavBar({ toggleForm }) {
   const router = useRouter();
+  const [darkMode, setDarkMode] = useState(false);
+
+  function toggleTheme() {
+    let classes = document.getElementsByTagName("html")[0].className.split(" ");
+
+    if (classes.includes("dark")) {
+      const newClasses = classes.filter((m) => m !== "dark");
+      document.getElementsByTagName("html")[0].className = newClasses;
+
+      if (localStorage) {
+        localStorage.setItem("slik_theme", "light");
+      }
+    } else {
+      document.getElementsByTagName("html")[0].className += "  dark  ";
+      if (localStorage) {
+        localStorage.setItem("slik_theme", "dark");
+      }
+    }
+    setDarkMode(!darkMode);
+  }
+
+  useEffect(() => {
+    if (localStorage) {
+      const theme = localStorage.getItem("slik_theme");
+
+      if (theme) {
+        if (theme === "dark") {
+          setDarkMode(true);
+          if (
+            !document
+              .getElementsByTagName("html")[0]
+              .className.split(" ")
+              .includes("dark")
+          ) {
+            document.getElementsByTagName("html")[0].className += "  dark  ";
+          }
+        }
+      }
+    }
+  }, []);
 
   return (
     <nav className="fixed hidden z-10 bg-[#EE3A46]  md:flex top-0   left-0 right-0    flex-row justify-between  items-center">
@@ -52,7 +93,7 @@ export default function DesktopNavBar({ toggleForm }) {
                 <li
                   key={i}
                   className={
-                    "hover:cursor-pointer dark:text-white text-black/90 font-semibold  self-center border-b border-transparent transform text-base duration-500 transition-colors pb-1 hover:border-black/90 dark:hover:border-white hover:scale-[1.0] "
+                    "hover:cursor-pointer dark:text-white text-white font-semibold  self-center border-b border-transparent transform text-base duration-500 transition-colors pb-1 hover:border-black/90 dark:hover:border-white hover:scale-[1.0] "
                   }
                 >
                   <FontAwesomeIcon icon={n.icon} className="text-base" />
@@ -67,9 +108,20 @@ export default function DesktopNavBar({ toggleForm }) {
 
       <div className="self-stretch xl:px-16 py-3 md:w-[50%] lg:w-[40%] bg-[#EE3A46]">
         <div className="flex h-full flex-row justify-around space-x-6 w-full">
-          <button className="block text-base font-semibold self-center   px-3 py-1  text-white outline-none hover:scale-[1.02] transform transition rounded-xl text-center ">
+          <button className="block text-lg font-semibold self-center   px-3 py-1  text-white outline-none hover:scale-[1.02] transform transition rounded-xl text-center ">
             Contact Us
           </button>
+
+          <div
+            onClick={toggleTheme}
+            className=" rounded-full min-w-[30px] self-center  transform duration-300 transition-all hover:scale-[103%] "
+          >
+            {darkMode ? (
+              <FontAwesomeIcon icon={faSun} className="text-3xl text-white" />
+            ) : (
+              <FontAwesomeIcon icon={faMoon} className="text-3xl text-white" />
+            )}
+          </div>
 
           <button
             onClick={toggleForm}
