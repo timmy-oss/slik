@@ -107,7 +107,7 @@ export default function WaitlistForm() {
         "bg-black/80  z-10 fixed  w-[100%] right-0 top-[5%] lg:top-0 min-h-screen "
       }
     >
-      <div className="min-h-[500px] max-h-[750px] z-10  rounded px-6  pb-12  max-w-md w-[90%] lg:w-full bg-[#FFFFFF] dak:bg-[#111315] mx-auto mt-8  hover:overflow-y-auto hide-scroll-bar">
+      <div className="min-h-[500px] max-h-[750px] z-10  rounded px-6  pb-12  max-w-md w-[90%] lg:w-full bg-[#FFFFFF] dak:bg-[#111315] mx-auto mt-8  overflow-y-auto hide-scroll-bar">
         <h1 className="text-3xl bg-white sticky py-4 top-0 left-4 right-0 font-bold lg:text-4xl text-[#2A2A2A]">
           {" "}
           Join the queue.
@@ -148,6 +148,7 @@ export default function WaitlistForm() {
                             id={f.name + r.name}
                             value={r.value}
                             type={f.type}
+                            autoFocus={false}
                             className=" w-[20px]  mt-2 cursor-pointer   border-[#797979] "
                             title={"Choose " + r.name}
                             name={f.name}
@@ -170,9 +171,10 @@ export default function WaitlistForm() {
                       id={f.name}
                       type={f.type}
                       name={f.name}
+                      autoFocus={false}
                       as={f.as || "input"}
                       className={
-                        "outline-none w-full block border-b border-[#797979] py-2 pl-1 pr-4 " +
+                        "outline-none w-full  block border-b border-[#797979] py-2 pl-1 pr-4 " +
                         cn([
                           {
                             " h-[50px]  resize-none ": f.as === "textarea",
