@@ -5,8 +5,8 @@ export default function Document() {
         <Html>
             <Head>
 
-                <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)" />
-                <meta name="theme-color" content="#242318" media="(prefers-color-scheme: dark)" />
+                <meta name="theme-color" content="#EE3A46" media="(prefers-color-scheme: light)" />
+                <meta name="theme-color" content="#EE3A46" media="(prefers-color-scheme: dark)" />
                 <link rel="manifest" href="/manifest.json" />
                 <link rel="apple-touch-icon" href="/icon-192x192.png"></link>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />

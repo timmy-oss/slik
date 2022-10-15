@@ -27,9 +27,9 @@ const pitchBoxes = [
   },
 
   {
-    title: "Gadgets",
+    title: "Groceries",
     body: "Delivery to every location in Nigeria",
-    img: "/assets/box.png",
+    img: "/assets/groceries.png",
   },
 
   {
@@ -76,7 +76,7 @@ export default function Home(props) {
           </p> */}
 
           <div className="mt-[36px] w-full flex flex-row justify-center lg:justify-start items-center   p-2 lg:w-[70%]  ">
-            <button className="block w-[70%] hover:text-[#EE3A46] dark:hover:text-white  text-lg px-12 py-2 lg:py-4 hover:bg-white dark:hover:bg-[#242318] hover:ring-1 hover:ring-[#EE3A46] transition-colors text-white transform duration-300 font-normal   bg-[#EE3A46]  rounded-xl outline-none text-center ">
+            <button className="block w-[70%] hover:text-[#EE3A46] dark:hover:text-white  text-lg px-12 py-2 lg:py-4 hover:bg-[#FBF7EB] dark:hover:bg-[#242318] hover:ring-1 hover:ring-[#EE3A46] transition-colors text-white transform duration-300 font-normal   bg-[#EE3A46]  rounded-xl outline-none text-center ">
               Join Waitlist
             </button>
           </div>
@@ -144,7 +144,7 @@ export default function Home(props) {
       <div className=" bg-[#FFFFFF] dark:bg-[#111315] py-[96px]  flex flex-col lg:flex-row justify-center lg:justify-center min-h-[727px]  space-y-16 lg:space-y-0">
         <div className="w-full lg:w-[50%] self-center bg-[##EEEEEE] lg:self-stretch mx-auto rounded-[10px]  flex flex-col justify-center items-center">
           <Image
-            src="/assets/slik-social-red-background.png"
+            src="/assets/delivery-car.png"
             layout="intrinsic"
             width="710"
             height="569"
