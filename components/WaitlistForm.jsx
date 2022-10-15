@@ -125,7 +125,7 @@ export default function WaitlistForm({ toggle, showForm }) {
       <div
         data-aos="zoom-in"
         style={{ fontFamily: "Work Sans" }}
-        className="min-h-[500px] relative max-h-[750px] z-10  rounded px-6  pb-12  max-w-md w-[90%] lg:w-full bg-[#FFFFFF] dark:bg-[#111315] mx-auto mt-8  overflow-y-auto hide-scroll-bar  scale-[0.95] lg:scale-[0.8]"
+        className="min-h-[500px] dark:border-white/50 dark:border relative max-h-[750px] z-10  rounded px-6  pb-12  max-w-md w-[90%] lg:w-full bg-[#FFFFFF] dark:bg-[#111315] mx-auto mt-8  overflow-y-auto hide-scroll-bar  scale-[0.95] lg:scale-[0.8]"
       >
         <div onClick={toggle} className="absolute top-2 lg:hidden right-3 z-10">
           <FontAwesomeIcon
