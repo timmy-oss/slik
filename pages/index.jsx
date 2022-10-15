@@ -9,7 +9,7 @@ const Home = () => {
   useEffect(() => {
     let tId = setTimeout(() => {
       setShowPage(true);
-    }, 2000);
+    }, 1000);
 
     return () => {
       clearTimeout(tId);

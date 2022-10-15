@@ -7,7 +7,6 @@ import {
   faBarsStaggered,
   faX,
 } from "@fortawesome/free-solid-svg-icons";
-// import { faRectangleXmark, faX } from "@fortawesome/free-regular-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { useState } from "react";
 import { navItems } from "./DesktopNavBar";
@@ -32,13 +31,13 @@ export default function MobileNavBar(props) {
 
       {showMenu && (
         <animated.div
-          style={{ fontFamily: "Mulish" }}
+          style={animationProps}
           className={
             "bg-black/40 dark:bg-white/40  md:hidden z-10 fixed  w-[100%] right-0 top-[5%] min-h-screen "
           }
         >
           <animated.div
-            // style={animationProps}
+            style={{ fontFamily: "Mulish" }}
             className="bg-white  dark:bg-[#111315] fixed h-full w-[80%] top-0 right-0"
           >
             <ul className=" mx-auto pt-[50%] font-bold space-y-10 ">

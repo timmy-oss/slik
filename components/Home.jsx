@@ -12,6 +12,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import AOS from "aos";
+import WaitListForm from "./WaitlistForm";
 
 const pitchBoxes = [
   {
@@ -53,6 +54,7 @@ export default function Home(props) {
     <>
       <DesktopNavBar />
       <MobileNavBar />
+      <WaitListForm />
 
       <div className="bg-[#FBF7EB] md:bg-[#FBF7EB] dark:bg-[#242318] md:dark:bg-[#242318]   md:pt-32 lg:pt-14 flex flex-col lg:flex-row justify-center lg:justify-around  min-h-[727px]">
         <div className="bg-[#FBF7EB] w-full md:bg-[#FBF7EB] dark:bg-[#242318] md:dark:bg-[#242318]   lg:w-[60%] px-4 lg:px-32 pt-24 pb-16 lg:pb-[67px]">
