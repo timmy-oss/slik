@@ -63,7 +63,41 @@ const fields = [
   },
 ];
 
+const baseValidationSchema = {
+  name: Yup.string()
+    .min(3, "Too short!")
+    .max(64, "Too long!")
+    .label("Name")
+    .required("Name cannot be blank!"),
+  email: Yup.string()
+    .email("Your email is invalid!")
+    .label("Email")
+    .required("Email cannot be blank!"),
+  phone: Yup.string()
+    .min(10, "Too short!")
+    .max(12, "Too long!")
+    .label("Phone Number")
+    .required("Phone number cannot be blank!"),
+  category: Yup.string()
+    .oneOf(["vendor", "driver", "user"], "Your description is invalid!")
+    .label(""),
+
+  more: Yup.string()
+    .min(40, "Too short!")
+    .test("is-enough-words", "At least 10 words!", (v) => {
+      if (v === undefined) return false;
+      return v.split(" ").length >= 10;
+    })
+    .label("More"),
+};
+
 export default function WaitlistForm() {
+  const validationSchema = Yup.object().shape(baseValidationSchema);
+
+  async function handleSubmit(values) {
+    console.log(v);
+  }
+
   return (
     <div
       style={{ fontFamily: "Work Sans" }}
@@ -78,6 +112,8 @@ export default function WaitlistForm() {
         </h1>
 
         <Formik
+          validationSchema={validationSchema}
+          onSubmit={handleSubmit}
           initialValues={{
             name: "",
             email: "",
@@ -89,7 +125,10 @@ export default function WaitlistForm() {
           {({ isValid }) => (
             <Form about="Waitlist Form" className="mt-4 space-y-4">
               {fields.map((f, i) => (
-                <div className="w-full py-2 flex flex-col  justify-center items-start">
+                <div
+                  key={i}
+                  className="w-full py-2 flex flex-col  justify-center items-start"
+                >
                   <label
                     htmlFor={f.name}
                     className="block text-[#797979] text-sm lg:text-base capitalize"
@@ -134,7 +173,7 @@ export default function WaitlistForm() {
                         "outline-none w-full block border-b border-[#797979] py-2 pl-1 pr-4 " +
                         cn([
                           {
-                            " h-[60px]  resize-none ": f.as === "textarea",
+                            " h-[50px]  resize-none ": f.as === "textarea",
                             " h-[30px] lg:h-[40px]": !f.as,
                           },
                         ])
@@ -142,6 +181,10 @@ export default function WaitlistForm() {
                       placeholder={f.placeholder}
                     />
                   )}
+
+                  <span className="mt-1 text-sm block text-red-500">
+                    <ErrorMessage name={f.name} />
+                  </span>
                 </div>
               ))}
               <div className="mt-4 ">
@@ -155,12 +198,18 @@ export default function WaitlistForm() {
                 />
               </div>
               <div className="mt-12 w-full flex flex-row justify-center  items-center     ">
-                <button className="block w-full  hover:text-[#EE3A46] dark:hover:text-white  text-lg px-12 py-2 lg:py-3 hover:bg-[#EE3A46]/90 hover:ring-1 hover:ring-[#EE3A46] transition-colors text-white transform duration-300 font-normal   bg-[#EE3A46]  rounded-xl outline-none text-center ">
+                <button
+                  type="submit"
+                  className="block w-full  hover:text-[#EE3A46] dark:hover:text-white  text-lg px-12 py-2 lg:py-3 hover:bg-[#EE3A46]/90 hover:ring-1 hover:ring-[#EE3A46] transition-colors text-white transform duration-300 font-normal   bg-[#EE3A46]  rounded-xl outline-none text-center "
+                >
                   Join Waitlist
                 </button>
               </div>
               <div className="mt-6 w-full flex flex-row justify-center  items-center     ">
-                <button className="block w-full hover:ring-2 hover:font-semibold  text-lg px-12 py-2 lg:py-3  ring-1 ring-black/90 transition-colors text-black/90 transform duration-300 font-normal     rounded-xl outline-none text-center ">
+                <button
+                  type="button"
+                  className="block w-full hover:ring-2 hover:font-semibold  text-lg px-12 py-2 lg:py-3  ring-1 ring-black/90 transition-colors text-black/90 transform duration-300 font-normal     rounded-xl outline-none text-center "
+                >
                   Close
                 </button>
               </div>
