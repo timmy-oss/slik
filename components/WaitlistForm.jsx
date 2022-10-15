@@ -125,7 +125,7 @@ export default function WaitlistForm({ toggle, showForm }) {
       <div
         data-aos="zoom-in"
         style={{ fontFamily: "Work Sans" }}
-        className="min-h-[500px] dark:border-white/50 dark:border relative max-h-[750px] z-10  rounded px-6  pb-12  max-w-md w-[90%] lg:w-full bg-[#FFFFFF] dark:bg-[#111315] mx-auto mt-8  overflow-y-auto hide-scroll-bar  scale-[0.95] lg:scale-[0.8]"
+        className="min-h-[500px] dark:border-white/40 dark:border relative max-h-[750px] z-10  rounded px-6  pb-12  max-w-md w-[90%] lg:w-full bg-[#FFFFFF] dark:bg-[#111315] mx-auto mt-8  overflow-y-auto hide-scroll-bar  scale-[0.95] lg:scale-[0.8]"
       >
         <div onClick={toggle} className="absolute top-2 lg:hidden right-3 z-10">
           <FontAwesomeIcon
@@ -201,7 +201,7 @@ export default function WaitlistForm({ toggle, showForm }) {
                         autoFocus={false}
                         as={f.as || "input"}
                         className={
-                          "outline-none w-full  block border-b dark:bg-[#111315] bg-white border-[#797979] dark:border-white py-2 pl-1 pr-4 " +
+                          "outline-none w-full dark:text-white text-black  block border-b dark:bg-[#111315] bg-white border-[#797979] dark:border-white py-2 pl-1 pr-4 " +
                           cn([
                             {
                               " h-[50px]  resize-none ": f.as === "textarea",
