@@ -65,25 +65,30 @@ const fields = [
 
 const baseValidationSchema = {
   name: Yup.string()
+    .trim()
     .min(3, "Too short!")
     .max(64, "Too long!")
     .label("Name")
     .required("Name cannot be blank!"),
   email: Yup.string()
+    .trim()
     .email("Your email is invalid!")
     .label("Email")
     .required("Email cannot be blank!"),
   phone: Yup.string()
+    .trim()
     .min(10, "Too short!")
     .max(12, "Too long!")
     .label("Phone Number")
     .required("Phone number cannot be blank!"),
   category: Yup.string()
+    .trim()
     .oneOf(["vendor", "driver", "user"], "Your description is invalid!")
     .label("Category")
     .required("Choose one that describes you best!"),
 
   more: Yup.string()
+    .trim()
     .min(40, "Too short!")
     .test("is-enough-words", "At least 10 words!", (v) => {
       if (v === undefined) return true;
@@ -104,13 +109,13 @@ export default function WaitlistForm() {
     <div
       style={{ fontFamily: "Work Sans" }}
       className={
-        "bg-black/80  z-10 fixed  w-[100%] right-0 top-[5%] lg:top-0 min-h-screen "
+        "bg-black/80  z-20 fixed  w-[100%] right-0 top-0 lg:top-0 min-h-screen "
       }
     >
       <div className="min-h-[500px] max-h-[750px] z-10  rounded px-6  pb-12  max-w-md w-[90%] lg:w-full bg-[#FFFFFF] dak:bg-[#111315] mx-auto mt-8  overflow-y-auto hide-scroll-bar">
         <h1 className="text-3xl bg-white sticky py-4 top-0 left-4 right-0 font-bold lg:text-4xl text-[#2A2A2A]">
           {" "}
-          Join the queue.
+          Join the queue
         </h1>
 
         <Formik
@@ -141,7 +146,7 @@ export default function WaitlistForm() {
                   </label>
 
                   {f.type === "radio" && (
-                    <div className="flex flex-row justify-start w-full space-x-6">
+                    <div className="flex mb-2 flex-row justify-start w-full space-x-6">
                       {f.radios.map((r, i) => (
                         <div className="flex flex-row space-x-2">
                           <Field
@@ -186,7 +191,7 @@ export default function WaitlistForm() {
                     />
                   )}
 
-                  <span className="mt-1 text-sm block text-red-500">
+                  <span className="mt-1 text-xs block text-red-500">
                     <ErrorMessage name={f.name} />
                   </span>
                 </div>
