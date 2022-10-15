@@ -125,16 +125,16 @@ export default function WaitlistForm({ toggle, showForm }) {
       <div
         data-aos="zoom-in"
         style={{ fontFamily: "Work Sans" }}
-        className="min-h-[500px] relative max-h-[750px] z-10  rounded px-6  pb-12  max-w-md w-[90%] lg:w-full bg-[#FFFFFF] dak:bg-[#111315] mx-auto mt-8  overflow-y-auto hide-scroll-bar  scale-[0.95] lg:scale-[0.8]"
+        className="min-h-[500px] relative max-h-[750px] z-10  rounded px-6  pb-12  max-w-md w-[90%] lg:w-full bg-[#FFFFFF] dark:bg-[#111315] mx-auto mt-8  overflow-y-auto hide-scroll-bar  scale-[0.95] lg:scale-[0.8]"
       >
         <div onClick={toggle} className="absolute top-2 lg:hidden right-3 z-10">
           <FontAwesomeIcon
             icon={faX}
-            className="text-base lg:text-lg text-black/90"
+            className="text-base lg:text-lg text-black/90 dark:text-white"
           />
         </div>
 
-        <h1 className="text-3xl bg-white sticky py-4 top-0 left-4 right-0 font-bold lg:text-4xl text-[#2A2A2A]">
+        <h1 className="text-3xl bg-white dark:bg-[#111315] sticky py-4 top-0 left-4 right-0 font-bold lg:text-4xl text-[#2A2A2A] dark:text-white">
           {" "}
           Join the queue
         </h1>
@@ -160,7 +160,7 @@ export default function WaitlistForm({ toggle, showForm }) {
                   >
                     <label
                       htmlFor={f.name}
-                      className="block text-[#797979] text-sm lg:text-base capitalize"
+                      className="block text-[#797979] dark:text-white text-sm lg:text-base capitalize"
                     >
                       {" "}
                       {f.label}
@@ -176,13 +176,13 @@ export default function WaitlistForm({ toggle, showForm }) {
                               value={r.value}
                               type={f.type}
                               autoFocus={false}
-                              className=" w-[20px]  mt-2 cursor-pointer   border-[#797979] "
+                              className=" w-[20px]  mt-2 cursor-pointer   border-[#797979] dark:border-white"
                               title={"Choose " + r.name}
                               name={f.name}
                               placeholder={f.placeholder}
                             />
                             <label
-                              className="text-[#797979] mt-2 text-sm lg:text-base capitalize"
+                              className="text-[#797979] dark:text-white mt-2 text-sm lg:text-base capitalize"
                               htmlFor={f.name + r.name}
                             >
                               {" "}
@@ -201,7 +201,7 @@ export default function WaitlistForm({ toggle, showForm }) {
                         autoFocus={false}
                         as={f.as || "input"}
                         className={
-                          "outline-none w-full  block border-b border-[#797979] py-2 pl-1 pr-4 " +
+                          "outline-none w-full  block border-b dark:bg-[#111315] bg-white border-[#797979] dark:border-white py-2 pl-1 pr-4 " +
                           cn([
                             {
                               " h-[50px]  resize-none ": f.as === "textarea",
@@ -220,7 +220,7 @@ export default function WaitlistForm({ toggle, showForm }) {
                 ))}
                 <div className="mt-4 ">
                   <Image
-                    src="/assets/recaptcha.png"
+                    src="/assets/recaptcha-new.png"
                     height="66"
                     width="90"
                     priority
@@ -240,7 +240,7 @@ export default function WaitlistForm({ toggle, showForm }) {
                     type="submit"
                     disabled={!isValid || isSubmitting}
                     className={
-                      "block w-full    text-lg px-12 py-2 lg:py-3   transition-colors text-white transform duration-300 font-normal   bg-[#EE3A46]  rounded-xl outline-none text-center " +
+                      "block w-full    text-lg px-12 py-2 lg:py-3   transition-colors text-white  transform duration-300 font-normal   bg-[#EE3A46]  rounded-xl outline-none text-center " +
                       cn({
                         " opacity-20 ": !isValid || isSubmitting,
                         " hover:ring-[#EE3A46] hover:text-[#EE3A46] dark:hover:text-white  hover:bg-[#EE3A46]/90 hover:ring-1":
@@ -257,7 +257,7 @@ export default function WaitlistForm({ toggle, showForm }) {
                     type="button"
                     disabled={isSubmitting}
                     className={
-                      "block w-full  text-lg px-12 py-2 lg:py-3  ring-1 ring-black/90 transition-colors text-black/90 transform duration-300 font-normal     rounded-xl outline-none text-center " +
+                      "block w-full  text-lg px-12 py-2 lg:py-3  ring-1 ring-black/90 dark:ring-white transition-colors text-black/90 dark:text-white transform duration-300 font-normal     rounded-xl outline-none text-center " +
                       cn({
                         " hover:ring-2 hover:font-semibold ": !isSubmitting,
                         " opacity-20 ": isSubmitting,
