@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 import { navItems } from "./DesktopNavBar";
 import AOS from "aos";
 
-export default function MobileNavBar(props) {
+export default function MobileNavBar({ toggleForm }) {
   const router = useRouter();
   const [showMenu, setShowMenu] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
@@ -102,7 +102,10 @@ export default function MobileNavBar(props) {
             </ul>
 
             <div className="mt-[72px] w-full    ">
-              <button className="block mx-auto hover:text-[#EE3A46] self-center text-base px-12 py-3 hover:bg-white  hover:ring-2 hover:ring-[#EE3A46] transition-colors text-white transform duration-300 font-normal dark:hover:bg-[#111315]   bg-[#EE3A46]  rounded-xl outline-none text-center ">
+              <button
+                onClick={toggleForm}
+                className="block mx-auto hover:text-[#EE3A46] self-center text-base px-12 py-3 hover:bg-white  hover:ring-2 hover:ring-[#EE3A46] transition-colors text-white transform duration-300 font-normal dark:hover:bg-[#111315]   bg-[#EE3A46]  rounded-xl outline-none text-center "
+              >
                 Join Waitlist
               </button>
             </div>

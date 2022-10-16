@@ -59,7 +59,7 @@ export default function Home(props) {
     <>
       <DesktopNavBar toggleForm={toggleForm} />
       {showForm && <WaitListForm toggle={toggleForm} showForm={showForm} />}
-      <MobileNavBar />
+      <MobileNavBar toggleForm={toggleForm} />
 
       <div className="bg-[#FBF7EB] md:bg-[#FBF7EB] dark:bg-[#242318] md:dark:bg-[#242318]   md:pt-32 lg:pt-14 flex flex-col lg:flex-row justify-center lg:justify-around  min-h-[727px]">
         <div className="bg-[#FBF7EB] w-full md:bg-[#FBF7EB] dark:bg-[#242318] md:dark:bg-[#242318]   lg:w-[60%] px-4 lg:px-32 pt-24 pb-16 lg:pb-[67px]">
@@ -381,7 +381,7 @@ export default function Home(props) {
         </div>
 
         <div className="flex w-full  flex-col pt-[100px] lg:flex-row justify-end  items-center space-y-8 lg:space-y-0">
-          <div className="lg:ml-24 lg:w-[50%]">
+          <div className="lg:ml-24 order-2 lg:order-1 lg:w-[50%]">
             <h3 className=" block dark:text-white capitalize font-bold py-6 text-2xl text-black/90">
               Slik Driver
             </h3>
@@ -407,7 +407,7 @@ export default function Home(props) {
             </div>
           </div>
 
-          <div className=" lg:w-[50%] flex flex-col justify-start items-start">
+          <div className=" lg:w-[50%] order-1 lg:order-2 flex flex-col justify-start items-start">
             <Image
               src="/assets/v1.png"
               layout="intrinsic"
