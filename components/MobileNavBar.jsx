@@ -115,10 +115,10 @@ export default function MobileNavBar({ toggleForm }) {
 
       {/* End of SlideInOverlay  */}
 
-      <nav className="py-3 z-20 bg-[#EE3A46] md:hidden px-4 flex flex-row  fixed top-0 left-0 right-0 justify-between items-center">
+      <nav className="py-3 z-20 bg-[#FBF7EB] shadow-lg md:hidden px-4 flex flex-row  fixed top-0 left-0 right-0 justify-between items-center">
         {/* <div className="self-center p-0  bg-blue-400"> */}
         <Image
-          src="/assets/Slik-Logo-horizontal-white-web.png"
+          src="/assets/Slik-Logo-horizontal-web.png"
           layout="fixed"
           width="60"
           height="35"
@@ -128,7 +128,7 @@ export default function MobileNavBar({ toggleForm }) {
         />
         {/* </div> */}
 
-        <div className="text-white text-3xl self-center">
+        <div className="text-[#EE3A46] text-3xl self-center">
           <div className="flex flex-row items-center justify-center space-x-6">
             {/* <div
               className={
@@ -149,11 +149,14 @@ export default function MobileNavBar({ toggleForm }) {
               className=" rounded-full  transform duration-300 transition-all hover:scale-[103%] "
             >
               {darkMode ? (
-                <FontAwesomeIcon icon={faSun} className="text-3xl text-white" />
+                <FontAwesomeIcon
+                  icon={faSun}
+                  className="text-3xl text-[#EE3A46]"
+                />
               ) : (
                 <FontAwesomeIcon
                   icon={faMoon}
-                  className="text-3xl text-white"
+                  className="text-3xl text-[#EE3A46]"
                 />
               )}
             </div>

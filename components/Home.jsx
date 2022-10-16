@@ -62,14 +62,13 @@ export default function Home(props) {
       <MobileNavBar toggleForm={toggleForm} />
 
       <div className="bg-[#FBF7EB] md:bg-[#FBF7EB] dark:bg-[#242318] md:dark:bg-[#242318]   md:pt-32 lg:pt-14 flex flex-col lg:flex-row justify-center lg:justify-around  min-h-[727px]">
-        <div className="bg-[#FBF7EB] w-full md:bg-[#FBF7EB] dark:bg-[#242318] md:dark:bg-[#242318]   lg:w-[60%] px-4 lg:px-32 pt-24 pb-16 lg:pb-[67px]">
+        <div className="bg-[#FBF7EB] w-full md:bg-[#FBF7EB] dark:bg-[#242318] md:dark:bg-[#242318]   lg:w-[60%] px-4 lg:px-32 pt-24 pb-16 lg:pb-[67px] self-end">
           <h1
             data-aos="fade-up"
             style={{ fontFamily: "Work Sans" }}
-            className="text-center  capitalize  p-4 font-black text-3xl md:text-4xl lg:text-4xl xl:text-5xl 2xl:text-6xl lg:max-w-3xl 2xl:max-w-4xl lg:text-left text-black/90 md:text-black/90 md:dark:text-white dark:text-white"
+            className="text-center   capitalize  p-4 font-black text-3xl md:text-5xl lg:text-7xl xl:text-7xl 2xl:text-7xl lg:max-w-3xl 2xl:max-w-4xl lg:text-left text-black/90 md:text-black/90 md:dark:text-white dark:text-white"
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias,
-            tempora.
+            Seamless Delivery. Every Time. Anywhere.
           </h1>
 
           {/* <p
@@ -106,7 +105,7 @@ export default function Home(props) {
           </div>
         </div>
 
-        <div className="w-full flex flex-col justify-center items-center   lg:w-[40%]  bg-[#FBF7EB] dark:bg-[#111315] md:dark:bg-[#242318] py-12 self-stretch ">
+        <div className="w-full flex flex-col justify-center items-center   lg:w-[40%]  bg-[#FBF7EB] dark:bg-[#111315] md:dark:bg-[#242318] py-12 self-end ">
           <Image
             src="/assets/mobile-logistics.png"
             layout="intrinsic"
@@ -471,14 +470,14 @@ export default function Home(props) {
               </li>
             </ul>
           </div>
-          <div className="md:w-[40%] flex-1 self-center">
-            <p className="text-black/90   dark:text-white text-left md:text-left capitalize pb-4 text-sm">
+          <div className="md:w-[40%] flex-1 self-start">
+            {/* <p className="text-black/90   dark:text-white text-left md:text-left capitalize pb-4 text-sm">
               {" "}
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum
               temporibus impedit dolores exercitationem officiis sunt quod illum
               est minima tempora in, ducimus possimus, error corrupti asperiores
               velit? Nobis, error eaque.
-            </p>
+            </p> */}
 
             <em className="text-black/90   dark:text-white block text-left md:text-left capitalize pb-4 text-sm">
               {" "}
@@ -492,14 +491,14 @@ export default function Home(props) {
           </div>
         </div>
 
-        <div className="mt-16">
-          <p className="text-black/90   dark:text-white  lg:max-w-[70%] mx-auto py-4 capitalize pb-4 text-sm text-center ">
+        <div className="mt-8">
+          {/* <p className="text-black/90   dark:text-white  lg:max-w-[70%] mx-auto py-4 capitalize pb-4 text-sm text-center ">
             {" "}
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum
             temporibus impedit dolores exercitationem officiis sunt quod illum
             est minima tempora in, ducimus possimus, error corrupti asperiores
             velit? Nobis.
-          </p>
+          </p> */}
 
           <p className="text-black/90   dark:text-white text-center   max-w-[70%] mx-auto py-4 capitalize pb-4 text-sm">
             &copy; 2021-2022 Slik - RC 000000
