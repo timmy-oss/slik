@@ -6,6 +6,8 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import AOS from "aos";
+import { useState } from "react";
+import CustomSelect from "./CustomSelect";
 
 const fields = [
   {
@@ -54,6 +56,53 @@ const fields = [
         value: "user",
       },
     ],
+    subset: [
+      {
+        name: "vehicleType",
+        when: "driver",
+        label: "Which will you be driving",
+
+        type: "radio",
+
+        options: [
+          {
+            name: "Truck",
+            value: "truck",
+          },
+          {
+            name: "Car",
+            value: "car",
+          },
+          {
+            name: "Bike",
+            value: "bike",
+          },
+        ],
+      },
+
+      {
+        name: "merchandiseType",
+        when: "vendor",
+        label: "Which will you be selling",
+
+        type: "select",
+
+        options: [
+          {
+            name: "Groceries",
+            value: "groceries",
+          },
+          {
+            name: "Accessories",
+            value: "accessories",
+          },
+          {
+            name: "Clothes",
+            value: "clothes",
+          },
+        ],
+      },
+    ],
   },
 
   {
@@ -87,7 +136,7 @@ const baseValidationSchema = {
     .required("Phone number cannot be blank!"),
   category: Yup.string()
     .trim()
-    .oneOf(["vendor", "driver", "user"], "Your description is invalid!")
+    .oneOf(["vendor", "driver", "user"], "Your selection is invalid!")
     .label("Category")
     .required("Choose one that describes you best!"),
 
@@ -102,8 +151,34 @@ const baseValidationSchema = {
     .label("More"),
 };
 
+const driverAddonSchema = {
+  vehicleType: Yup.string()
+    .trim()
+    .oneOf(["truck", "car", "bike"], "Your selection is invalid!")
+    .label("Vehicle Type")
+    .required("Choose one that describes you best!"),
+};
+
+const vendorAddonSchema = {
+  merchandiseType: Yup.string()
+    .trim()
+    .oneOf(["truck", "car", "bike"], "Your selection is invalid!")
+    .label("Merchandise Type")
+    .required("Choose one that describes you best!"),
+};
+
 export default function WaitlistForm({ toggle, showForm }) {
-  const validationSchema = Yup.object().shape(baseValidationSchema);
+  const [schemaAddon, setSchemaAddon] = useState(0);
+
+  const validationSchema = Yup.object().shape(
+    schemaAddon === 0
+      ? baseValidationSchema
+      : schemaAddon === 1
+      ? { ...baseValidationSchema, ...driverAddonSchema }
+      : schemaAddon === 2
+      ? { ...baseValidationSchema, ...vendorAddonSchema }
+      : {}
+  );
 
   AOS.init({
     offset: 40,
@@ -119,7 +194,7 @@ export default function WaitlistForm({ toggle, showForm }) {
   return (
     <div
       className={
-        "bg-black/80  z-30 fixed  w-[100%] right-0 top-0 lg:top-0 min-h-screen "
+        "bg-black/60 dark:bg-white/40  z-30 fixed  w-[100%] right-0 top-0 lg:top-0 min-h-screen "
       }
     >
       <div
@@ -142,15 +217,36 @@ export default function WaitlistForm({ toggle, showForm }) {
         <Formik
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
+          validateOnChange
+          validateOnBlur
           initialValues={{
             name: "",
             email: "",
             phone: "",
             category: "",
             more: "",
+            vehicleType: "",
           }}
         >
-          {({ isValid, isSubmitting }) => {
+          {({ isValid, isSubmitting, values }) => {
+            if (values.category === "driver") {
+              if (schemaAddon !== 1) {
+                setSchemaAddon(1);
+              }
+            }
+
+            if (values.category === "vendor") {
+              if (schemaAddon !== 2) {
+                setSchemaAddon(1);
+              }
+            }
+
+            if (values.category === "user") {
+              if (schemaAddon !== 0) {
+                setSchemaAddon(0);
+              }
+            }
+
             return (
               <Form about="Waitlist Form" className="mt-4 space-y-4 pb-12">
                 {fields.map((f, i) => (
@@ -167,10 +263,12 @@ export default function WaitlistForm({ toggle, showForm }) {
                       {f.required && <span className="text-red-500">*</span>}
                     </label>
 
+                    {/* Radio types  */}
+
                     {f.type === "radio" && (
                       <div className="flex mb-2 flex-row justify-start w-full space-x-6">
                         {f.radios.map((r, i) => (
-                          <div className="flex flex-row space-x-2">
+                          <div key={i} className="flex flex-row space-x-2">
                             <Field
                               id={f.name + r.name}
                               value={r.value}
@@ -192,6 +290,86 @@ export default function WaitlistForm({ toggle, showForm }) {
                         ))}
                       </div>
                     )}
+
+                    {/* Subsets  */}
+
+                    {f.subset &&
+                      f.subset.map((s, i) => {
+                        return (
+                          <>
+                            {s.when === values[f.name] && s.type === "radio" && (
+                              <>
+                                <label
+                                  htmlFor={f.name}
+                                  className="block text-[#797979] dark:text-white mt-4 text-sm lg:text-base capitalize"
+                                >
+                                  {" "}
+                                  {s.label}
+                                  {f.required && (
+                                    <span className="text-red-500">*</span>
+                                  )}
+                                </label>
+                                <div className="flex mb-2 flex-row justify-start w-full space-x-6">
+                                  {s.options.map((r, i) => (
+                                    <div
+                                      key={i}
+                                      className="flex flex-row space-x-2"
+                                    >
+                                      <Field
+                                        id={f.name + r.name}
+                                        value={r.value}
+                                        type={s.type}
+                                        autoFocus={false}
+                                        className=" w-[20px]  mt-2 cursor-pointer   border-[#797979] dark:border-white"
+                                        title={"Choose " + r.name}
+                                        name={s.name}
+                                        placeholder={f.placeholder}
+                                      />
+                                      <label
+                                        className="text-[#797979] dark:text-white mt-2 text-sm lg:text-base capitalize"
+                                        htmlFor={f.name + r.name}
+                                      >
+                                        {r.name}
+                                      </label>
+                                    </div>
+                                  ))}
+                                </div>
+
+                                <span className="mt-1 text-xs lg:text-sm block text-red-500">
+                                  <ErrorMessage name={s.name} />
+                                </span>
+                              </>
+                            )}
+
+                            {s.when === values[f.name] && s.type === "select" && (
+                              <>
+                                <label
+                                  htmlFor={f.name}
+                                  className="block text-[#797979] dark:text-white mt-4 text-sm lg:text-base capitalize"
+                                >
+                                  {s.label}
+                                  {f.required && (
+                                    <span className="text-red-500">*</span>
+                                  )}
+                                </label>
+                                <div className="flex mb-2 flex-row justify-start w-full space-x-6">
+                                  {/* Custom Select Component */}
+
+                                  <CustomSelect />
+
+                                  {/* End - Custom Select Component */}
+                                </div>
+
+                                <span className="mt-1 text-xs lg:text-sm block text-red-500">
+                                  <ErrorMessage name={s.name} />
+                                </span>
+                              </>
+                            )}
+                          </>
+                        );
+                      })}
+
+                    {/* Other input types  */}
 
                     {f.type !== "radio" && (
                       <Field
@@ -218,6 +396,7 @@ export default function WaitlistForm({ toggle, showForm }) {
                     </span>
                   </div>
                 ))}
+
                 <div className="mt-4 ">
                   <Image
                     src="/assets/recaptcha-new.png"
@@ -243,7 +422,7 @@ export default function WaitlistForm({ toggle, showForm }) {
                       "block w-full    text-lg px-12 py-2 lg:py-3   transition-colors text-white  transform duration-300 font-normal   bg-[#EE3A46]  rounded-xl outline-none text-center " +
                       cn({
                         " opacity-20 ": !isValid || isSubmitting,
-                        " hover:ring-[#EE3A46] hover:text-[#EE3A46] dark:hover:text-white  hover:bg-[#EE3A46]/90 hover:ring-1":
+                        " hover:ring-[#EE3A46] hover:text-[white] dark:hover:text-white  hover:bg-[#EE3A46]/90 hover:ring-1":
                           isValid && !isSubmitting,
                       })
                     }

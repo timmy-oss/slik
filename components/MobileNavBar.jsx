@@ -74,7 +74,7 @@ export default function MobileNavBar({ toggleForm }) {
       {showMenu && (
         <div
           className={
-            "bg-black/40 dark:bg-white/40  md:hidden z-10 fixed  w-[100%] right-0 top-[5%] min-h-screen "
+            "bg-black/60 dark:bg-white/40  md:hidden z-10 fixed  w-[100%] right-0 top-[5%] min-h-screen "
           }
         >
           <div
