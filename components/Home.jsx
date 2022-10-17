@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import DesktopNavBar from "./DesktopNavBar";
 import MobileNavBar from "./MobileNavBar";
 import Image from "next/image";
@@ -13,34 +13,35 @@ import {
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import AOS from "aos";
 import WaitListForm from "./WaitlistForm";
+import Link from "next/link";
 
 const pitchBoxes = [
   {
-    title: "Food & Drinks",
-    body: "Delivery to every location in Nigeria",
+    title: "Meals & Drinks",
+    body: "Get your meals and drinks delivered to your doorstep, right from your favourite vendors.",
     img: "/assets/burg.png",
   },
 
   {
-    title: "Packages",
-    body: "Delivery to every location in Nigeria",
+    title: "Packaging",
+    body: "Need to waybill a package? We offer interstate delivery services within Nigeria!",
     img: "/assets/box.png",
   },
 
   {
     title: "Groceries",
-    body: "Delivery to every location in Nigeria",
+    body: "Why spend hours grocery shopping when you can get someone else to do it for you?",
     img: "/assets/groceries.png",
   },
 
   {
     title: "Laundry",
-    body: "Delivery to every location in Nigeria",
+    body: "Experience laundry without stress. We get your clothes to the dry cleaner and back. Fast!",
     img: "/assets/laundry.png",
   },
 ];
 
-export default function Home(props) {
+export default function Home({ waitlistData = null, ...props }) {
   const router = useRouter();
   const [showForm, setShowForm] = useState(false);
 
@@ -48,17 +49,25 @@ export default function Home(props) {
     setShowForm(!showForm);
   }
 
-  AOS.init({
-    offset: 40,
-    duration: 800,
-    easing: "ease-in-sine",
-    delay: 100,
-  });
+  useEffect(() => {
+    AOS.init({
+      offset: 40,
+      duration: 800,
+      easing: "ease-in-sine",
+      delay: 100,
+    });
+  }, []);
 
   return (
     <>
       <DesktopNavBar toggleForm={toggleForm} />
-      {showForm && <WaitListForm toggle={toggleForm} showForm={showForm} />}
+      {((waitlistData && waitlistData.showForm) || showForm) && (
+        <WaitListForm
+          toggle={waitlistData ? waitlistData.toggleForm : toggleForm}
+          showForm={waitlistData ? waitlistData.showForm : showForm}
+          pref={waitlistData && waitlistData.pref}
+        />
+      )}
       <MobileNavBar toggleForm={toggleForm} />
 
       <div className="bg-[#FBF7EB] md:bg-[#FBF7EB] dark:bg-[#242318] md:dark:bg-[#242318]   md:pt-32 lg:pt-14 flex flex-col lg:flex-row justify-center lg:justify-around  min-h-[727px]">
@@ -174,9 +183,9 @@ export default function Home(props) {
 
           <h2
             style={{ fontFamily: "Work Sans" }}
-            className="text-left lg:text-left mx-auto lg:w-[80%] text-black/90 dark:text-white text-2xl lg:text-3xl py-8 font-bold "
+            className="text-left lg:text-left mx-auto lg:w-[80%] text-black/90 dark:text-white text-2xl capitalize lg:text-3xl py-8 font-bold "
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Connecting vendors to customers all over
           </h2>
 
           <p
@@ -184,21 +193,13 @@ export default function Home(props) {
             style={{ fontFamily: "Work Sans" }}
             className="text-left lg:text-left mx-auto lg:w-[80%] dark:text-white text-base lg:text-lg text-[#797979] "
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
-            quisquam in molestias minus pariatur harum voluptate error, fugiat
-            earum rerum iusto, placeat ex amet dolores, accusantium iste
-            aspernatur. Minus cupiditate voluptatibus aperiam omnis expedita
-            magni commodi incidunt delectus ad deserunt necessitatibus beatae ea
-            repudiandae excepturi reiciendis sed accusantium blanditiis tempora,
-            aliquid nesciunt facere porro vel totam numquam? Exercitationem
-            ducimus cum inventore similique perferendis repudiandae officiis
-            sunt beatae obcaecati, aut eos, hic officia vero tempore totam,
-            laborum aperiam assumenda. Nam sequi earum velit possimus
-            accusantium ut culpa atque, repudiandae praesentium eius tempora
-            laborum harum. Voluptatem aut sunt, animi consequuntur dolorum
-            delectus omnis velit iure, nulla magni earum. Nihil, assumenda
-            numquam odio sint quasi perferendis, architecto id soluta iste,
-            dolores excepturi eveniet.
+            Slik is more than just logistics. We are building a truly connected
+            ecosystem where goods and services can travel safely from any point
+            in one country to another. From your favourite <b> Food Vendor</b>{" "}
+            or <b> Dry Cleaner</b> right around the corner to that{" "}
+            <b>Whatsapp Business Account </b> from the other side of the
+            country. We are building a network that allows for easy movement of
+            goods and services, FAST.
           </p>
 
           <div className="mt-[72px] mx-auto lg:w-[80%]  ">
@@ -228,9 +229,9 @@ export default function Home(props) {
 
           <h2
             // style={{ fontFamily: "Work Sans" }}
-            className=" text-left lg:text-left dark:text-white lg:w-[80%] text-black/90 text-xl lg:text-2xl py-8 font-bold "
+            className=" text-left lg:text-left dark:text-white lg:w-[80%] text-black/90 text-xl lg:text-2xl  py-8 font-bold "
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            If you can buy it, we can deliver it.
           </h2>
         </div>
 
@@ -291,7 +292,8 @@ export default function Home(props) {
             // style={{ fontFamily: "Work Sans" }}
             className="   text-lg   lg:text-xl font-normal dark:text-white  text-left  text-white"
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi!
+            Get real-time notifications on every delivery right from the mobile
+            apps.
           </h3>
         </div>
 
@@ -334,9 +336,9 @@ export default function Home(props) {
       >
         <h1
           // style={{ fontFamily: "Work Sans" }}
-          className="     text-2xl font-bold dark:text-white  text-center  text-black/90"
+          className="  capitalize   text-2xl font-bold dark:text-white  text-center  text-black/90"
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi!
+          More than just Delivery
         </h1>
 
         <div className="flex w-full  flex-col pt-[100px] lg:flex-row justify-evenly lg:space-x-24 items-center space-y-8 lg:space-y-0">
@@ -362,27 +364,27 @@ export default function Home(props) {
               // style={{ fontFamily: "Work Sans" }}
               className="text-left lg:w-[80%] dark:text-white text-base lg:text-lg text-[#797979] "
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
-              omnis adipisci expedita labore velit consequuntur pariatur sed
-              inventore perferendis, voluptas mollitia dignissimos nam, quis
-              eaque ipsa suscipit, nulla repellat ut animi enim quia ratione
-              ipsum. Voluptatum, reprehenderit atque odit animi accusantium
-              officiis minus cum velit eos impedit quidem ut sit!
+              Are you a food vendor, Dry Cleaner, or a Local/Online Store Owner?
+              Why wait for customers to come to you when you can take your
+              products and services to them?! Become a Slik Vendor and reach
+              customers wherever they are in the country.
             </p>
 
-            <div className="mt-[60px]">
-              <button className="block text-[#EE3A46] self-center text-base  py-3 px-4 ring-1 hover:ring-2 ring-[#EE3A46] transition-colors  transform duration-300 font-normal    rounded-xl outline-none text-center ">
-                Become a vendor &nbsp;
-                <FontAwesomeIcon icon={faArrowRightLong} className="" />
-              </button>
-            </div>
+            <Link href="/join-waitlist?pref=vendor">
+              <div className="mt-[60px]">
+                <button className="block text-[#EE3A46] self-center text-base  py-3 px-4 ring-1 hover:ring-2 ring-[#EE3A46] transition-colors  transform duration-300 font-normal    rounded-xl outline-none text-center ">
+                  Become a Vendor &nbsp;
+                  <FontAwesomeIcon icon={faArrowRightLong} className="" />
+                </button>
+              </div>
+            </Link>
           </div>
         </div>
 
         <div className="flex w-full  flex-col pt-[100px] lg:flex-row justify-end  items-center space-y-8 lg:space-y-0">
           <div className="lg:ml-24 order-2 lg:order-1 lg:w-[50%]">
             <h3 className=" block dark:text-white capitalize font-bold py-6 text-2xl text-black/90">
-              Slik Driver
+              Slik Rider
             </h3>
 
             <p
@@ -390,20 +392,20 @@ export default function Home(props) {
               // style={{ fontFamily: "Work Sans" }}
               className="text-left lg:w-[80%] dark:text-white text-base lg:text-lg text-[#797979] "
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
-              omnis adipisci expedita labore velit consequuntur pariatur sed
-              inventore perferendis, voluptas mollitia dignissimos nam, quis
-              eaque ipsa suscipit, nulla repellat ut animi enim quia ratione
-              ipsum. Voluptatum, reprehenderit atque odit animi accusantium
-              officiis minus cum velit eos impedit quidem ut sit!
+              Are you a local or interstate rider? Join Nigeria's fastest
+              growing network of active riders and increase your income. Choose
+              when and where you work. Set your own price on every delivery. All
+              you need is a vehicle, a smartphone, and time.
             </p>
 
-            <div className="mt-[60px] ">
-              <button className="block text-[#EE3A46] self-center text-base  py-3 px-4  ring-1 hover:ring-2 ring-[#EE3A46] transition-colors  transform duration-300 font-normal    rounded-xl outline-none text-center ">
-                Become a driver &nbsp;
-                <FontAwesomeIcon icon={faArrowRightLong} className="" />
-              </button>
-            </div>
+            <Link href="/join-waitlist?pref=driver">
+              <div className="mt-[60px] ">
+                <button className="block text-[#EE3A46] self-center text-base  py-3 px-4  ring-1 hover:ring-2 ring-[#EE3A46] transition-colors  transform duration-300 font-normal    rounded-xl outline-none text-center ">
+                  Become a Rider &nbsp;
+                  <FontAwesomeIcon icon={faArrowRightLong} className="" />
+                </button>
+              </div>
+            </Link>
           </div>
 
           <div className=" lg:w-[50%] order-1 lg:order-2 flex flex-col justify-start items-start">
@@ -492,13 +494,9 @@ export default function Home(props) {
         </div>
 
         <div className="mt-8">
-          {/* <p className="text-black/90   dark:text-white  lg:max-w-[70%] mx-auto py-4 capitalize pb-4 text-sm text-center ">
-            {" "}
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum
-            temporibus impedit dolores exercitationem officiis sunt quod illum
-            est minima tempora in, ducimus possimus, error corrupti asperiores
-            velit? Nobis.
-          </p> */}
+          <p className="text-black/90   dark:text-white  lg:max-w-[70%] mx-auto py-4 capitalize pb-4 text-sm text-center ">
+            Seamless Delivery. Every Time. Anywhere.
+          </p>
 
           <p className="text-black/90   dark:text-white text-center   max-w-[70%] mx-auto py-4 capitalize pb-4 text-sm">
             &copy; 2021-2022 Slik - RC 000000

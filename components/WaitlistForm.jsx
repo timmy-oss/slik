@@ -6,7 +6,7 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import AOS from "aos";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CustomSelect from "./CustomSelect";
 
 const fields = [
@@ -167,7 +167,7 @@ const vendorAddonSchema = {
     .required("Choose one that describes you best!"),
 };
 
-export default function WaitlistForm({ toggle, showForm }) {
+export default function WaitlistForm({ toggle, showForm, pref = null }) {
   const [schemaAddon, setSchemaAddon] = useState(0);
 
   const validationSchema = Yup.object().shape(
@@ -180,21 +180,25 @@ export default function WaitlistForm({ toggle, showForm }) {
       : {}
   );
 
-  AOS.init({
-    offset: 40,
-    duration: 500,
-    easing: "ease-in-sine",
-    delay: 100,
-  });
+  useEffect(() => {
+    AOS.init({
+      offset: 40,
+      duration: 500,
+      easing: "ease-in-sine",
+      delay: 100,
+    });
+  }, []);
 
   async function handleSubmit(values) {
     console.log(values);
   }
 
+  console.log("pref is : ", pref);
+
   return (
     <div
       className={
-        "bg-black/60 dark:bg-white/40  z-30 fixed  w-[100%] right-0 top-0 lg:top-0 min-h-screen "
+        "bg-black/60 dark:bg-black/40  z-30 fixed  w-[100%] right-0 top-0 lg:top-0 min-h-screen "
       }
     >
       <div
@@ -223,12 +227,14 @@ export default function WaitlistForm({ toggle, showForm }) {
             name: "",
             email: "",
             phone: "",
-            category: "",
+            category: pref ? pref : "",
             more: "",
             vehicleType: "",
           }}
         >
           {({ isValid, isSubmitting, values }) => {
+            console.log(values.category);
+
             if (values.category === "driver") {
               if (schemaAddon !== 1) {
                 setSchemaAddon(1);
@@ -300,6 +306,7 @@ export default function WaitlistForm({ toggle, showForm }) {
                             {s.when === values[f.name] && s.type === "radio" && (
                               <>
                                 <label
+                                  key={i}
                                   htmlFor={f.name}
                                   className="block text-[#797979] dark:text-white mt-4 text-sm lg:text-base capitalize"
                                 >
@@ -309,7 +316,10 @@ export default function WaitlistForm({ toggle, showForm }) {
                                     <span className="text-red-500">*</span>
                                   )}
                                 </label>
-                                <div className="flex mb-2 flex-row justify-start w-full space-x-6">
+                                <div
+                                  key={i + 1}
+                                  className="flex mb-2 flex-row justify-start w-full space-x-6"
+                                >
                                   {s.options.map((r, i) => (
                                     <div
                                       key={i}
@@ -335,7 +345,10 @@ export default function WaitlistForm({ toggle, showForm }) {
                                   ))}
                                 </div>
 
-                                <span className="mt-1 text-xs lg:text-sm block text-red-500">
+                                <span
+                                  key={i + 2}
+                                  className="mt-1 text-xs lg:text-sm block text-red-500"
+                                >
                                   <ErrorMessage name={s.name} />
                                 </span>
                               </>
@@ -344,6 +357,7 @@ export default function WaitlistForm({ toggle, showForm }) {
                             {s.when === values[f.name] && s.type === "select" && (
                               <>
                                 <label
+                                  key={i + 3}
                                   htmlFor={f.name}
                                   className="block text-[#797979] dark:text-white mt-4 text-sm lg:text-base capitalize"
                                 >
@@ -352,7 +366,10 @@ export default function WaitlistForm({ toggle, showForm }) {
                                     <span className="text-red-500">*</span>
                                   )}
                                 </label>
-                                <div className="flex mb-2 flex-row justify-start w-full space-x-6">
+                                <div
+                                  key={i + 4}
+                                  className="flex mb-2 flex-row justify-start w-full space-x-6"
+                                >
                                   {/* Custom Select Component */}
 
                                   <CustomSelect />
@@ -360,7 +377,10 @@ export default function WaitlistForm({ toggle, showForm }) {
                                   {/* End - Custom Select Component */}
                                 </div>
 
-                                <span className="mt-1 text-xs lg:text-sm block text-red-500">
+                                <span
+                                  key={i + 5}
+                                  className="mt-1 text-xs lg:text-sm block text-red-500"
+                                >
                                   <ErrorMessage name={s.name} />
                                 </span>
                               </>
@@ -373,6 +393,7 @@ export default function WaitlistForm({ toggle, showForm }) {
 
                     {f.type !== "radio" && (
                       <Field
+                        key={i + 5}
                         id={f.name}
                         type={f.type}
                         name={f.name}
@@ -391,7 +412,10 @@ export default function WaitlistForm({ toggle, showForm }) {
                       />
                     )}
 
-                    <span className="mt-1 text-xs lg:text-sm block text-red-500">
+                    <span
+                      key={i + 6}
+                      className="mt-1 text-xs lg:text-sm block text-red-500"
+                    >
                       <ErrorMessage name={f.name} />
                     </span>
                   </div>
