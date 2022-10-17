@@ -71,26 +71,20 @@ export default function Home({ waitlistData = null, ...props }) {
       <MobileNavBar toggleForm={toggleForm} />
 
       <div className="bg-[#FBF7EB] md:bg-[#FBF7EB] dark:bg-[#242318] md:dark:bg-[#242318]   md:pt-32 lg:pt-14 flex flex-col lg:flex-row justify-center lg:justify-around  min-h-[727px]">
-        <div className="bg-[#FBF7EB] w-full md:bg-[#FBF7EB] dark:bg-[#242318] md:dark:bg-[#242318]   lg:w-[60%] px-4 lg:px-32 pt-24 pb-16 lg:pb-[67px] self-end">
+        <div className="bg-[#FBF7EB] w-full md:bg-[#FBF7EB] dark:bg-[#242318] md:dark:bg-[#242318]   lg:w-[80%] px-4 lg:px-32 pt-24 pb-16 lg:pb-[67px] self-stretch lg:space-y-40">
           <h1
             data-aos="fade-up"
-            style={{ fontFamily: "Work Sans" }}
-            className="text-center   capitalize  p-4 font-black text-3xl md:text-5xl lg:text-7xl xl:text-7xl 2xl:text-7xl lg:max-w-3xl 2xl:max-w-4xl lg:text-left text-black/90 md:text-black/90 md:dark:text-white dark:text-white"
+            style={{ fontFamily: "Arial Black" }}
+            className="text-center   capitalize  p-4 font-black text-3xl md:text-5xl lg:text-7xl xl:text-7xl 2xl:text-7xl lg:max-w-5xl 2xl:max-w-6xl lg:text-left text-black/90 md:text-black/90 md:dark:text-white dark:text-white"
           >
-            Seamless Delivery. Every Time. Anywhere.
+            <div className="w-full space-y-3 lg:space-y-6 ">
+              <span className="block w-full"> Seamless Delivery. </span>
+              <span className="block w-full"> Every Time. </span>
+              <span className="block w-full"> Anywhere. </span>
+            </div>
           </h1>
 
-          {/* <p
-            data-aos="fade-up"
-            style={{ fontFamily: "Work Sans" }}
-            className="text-center max-w-3xl px-4 text-lg lg:text-xl lg:text-left md:dark:text-white py-4 dark:text-white text-black/90 md:text-black/90"
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
-            obcaecati saepe dicta explicabo dolorum corporis vel repudiandae qui
-            sint aut, soluta recusandae repellendus enim asperiores.
-          </p> */}
-
-          <div className="mt-[36px] w-full flex flex-row justify-center lg:justify-start items-center   p-2 lg:w-[70%]  ">
+          <div className="mt-[36px] w-full flex flex-row justify-center lg:justify-start items-center    p-2 lg:w-[70%]  ">
             <button
               onClick={toggleForm}
               className="block w-[70%] hover:text-[#EE3A46] dark:hover:text-white  text-lg px-12 py-2 lg:py-4 hover:bg-[#FBF7EB] dark:hover:bg-[#242318] hover:ring-1 hover:ring-[#EE3A46] transition-colors text-white transform duration-300 font-normal   bg-[#EE3A46]  rounded-xl outline-none text-center "
@@ -99,7 +93,7 @@ export default function Home({ waitlistData = null, ...props }) {
             </button>
           </div>
 
-          <div className="p-2 pl-4 max-w-md hidden  bg-white md:dark:bg-[#2A2A2A] rounded-[10px] mt-12">
+          {/* <div className="p-2 pl-4 max-w-md   bg-white md:dark:bg-[#2A2A2A] rounded-[10px] mt-12">
             <div className="flex flex-row w-full max-w-md   rounded-[10px]  justify-between items-center">
               <input
                 className=" outline-none w-[65%] bg-[#EEEEEE] md:dark:bg-[#444444] text-sm md:text-lg h-[50px] lg:h-[72px] caret:text-prim-color text-black/90 md:dark:text-white placeholder:text-black/40 md:dark:placeholder:text-white/40  py-4 pl-4 md:pl-8  pr-8 rounded-y-xl rounded-l-xl  "
@@ -111,7 +105,7 @@ export default function Home({ waitlistData = null, ...props }) {
                 Track order
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="w-full flex flex-col justify-center items-center   lg:w-[40%]  bg-[#FBF7EB] dark:bg-[#111315] md:dark:bg-[#242318] py-12 self-end ">

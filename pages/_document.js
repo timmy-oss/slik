@@ -12,6 +12,10 @@ export default function Document() {
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
                 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Mulish:wght@400;700;900&family=Roboto:wght@400;700;900&family=Work+Sans:wght@400;700;900&display=swap" rel="stylesheet" />
+                <link href="http://fonts.cdnfonts.com/css/arial?styles=48885,48886,48890,51915" rel="stylesheet" />
+
+
+
 
             </Head>
             <body>
