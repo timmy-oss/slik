@@ -265,7 +265,7 @@ export default function Home({ waitlistData = null, ...props }) {
                 <p
                   data-aos="fade-up"
                   // style={{ fontFamily: "Work Sans" }}
-                  className="text-left w-[80%] dark:text-white text-base text-[#797979] "
+                  className="text-left w-[95%] dark:text-white text-base text-[#797979] "
                 >
                   {c.body}{" "}
                 </p>
