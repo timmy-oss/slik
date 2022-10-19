@@ -73,8 +73,8 @@ export default function DesktopNavBar({ toggleForm }) {
   }, []);
 
   return (
-    <nav className="fixed hidden z-10 bg-[#FBF7EB] shadow-lg  md:flex top-0   left-0 right-0    flex-row justify-between  items-center">
-      <div className="self-center  md:w-[50%] lg:w-[60%] bg-[#FBF7EB] dark:bg-[#EE3A46] flex flex-row justify-around  px-12 py-3 ">
+    <nav className="fixed hidden z-10 bg-[#FBF7EB] dark:bg-[#242318]   md:flex top-0   left-0 right-0    flex-row justify-between  items-center">
+      <div className="self-center  md:w-[50%] lg:w-[60%] bg-[#FBF7EB] dark:bg-[#242318] flex flex-row justify-around  px-12 py-3 ">
         <div>
           <Image
             src="/assets/Slik-Logo-horizontal-web.png"
@@ -106,9 +106,9 @@ export default function DesktopNavBar({ toggleForm }) {
         </div>
       </div>
 
-      <div className="self-stretch xl:px-16 py-3 md:w-[50%] lg:w-[40%] bg-[#FBF7EB]">
+      <div className="self-stretch xl:px-16 py-3 md:w-[50%] lg:w-[40%] bg-[#FBF7EB] dark:bg-[#242318]">
         <div className="flex h-full flex-row justify-around space-x-6 w-full">
-          <button className="block text-lg font-semibold self-center   px-3 py-1  text-black/90 outline-none hover:scale-[1.02] transform transition rounded-xl text-center ">
+          <button className="block text-lg font-semibold self-center   px-3 py-1  text-black/90 dark:text-white outline-none hover:scale-[1.02] transform transition rounded-xl text-center ">
             Contact Us
           </button>
 
@@ -119,12 +119,12 @@ export default function DesktopNavBar({ toggleForm }) {
             {darkMode ? (
               <FontAwesomeIcon
                 icon={faSun}
-                className="text-3xl text-black/90"
+                className="text-3xl text-black/90 dark:text-white"
               />
             ) : (
               <FontAwesomeIcon
                 icon={faMoon}
-                className="text-3xl text-black/90"
+                className="text-3xl text-black/90 dark:text-white"
               />
             )}
           </div>

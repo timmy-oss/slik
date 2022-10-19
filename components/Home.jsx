@@ -71,11 +71,11 @@ export default function Home({ waitlistData = null, ...props }) {
       <MobileNavBar toggleForm={toggleForm} />
 
       <div className="bg-[#FBF7EB] md:bg-[#FBF7EB] dark:bg-[#242318] md:dark:bg-[#242318]   md:pt-32 lg:pt-14 flex flex-col lg:flex-row justify-center lg:justify-around  min-h-[727px]">
-        <div className="bg-[#FBF7EB] w-full md:bg-[#FBF7EB] dark:bg-[#242318] md:dark:bg-[#242318]   lg:w-[80%] px-4 lg:px-32 pt-24 pb-16 lg:pb-[67px] self-stretch lg:space-y-40">
+        <div className="bg-[#FBF7EB] w-full md:bg-[#FBF7EB] dark:bg-[#242318] md:dark:bg-[#242318]   lg:w-[60%]  px-4 lg:px-32 pt-24 pb-16 lg:pb-[67px] self-stretch lg:space-y-40">
           <h1
             data-aos="fade-up"
             style={{ fontFamily: "Arial Black" }}
-            className="text-center   capitalize  p-4 font-black text-3xl md:text-5xl lg:text-7xl xl:text-7xl 2xl:text-7xl lg:max-w-5xl 2xl:max-w-6xl lg:text-left text-black/90 md:text-black/90 md:dark:text-white dark:text-white"
+            className="text-center   capitalize  p-4 font-black text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl lg:max-w-5xl 2xl:max-w-6xl lg:text-left text-black/90 md:text-black/90 md:dark:text-white dark:text-white"
           >
             <div className="w-full space-y-3 lg:space-y-6 ">
               <span className="block w-full"> Seamless Delivery. </span>
@@ -108,12 +108,12 @@ export default function Home({ waitlistData = null, ...props }) {
           </div> */}
         </div>
 
-        <div className="w-full flex flex-col justify-center items-center   lg:w-[40%]  bg-[#FBF7EB] dark:bg-[#111315] md:dark:bg-[#242318] py-12 self-end ">
+        <div className="w-full flex flex-col justify-center items-stretch   lg:w-[40%]  bg-[#FBF7EB] dark:bg-[#111315] md:dark:bg-[#242318] py-12 self-end ">
           <Image
             src="/assets/mobile-logistics.png"
             layout="intrinsic"
-            width="700"
-            height="500"
+            width="710"
+            height="569"
             alt="bike"
             objectFit="contain"
             className=""
@@ -284,7 +284,7 @@ export default function Home({ waitlistData = null, ...props }) {
         <div className="lg:w-[40%] self-start">
           <h3
             // style={{ fontFamily: "Work Sans" }}
-            className="   text-lg   lg:text-xl font-normal dark:text-white  text-left  text-white"
+            className="   text-xl   lg:text-3xl font-normal dark:text-white  text-left  text-white"
           >
             Get real-time notifications on every delivery right from the mobile
             apps.
@@ -292,10 +292,6 @@ export default function Home({ waitlistData = null, ...props }) {
         </div>
 
         <div className="lg:flex-1 self-start space-y-4">
-          <h2 className="text-left text-white text-lg lg:text-xl">
-            {" "}
-            Coming soon.
-          </h2>{" "}
           <div className="flex flex-row justify-start space-x-6">
             <div>
               <Image
