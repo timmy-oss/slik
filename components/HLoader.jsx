@@ -5,7 +5,7 @@ export default function HLoader() {
 
   useEffect(() => {
     let tid = setTimeout(() => {
-      setLeft(left >= 100 ? -100 : left + (left >= 100 ? 150 : 2));
+      setLeft(left >= 100 ? -100 : left + (left >= 100 ? 150 : 4));
     }, 10);
 
     return () => {

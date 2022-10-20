@@ -10,6 +10,7 @@ import { useState, useEffect, createRef } from "react";
 import CustomSelect from "./CustomSelect";
 import ReCAPTCHA from "react-google-recaptcha";
 import { sendRPC } from "../lib/rpc";
+import { useRouter } from "next/router";
 
 const merchandiseTypes = [
   {
@@ -92,23 +93,23 @@ const fields = [
     radios: [
       {
         name: "Vendor",
-        value: "vendor",
+        value: "VENDOR",
       },
 
       {
         name: "Driver",
-        value: "driver",
+        value: "DRIVER",
       },
 
       {
         name: "User",
-        value: "user",
+        value: "CUSTOMER",
       },
     ],
     subset: [
       {
         name: "vehicleType",
-        when: "driver",
+        when: "DRIVER",
         label: "Which will you be driving",
 
         type: "radio",
@@ -116,22 +117,22 @@ const fields = [
         options: [
           {
             name: "Truck",
-            value: "truck",
+            value: "TRUCK",
           },
           {
             name: "Car",
-            value: "car",
+            value: "CAR",
           },
           {
             name: "Bike",
-            value: "bike",
+            value: "BIKE",
           },
         ],
       },
 
       {
         name: "merchandiseType",
-        when: "vendor",
+        when: "VENDOR",
         label: "Which will you be selling",
 
         type: "select",
@@ -185,7 +186,7 @@ const baseValidationSchema = {
     .required("Phone number cannot be blank!"),
   category: Yup.string()
     .trim()
-    .oneOf(["vendor", "driver", "user"], "Your selection is invalid!")
+    .oneOf(["VENDOR", "DRIVER", "CUSTOMER"], "Your selection is invalid!")
     .label("Category")
     .required("Choose one that describes you best!"),
 
@@ -203,7 +204,7 @@ const baseValidationSchema = {
 const driverAddonSchema = {
   vehicleType: Yup.string()
     .trim()
-    .oneOf(["truck", "car", "bike"], "Your selection is invalid!")
+    .oneOf(["TRUCK", "CAR", "BIKE"], "Your selection is invalid!")
     .label("Vehicle Type")
     .required("Choose one that describes you best!"),
 };
@@ -222,8 +223,15 @@ const vendorAddonSchema = {
 export default function WaitlistForm({ toggle, showForm, pref = null }) {
   const [schemaAddon, setSchemaAddon] = useState(0);
   const recaptchaRef = createRef();
+  const formikRef = createRef();
   const [valuesI, setValuesI] = useState(null);
   const [fetching, setFetching] = useState(false);
+  const [rpcError, setRpcError] = useState(null);
+  const [info, setInfo] = useState(null);
+  const router = useRouter();
+  const [reset, setReset] = useState(false);
+
+  const theme = localStorage.getItem("slik_theme");
 
   const validationSchema = Yup.object().shape(
     schemaAddon === 0
@@ -245,38 +253,60 @@ export default function WaitlistForm({ toggle, showForm, pref = null }) {
   }, []);
 
   async function handleSubmit(values) {
+    setRpcError(null);
+    setInfo(null);
+
     setFetching(true);
 
-    recaptchaRef.current.execute();
     setValuesI(values);
+    recaptchaRef.current.execute();
   }
 
   async function onRecaptchaChange(token) {
     if (!token) {
+      console.log("No Recaptcha token : Resetting...");
       recaptchaRef.current.reset();
+      setFetching(false);
+      setRpcError("Recaptcha challenge expired. Please try again.");
       return;
     }
 
     const data = {
       ...valuesI,
-      recaptchaToken: token,
+      recaptcha: token,
+      vehicleType: valuesI.vehicleType || null,
+      merchandiseType: valuesI.merchandiseType || null,
+      phone: phone(valuesI.phone, { country: "NG" }).phoneNumber,
     };
 
+    // console.log("Sending RPC...", data);
     const res = await sendRPC("waitlist.add_applicant", {
       applicantData: data,
     });
 
     if (!res.success) {
-      console.log(res.error);
+      // console.log(res.error);
+      setRpcError(res.errorMessage);
     } else {
       if (res.data.error) {
-        console.log(res.data.error.message, res.data.error.data);
+        const errors = JSON.parse(res.data.error.data);
+        setRpcError(errors.map((e) => <p> {e.msg} </p>));
+
+        // console.log(res.data.error.message, res.data.error.data);
       } else {
         if (res.data.result.ok) {
-          console.log("Applicant Registered");
+          // console.log("Applicant Registered");
+
+          setInfo(
+            "Your application has been registered. You will be notified once we launch, thanks for believing in us!"
+          );
+
+          formikRef.current.resetForm();
         }
       }
     }
+
+    recaptchaRef.current.reset();
 
     setFetching(false);
   }
@@ -309,6 +339,18 @@ export default function WaitlistForm({ toggle, showForm, pref = null }) {
           Join the queue
         </h1>
 
+        {rpcError && (
+          <p className="mt-2 pb-6 sticky bg-white dark:bg-[#111315] top-16 left-4 text-sm lg:text-base block text-red-500">
+            {rpcError}
+          </p>
+        )}
+
+        {info && (
+          <p className="mt-2 pb-6 sticky bg-white dark:bg-[#111315] top-16 left-4 text-sm lg:text-base block text-green-500">
+            {info}
+          </p>
+        )}
+
         <Formik
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
@@ -317,13 +359,14 @@ export default function WaitlistForm({ toggle, showForm, pref = null }) {
             name: "",
             email: "",
             phone: "",
-            category: pref || "",
+            category: (pref && pref.toUpperCase()) || "",
             more: "",
             vehicleType: "",
             merchandiseType: "",
           }}
+          innerRef={formikRef}
         >
-          {({ isValid, isSubmitting, values, setFieldValue }) => {
+          {({ isValid, isSubmitting, values, setFieldValue, resetForm }) => {
             if (values.category === "driver") {
               if (schemaAddon !== 1) {
                 setSchemaAddon(1);
@@ -535,6 +578,7 @@ export default function WaitlistForm({ toggle, showForm, pref = null }) {
                     size="invisible"
                     ref={recaptchaRef}
                     badge="inline"
+                    theme={theme ? theme : "light"}
                   />
 
                   {/* End of Recaptcha  */}
