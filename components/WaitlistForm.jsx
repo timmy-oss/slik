@@ -2,12 +2,60 @@ import * as Yup from "yup";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import phone from "phone";
 import cn from "classnames";
-import Image from "next/image";
+import HLoader from "../components/HLoader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import AOS from "aos";
-import { useState, useEffect } from "react";
+import { useState, useEffect, createRef } from "react";
 import CustomSelect from "./CustomSelect";
+import ReCAPTCHA from "react-google-recaptcha";
+
+const merchandiseTypes = [
+  {
+    name: "Supermarket",
+    value: "supermarket",
+  },
+  {
+    name: "Health & Beauty",
+    value: "health_and_beauty",
+  },
+  {
+    name: "Home & Office",
+    value: "home_and_office",
+  },
+  {
+    name: "Phone & Tablets",
+    value: "phone_and_tablets",
+  },
+  {
+    name: "Computing",
+    value: "computing",
+  },
+  {
+    name: "Electronics",
+    value: "electronics",
+  },
+  {
+    name: "Women's Fashion",
+    value: "women's_fashion",
+  },
+  {
+    name: "Men's Fashion",
+    value: "men's_fashion",
+  },
+  {
+    name: "Gaming",
+    value: "gaming",
+  },
+  {
+    name: "Sporting Goods",
+    value: "sporting_goods",
+  },
+  {
+    name: "Automobile",
+    value: "automobile",
+  },
+];
 
 const fields = [
   {
@@ -162,13 +210,19 @@ const driverAddonSchema = {
 const vendorAddonSchema = {
   merchandiseType: Yup.string()
     .trim()
-    .oneOf(["truck", "car", "bike"], "Your selection is invalid!")
+    .oneOf(
+      merchandiseTypes.map((m) => m.value),
+      "Your selection is invalid!"
+    )
     .label("Merchandise Type")
     .required("Choose one that describes you best!"),
 };
 
 export default function WaitlistForm({ toggle, showForm, pref = null }) {
   const [schemaAddon, setSchemaAddon] = useState(0);
+  const recaptchaRef = createRef();
+  const [valuesI, setValuesI] = useState(null);
+  const [fetching, setFetching] = useState(false);
 
   const validationSchema = Yup.object().shape(
     schemaAddon === 0
@@ -190,10 +244,31 @@ export default function WaitlistForm({ toggle, showForm, pref = null }) {
   }, []);
 
   async function handleSubmit(values) {
-    console.log(values);
+    setFetching(true);
+
+    recaptchaRef.current.execute();
+    setValuesI(values);
   }
 
-  console.log("pref is : ", pref);
+  function onRecaptchaChange(token) {
+    if (!token) {
+      recaptchaRef.current.reset();
+      return;
+    }
+
+    const data = {
+      ...valuesI,
+      recaptchaToken: token,
+    };
+
+    console.log(data);
+
+    setFetching(false);
+  }
+
+  function onRecaptchaError(error) {
+    setFetching(false);
+  }
 
   return (
     <div
@@ -201,6 +276,7 @@ export default function WaitlistForm({ toggle, showForm, pref = null }) {
         "bg-black/60 dark:bg-black/40  z-30 fixed  w-[100%] right-0 top-0 lg:top-0 min-h-screen "
       }
     >
+      {fetching && <HLoader />}
       <div
         data-aos="zoom-in"
         style={{ fontFamily: "Work Sans" }}
@@ -222,19 +298,17 @@ export default function WaitlistForm({ toggle, showForm, pref = null }) {
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
           validateOnChange
-          validateOnBlur
           initialValues={{
             name: "",
             email: "",
             phone: "",
-            category: pref ? pref : "",
+            category: pref || "",
             more: "",
             vehicleType: "",
+            merchandiseType: "",
           }}
         >
-          {({ isValid, isSubmitting, values }) => {
-            console.log(values.category);
-
+          {({ isValid, isSubmitting, values, setFieldValue }) => {
             if (values.category === "driver") {
               if (schemaAddon !== 1) {
                 setSchemaAddon(1);
@@ -243,7 +317,7 @@ export default function WaitlistForm({ toggle, showForm, pref = null }) {
 
             if (values.category === "vendor") {
               if (schemaAddon !== 2) {
-                setSchemaAddon(1);
+                setSchemaAddon(2);
               }
             }
 
@@ -254,7 +328,15 @@ export default function WaitlistForm({ toggle, showForm, pref = null }) {
             }
 
             return (
-              <Form about="Waitlist Form" className="mt-4 space-y-4 pb-12">
+              <Form
+                about="Waitlist Form"
+                className={
+                  " mt-4 space-y-4 pb-12 " +
+                  cn({
+                    // " blur-sm cursor-not-allowed": fetching,
+                  })
+                }
+              >
                 {fields.map((f, i) => (
                   <div
                     key={i + f.name}
@@ -372,7 +454,14 @@ export default function WaitlistForm({ toggle, showForm, pref = null }) {
                                 >
                                   {/* Custom Select Component */}
 
-                                  <CustomSelect />
+                                  <CustomSelect
+                                    name="merchandiseType"
+                                    options={merchandiseTypes}
+                                    currentValue={values.merchandiseType}
+                                    setValue={(v) => {
+                                      setFieldValue("merchandiseType", v);
+                                    }}
+                                  />
 
                                   {/* End - Custom Select Component */}
                                 </div>
@@ -421,33 +510,37 @@ export default function WaitlistForm({ toggle, showForm, pref = null }) {
                   </div>
                 ))}
 
-                <div className="mt-4 ">
-                  <Image
-                    src="/assets/recaptcha-new.png"
-                    height="66"
-                    width="90"
-                    priority
-                    layout="intrinsic"
-                    alt="Recaptcha"
+                <div className="mt-4 mb-8 ">
+                  {/* Recaptcha  */}
+
+                  <ReCAPTCHA
+                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                    onChange={onRecaptchaChange}
+                    onError={onRecaptchaError}
+                    size="invisible"
+                    ref={recaptchaRef}
+                    badge="inline"
                   />
+
+                  {/* End of Recaptcha  */}
                 </div>
 
                 {!isValid && (
                   <p className="mt-1 text-sm block text-red-500">
-                    Please correct the errors in the form to continue.
+                    Please complete the form and correct errors if any.
                   </p>
                 )}
 
                 <div className="mt-12 w-full flex flex-row justify-center  items-center     ">
                   <button
                     type="submit"
-                    disabled={!isValid || isSubmitting}
+                    disabled={!isValid || isSubmitting || fetching}
                     className={
                       "block w-full    text-lg px-12 py-2 lg:py-3   transition-colors text-white  transform duration-300 font-normal   bg-[#EE3A46]  rounded-xl outline-none text-center " +
                       cn({
-                        " opacity-20 ": !isValid || isSubmitting,
+                        " opacity-20 ": !isValid || isSubmitting || fetching,
                         " hover:ring-[#EE3A46] hover:text-[white] dark:hover:text-white  hover:bg-[#EE3A46]/90 hover:ring-1":
-                          isValid && !isSubmitting,
+                          isValid && !isSubmitting && !fetching,
                       })
                     }
                   >
@@ -458,12 +551,13 @@ export default function WaitlistForm({ toggle, showForm, pref = null }) {
                   <button
                     onClick={toggle}
                     type="button"
-                    disabled={isSubmitting}
+                    disabled={isSubmitting || fetching}
                     className={
                       "block w-full  text-lg px-12 py-2 lg:py-3  ring-1 ring-black/90 dark:ring-white transition-colors text-black/90 dark:text-white transform duration-300 font-normal     rounded-xl outline-none text-center " +
                       cn({
-                        " hover:ring-2 hover:font-semibold ": !isSubmitting,
-                        " opacity-20 ": isSubmitting,
+                        " hover:ring-2 hover:font-semibold ":
+                          !isSubmitting && !fetching,
+                        " opacity-20 ": isSubmitting || fetching,
                       })
                     }
                   >

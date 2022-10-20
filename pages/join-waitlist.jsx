@@ -1,5 +1,4 @@
 import Head from "next/head";
-import WaitlistForm from "../components/WaitlistForm";
 import { useRouter } from "next/router";
 import Slik from "../components/Slik";
 import Home from "../components/Home";
@@ -23,6 +22,7 @@ export default function WaitlistPage() {
     <div className=" min-h-screen bg-main-bg  ">
       <Head>
         <title> Join waitlist - Slik </title>
+
         <link rel="icon" href="/assets/slik-favicon-transparent-web.png" />
         <link rel="shortcut icon" href="Slik-Logo-horizontal-web.png" />
       </Head>
