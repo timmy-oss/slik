@@ -9,6 +9,7 @@ import AOS from "aos";
 import { useState, useEffect, createRef } from "react";
 import CustomSelect from "./CustomSelect";
 import ReCAPTCHA from "react-google-recaptcha";
+import { sendRPC } from "../lib/rpc";
 
 const merchandiseTypes = [
   {
@@ -250,7 +251,7 @@ export default function WaitlistForm({ toggle, showForm, pref = null }) {
     setValuesI(values);
   }
 
-  function onRecaptchaChange(token) {
+  async function onRecaptchaChange(token) {
     if (!token) {
       recaptchaRef.current.reset();
       return;
@@ -261,7 +262,21 @@ export default function WaitlistForm({ toggle, showForm, pref = null }) {
       recaptchaToken: token,
     };
 
-    console.log(data);
+    const res = await sendRPC("waitlist.add_applicant", {
+      applicantData: data,
+    });
+
+    if (!res.success) {
+      console.log(res.error);
+    } else {
+      if (res.data.error) {
+        console.log(res.data.error.message, res.data.error.data);
+      } else {
+        if (res.data.result.ok) {
+          console.log("Applicant Registered");
+        }
+      }
+    }
 
     setFetching(false);
   }
@@ -527,7 +542,7 @@ export default function WaitlistForm({ toggle, showForm, pref = null }) {
 
                 {!isValid && (
                   <p className="mt-1 text-sm block text-red-500">
-                    Please complete the form and correct errors if any.
+                    Please complete the form and correct errors to continue.
                   </p>
                 )}
 
