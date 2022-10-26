@@ -281,18 +281,18 @@ export default function WaitlistForm({ toggle, showForm, pref = null }) {
 
     // console.log("Sending RPC...", data);
     const res = await sendRPC("waitlist.add_applicant", {
-      applicantData: data,
+      applicant_data: data,
     });
 
     if (!res.success) {
-      // console.log(res.error);
+      console.log(res.error);
       setRpcError(res.errorMessage);
     } else {
       if (res.data.error) {
         const errors = JSON.parse(res.data.error.data);
         setRpcError(errors.map((e) => <p> {e.msg} </p>));
 
-        // console.log(res.data.error.message, res.data.error.data);
+        console.log(res.data.error.message, res.data.error.data);
       } else {
         if (res.data.result.ok) {
           // console.log("Applicant Registered");
