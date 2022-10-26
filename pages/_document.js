@@ -5,6 +5,8 @@ export default function Document() {
         <Html>
             <Head>
 
+                <meta name="description" content="Slik is more than just logistics. We are building a truly connected ecosystem where goods and services can travel safely from any point in one country to another." />
+                <meta name="author" content="Timileyin Pelumi" />
                 <meta name="theme-color" content="#EE3A46" media="(prefers-color-scheme: light)" />
                 <meta name="theme-color" content="#EE3A46" media="(prefers-color-scheme: dark)" />
                 <link rel="manifest" href="/manifest.json" />
