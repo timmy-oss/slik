@@ -1,10 +1,7 @@
 import Head from "next/head";
-import { useEffect, useState } from "react";
 import HomeComponent from "../components/Home";
 
 const Home = () => {
-  const [showPage, setShowPage] = useState(false);
-
   return (
     <div className=" min-h-screen bg-main-bg  ">
       <Head>

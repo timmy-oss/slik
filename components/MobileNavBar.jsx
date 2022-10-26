@@ -17,12 +17,14 @@ export default function MobileNavBar({ toggleForm }) {
   const [showMenu, setShowMenu] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
 
-  AOS.init({
-    offset: 40,
-    duration: 500,
-    easing: "ease-in-sine",
-    delay: 100,
-  });
+  useEffect(() => {
+    AOS.init({
+      offset: 40,
+      duration: 800,
+      easing: "ease-in-sine",
+      delay: 100,
+    });
+  }, []);
 
   useEffect(() => {
     if (localStorage) {
